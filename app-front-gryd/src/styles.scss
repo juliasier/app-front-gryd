@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --header-height: 140px; // ajuste conforme o conteúdo do header
+  --primary-color: #7891c4;
+}
+
+/* Reset e estrutura */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #5a5154;
+  overflow-x: hidden;
+}

@@ -1,0 +1,43 @@
+.container {
+    background-color: cadetblue;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 240px; // padding lateral
+
+    @media (max-width: 1024px) {
+        padding: 0 60px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 20px;
+    }
+
+    /* Header fixo no topo */
+    header {
+        // position: fixed;
+        height: var(--header-height);
+        background: #95f8bf;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    /* Conteúdo começa após o header */
+    .page {
+        padding-top: var(--header-height);
+
+        section {
+            min-height: 100vh;
+            scroll-margin-top: var(--header-height);
+            padding: 2rem 0;
+            color: white;
+            background: #f8d995;
+
+        }
+    }
+}
