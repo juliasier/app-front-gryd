@@ -1,21 +1,14 @@
 .container {
-    background-color: cadetblue;
-
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 240px; // padding lateral
-
-    @media (max-width: 1024px) {
-        padding: 0 60px;
-    }
-
-    @media (max-width: 768px) {
-        padding: 0 20px;
-    }
+    background-color: cadetblue;
 
     /* Header fixo no topo */
     header {
-        // position: fixed;
+        position: fixed;
+        max-width: 1440px;
+        width: 100%;
+        margin-top: 60px; //Tirar quando tiver em tela < 1440px
         height: var(--header-height);
         background: #95f8bf;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,6 +17,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-radius: 12px;
     }
 
 
