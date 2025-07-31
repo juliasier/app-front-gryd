@@ -18,20 +18,53 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 12px;
+
+        img {
+            padding: 20px 0 20px 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            margin-right: 30px;
+            border: 1px solid #b60000;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        button:focus {
+            outline: 2px solid #7891c4;
+            outline-offset: 2px;
+        }
     }
 
+    main {
+        padding-top: calc(var(--header-height) + 90px);
 
-    /* Conteúdo começa após o header */
-    .page {
-        padding-top: var(--header-height);
-
-        section {
+        .hero-content {
             min-height: 100vh;
             scroll-margin-top: var(--header-height);
-            padding: 2rem 0;
-            color: white;
-            background: #f8d995;
+            padding-top: calc(var(--header-height) + 80px);
+            display: flex;
+            justify-content: space-between;
 
+            .first-card {
+                width: 593px;
+                height: 326px;
+                padding-top: 45px 0 45px0 ;
+                background-color: transparent;
+                border: 1px solid red;
+            }
+
+            .second-card {
+                background-color: rgb(142, 229, 229);
+                height: 415px;
+                width: 703px;
+                border-radius: 12px;
+            }
         }
     }
 }
