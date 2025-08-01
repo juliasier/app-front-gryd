@@ -1,12 +1,73 @@
+@import '../styles.scss'; // Caminho relativo ao arquivo do componente
+
 .background {
   background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
   background-size: cover;
   min-height: 100vh;
 
   .content {
-    margin-top: 40px;
-    padding: 0 20px;
-    background-color: var(--gray-10); // Exemplo com variável
-    border-radius: 8px;
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    height:415px;
+
+
+    @media (max-width: $tablet-max-width) {
+      padding: 10px 5px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      padding: 5px 2px;
+    }
+
+    .first-card section{
+      display: flex;
+     gap: 20px;
+    }
+
+    .secondary-card {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-right: 2rem;
+
+  .card-img {
+    position: absolute;
+    border: 3px solid red;
+    border-radius: 12px;
+    width: 280px;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  // Sobreposição com deslocamento
+  .img1 {
+    z-index: 3;
+    right: 0;
+    top: 0;
+  }
+
+  .img2 {
+    z-index: 2;
+    right: 20px;
+    top: 20px;
+  }
+
+  .img3 {
+    z-index: 1;
+    right: 40px;
+    top: 40px;
+  }
+}
+
   }
 }
