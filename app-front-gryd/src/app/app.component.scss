@@ -1,5 +1,12 @@
-.app-background {
-//   background: url('assets/desktop-1440/bg-hero.webp') no-repeat center center;
+.background {
+  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
   background-size: cover;
   min-height: 100vh;
+
+  .content {
+    margin-top: 40px;
+    padding: 0 20px;
+    background-color: var(--gray-10); // Exemplo com variável
+    border-radius: 8px;
+  }
 }
