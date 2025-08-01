@@ -1,20 +1,166 @@
-:root {
-  --header-height: 90px; // Verificar: Figma está 89px;
-  --primary-color: #7891c4;
+// Variáveis de grid e breakpoints
+$grid-columns: 12;
+$desktop-max-width: 1440px;
+$tablet-max-width: 1024px;
+$mobile-max-width: 768px;
+
+// Paleta de marrom pastel
+$background-color: #f4e1d2;  // Fundo geral
+$header-bg-color: #a67c52;    // Fundo do Header
+$nav-hover-color: #7f5f3e;    // Cor de hover para o nav
+$button-bg-color: #b97a4b;    // Cor do botão "Comece agora"
+$button-hover-bg-color: #9e6132; // Cor do hover do botão
+$grid-background: #d7b9a1;   // Cor de fundo para destacar o grid
+
+// Layout Container - Aplique uma estrutura de grid geral
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: 20px; // Espaçamento geral entre os itens
+  padding: 20px;
+  background-color: $grid-background;  // Destaca o grid para visualização
+
+  // Responsividade
+  @media (max-width: $desktop-max-width) {
+    max-width: $desktop-max-width;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @media (max-width: $mobile-max-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* Reset e estrutura */
-* {
-  margin: 0;
-  padding: 0;
+// Header
+header {
+  position: relative;
+  width: 100%;
+  background-color: $header-bg-color;  // Cor de fundo do header
+  color: #fff;
+  padding: 20px;
   box-sizing: border-box;
 
+  // Centralização e largura até 1440px
+  @media (max-width: $desktop-max-width) {
+    width: 100%;
+  }
+
+  @media (min-width: $desktop-max-width + 1) {
+    width: $desktop-max-width;
+    margin: 0 auto;
+    padding-top: 60px; // Para espaçamento do top 60px após 1440px
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $nav-hover-color;  // Cor de hover no menu
+        }
+      }
+    }
+
+    button {
+      background-color: $button-bg-color; // Cor do botão
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $button-hover-bg-color; // Cor do hover no botão
+      }
+    }
+  }
+
+  // Responsividade para o Header
+  @media (max-width: $tablet-max-width) {
+    .header-inner {
+      flex-direction: column;
+      align-items: center;
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    .header-inner {
+      padding: 10px;
+      nav {
+        gap: 10px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+  }
 }
 
-html, body {
-  height: 100%;
+// Body e conteúdo
+body {
   font-family: 'Arial', sans-serif;
-  scroll-behavior: smooth;
-  background-color: #553045;
+  background-color: $background-color; // Cor de fundo do body
+  color: #333;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  main {
+    display: block;
+    padding-top: 80px; // Para ajustar o header fixo
+  }
+
+  .content {
+    margin-top: 40px;
+  }
+
+  // Responsividade do conteúdo
+  @media (max-width: $tablet-max-width) {
+    padding: 10px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 5px;
+  }
 }
