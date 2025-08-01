@@ -7,11 +7,32 @@ $mobile-max-width: 768px;
 // Paleta de marrom pastel
 $background-color: #f4e1d2;  // Fundo geral
 
-$header-bg-color: var(--red-gradient);    // Usando o gradiente linear vermelho
 $nav-hover-color: #7f5f3e;    // Cor de hover para o nav
 $button-bg-color: #b97a4b;    // Cor do botão "Comece agora"
 $button-hover-bg-color: #9e6132; // Cor do hover do botão
 $grid-background: #d7b9a1;   // Cor de fundo para destacar o grid
+
+$gray-10: #E2E2E2;
+$gray-20: #A5A5A5;
+$gray-30: #7B7B7B;
+$gray-40: #585858;
+$gray-50: #484848;
+$gray-60: #373737;
+$gray-70: #232323;
+$gray-80: #121212;
+$gray-90: #C1C1C1;
+$black-100: #000000;
+
+$red-10: #C30000;
+$red-20: #BA0909;
+$red-30: #B90A0A;
+$red-40: #AF1414;
+$red-50: #A61D1D;
+$red-60: #9C2727;
+$red-70: #923131;
+$red-80: #883B3B;
+
+$header-gradient: linear-gradient(to right, $gray-70, $red-10);
 
 // Layout Container - Aplique uma estrutura de grid geral
 .container {
@@ -41,7 +62,7 @@ $grid-background: #d7b9a1;   // Cor de fundo para destacar o grid
 header {
   position: relative;
   width: 100%;
-  background: $header-bg-color;  // Cor de fundo do header com gradiente linear
+  background: $header-gradient;
   color: #fff;
   padding: 20px;
   box-sizing: border-box;
@@ -49,12 +70,14 @@ header {
   // Centralização e largura até 1440px
   @media (max-width: $desktop-max-width) {
     width: 100%;
+    margin-top:0;
   }
 
   @media (min-width: $desktop-max-width ) {
     width: $desktop-max-width;
-    margin: 0 auto;
+    margin: 60px auto;
     padding-top: 60px; // Para espaçamento do top 60px após 1440px
+
   }
 
   .header-inner {
@@ -147,21 +170,17 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
 
-  main {
-    display: block;
-    padding-top: 80px; // Para ajustar o header fixo
-  }
 
-  .content {
-    margin-top: 40px;
-  }
+  // .content {
+  //   margin-top: 40px;
+  // }
 
-  // Responsividade do conteúdo
-  @media (max-width: $tablet-max-width) {
-    padding: 10px;
-  }
+  // // Responsividade do conteúdo
+  // @media (max-width: $tablet-max-width) {
+  //   padding: 10px;
+  // }
 
-  @media (max-width: $mobile-max-width) {
-    padding: 5px;
-  }
+  // @media (max-width: $mobile-max-width) {
+  //   padding: 5px;
+  // }
 }
