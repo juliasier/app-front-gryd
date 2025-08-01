@@ -6,7 +6,8 @@ $mobile-max-width: 768px;
 
 // Paleta de marrom pastel
 $background-color: #f4e1d2;  // Fundo geral
-$header-bg-color: #a67c52;    // Fundo do Header
+
+$header-bg-color: var(--red-gradient);    // Usando o gradiente linear vermelho
 $nav-hover-color: #7f5f3e;    // Cor de hover para o nav
 $button-bg-color: #b97a4b;    // Cor do botão "Comece agora"
 $button-hover-bg-color: #9e6132; // Cor do hover do botão
@@ -40,7 +41,7 @@ $grid-background: #d7b9a1;   // Cor de fundo para destacar o grid
 header {
   position: relative;
   width: 100%;
-  background-color: $header-bg-color;  // Cor de fundo do header
+  background: $header-bg-color;  // Cor de fundo do header com gradiente linear
   color: #fff;
   padding: 20px;
   box-sizing: border-box;
@@ -50,7 +51,7 @@ header {
     width: 100%;
   }
 
-  @media (min-width: $desktop-max-width + 1) {
+  @media (min-width: $desktop-max-width ) {
     width: $desktop-max-width;
     margin: 0 auto;
     padding-top: 60px; // Para espaçamento do top 60px após 1440px

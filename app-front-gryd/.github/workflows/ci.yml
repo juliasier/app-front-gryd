@@ -40,3 +40,5 @@ jobs:
           branch: gh-pages        # Branch onde será publicado
           folder: dist/meu-site-angular  # Caminho onde o build é gerado
           token: ${{ secrets.GITHUB_TOKEN }} # Usar o token do GitHub
+
+          
