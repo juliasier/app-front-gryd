@@ -162,7 +162,7 @@ header {
 // Body e conteúdo
 body {
   font-family: 'Arial', sans-serif;
-  background-color: $background-color; // Cor de fundo do body
+  background: url('assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
   color: #333;
   margin: 0;
   padding: 0;
