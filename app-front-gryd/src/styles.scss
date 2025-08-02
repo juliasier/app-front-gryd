@@ -163,3 +163,5 @@ $header-gradient: linear-gradient(to right, $gray-70, $red-10);
     color: #FFF;
   }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

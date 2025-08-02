@@ -2,7 +2,7 @@
 .motivos-container {
     display: flex;
     flex-direction: column;
-    background-color: #FAFAFA;
+    background-color: #f1bebe;
     position: relative;
 
     .motivos-content {
@@ -52,7 +52,7 @@
 
 .dotted-square {
     position: absolute;
-    top: 10%;
+    top: 90%;
     right: 2%;
     transform: rotate(30deg);
     width: 160px;
