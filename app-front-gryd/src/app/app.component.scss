@@ -9,11 +9,70 @@
     max-width: $desktop-max-width;
     margin: 0 auto;
     display: flex;
-    gap: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    height:415px;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 
+    aside.hero-content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start; // Para alinhar pelo topo
+      gap: 2rem;
+      width: 100%;
+
+      .first-card {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .secondary-card {
+        flex: 1;
+        position: relative;
+        min-width: 480px;
+        height: 212px; // para conter a altura exata das imagens
+        display: flex;
+        justify-content: flex-end;
+
+        .card-img {
+          position: absolute;
+          width: 480px;
+          height: 212px;
+          border: 2px solid #959595; // wireframe-stuff color
+          border-radius: 12px;
+          object-fit: cover;
+          transition: transform 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+
+        .img1 {
+          z-index: 3;
+          right: 190px;
+          top: 160px;
+          border-radius:8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+       }
+
+        .img2 {
+          z-index: 2;
+          right: 120px;
+          top: 80px;
+          border-radius:8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+          
+        }
+
+        .img3 {
+          z-index: 1;
+          right: 40px;
+          top: 30px;
+          border-radius:8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+        }
+      }
+    }
 
     @media (max-width: $tablet-max-width) {
       padding: 10px 5px;
@@ -22,52 +81,5 @@
     @media (max-width: $mobile-max-width) {
       padding: 5px 2px;
     }
-
-    .first-card section{
-      display: flex;
-     gap: 20px;
-    }
-
-    .secondary-card {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 2rem;
-  padding-right: 2rem;
-
-  .card-img {
-    position: absolute;
-    border: 3px solid red;
-    border-radius: 12px;
-    width: 280px;
-    height: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-
-  // Sobreposição com deslocamento
-  .img1 {
-    z-index: 3;
-    right: 0;
-    top: 0;
-  }
-
-  .img2 {
-    z-index: 2;
-    right: 20px;
-    top: 20px;
-  }
-
-  .img3 {
-    z-index: 1;
-    right: 40px;
-    top: 40px;
-  }
-}
-
   }
 }
