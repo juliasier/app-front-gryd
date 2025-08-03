@@ -47,14 +47,29 @@ $red-90: #F43535;
             display: block;
         }
 
-        .motivos-list {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            flex-wrap: wrap;
+
+        .motivo section {
+            flex: 1 1 280px;
+            max-width: 340px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+//            text-align: left;
+
+            img {
+                margin-bottom: 16px;
+            }
+            h2 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+            p {
+                font-size: 1rem;
+                color: #444;
+            }
         }
 
-        .motivo {
+         .group-images {
             flex: 1 1 280px;
             max-width: 340px;
             background: #fff;
