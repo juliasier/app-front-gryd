@@ -48,23 +48,23 @@ body {
   min-height: 100vh;
   line-height: 1.5;
 }
+
 .background {
-    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
-    background-size: cover;
-    min-height: 100vh;
-    display: grid;
+  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+  background-size: cover;
+  min-height: 100vh;
+  display: grid;
 
-    .container {
-      max-width:$desktop-max-width;
-      position: fixed;
-      margin-top: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #da33be;
-
-    }
-
+  .container {
+    max-width: $desktop-max-width;
+    position: fixed;
+    margin-top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #da33be;
   }
+
+}
 
 
 //Mobile:300 até 599px
@@ -81,6 +81,18 @@ body {
       background-color: #186294;
     }
 
+    nav.desktop-nav {
+      display: none;
+    }
+
+    .btn-cta {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
   }
 }
 
@@ -93,7 +105,7 @@ body {
     display: grid;
 
     .container {
-      width:90%;
+      width: 90%;
       position: fixed;
       margin-top: 60px;
       left: 50%;
@@ -105,7 +117,7 @@ body {
   }
 }
 
-  // Desktop: 1024px ou mais
+// Desktop: 1024px ou mais
 
 @media (min-width:1024px) {
   .background {

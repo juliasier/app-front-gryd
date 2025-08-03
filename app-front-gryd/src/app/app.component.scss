@@ -1,40 +1,101 @@
 
 // $header-gradient: linear-gradient(to right, $gray-70, $red-10);
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  width: 100%;
 
+  img.logo {
+    height: 40px;
+  }
 
-  // .header-inner {
-  //   height: 89px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-  //   width: 100%;
-  //   max-width: 100%;
+  nav {
+    display: flex;
+    gap: 80px;
 
-  //   .logo {
-  //     height: 40px;
-  //     width: auto;
-  //   }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
 
-  //   nav {
-  //     display: flex;
-  //     gap: 20px;
-  //     flex-grow: 1;
-  //     justify-content: center;
+  .btn-cta {
+    background-color:#9C2727;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
-  //     a {
-  //       text-decoration: none;
-  //       color: #fff;
-  //       font-size: 16px;
-  //       transition: color 0.3s ease;
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+}
 
-  //       &:hover {
-  //         color: $nav-hover-color; // Cor de hover no menu
-  //       }
-  //     }
-  //   }
+//Header mobile
+@media (min-width: 270px) and (max-width: 450px) {
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+    
+}
 
+//Header tablet 
+@media (min-width: 600px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
 
+  }
+}
+
+  .header-inner {
+    height: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #f4f4f4; // Cor de hover no menu
+        }
+      }
+    }
+
+  }
 //   aside.hero-content {
 //     display: flex;
 //     flex-direction: row;

@@ -14,5 +14,9 @@ import { SobreComponent } from './pages/sobre/sobre.component';
   ]
 })
 export class AppComponent {
-  title = 'app-front-gryd';
+    sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 }
