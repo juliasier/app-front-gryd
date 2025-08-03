@@ -1,11 +1,34 @@
 // Variáveis de grid e breakpoints
-$desktop-min-width: 1240px;
+$desktop-min-width: 1024px;
 $desktop-max-width: 1440px;
-$tablet-min-width: 600px;
-$tablet-max-width: 1024px;
-$mobile-max-width: 450px;
 
-// Reset básico
+$tablet-min-width: 600px;
+$tablet-max-width: 1023px;
+
+$mobile-min-width: 270px;
+$mobile-max-width: 599px;
+
+$gray-10: #E2E2E2;
+$gray-20: #A5A5A5;
+$gray-30: #7B7B7B;
+$gray-40: #585858;
+$gray-50: #484848;
+$gray-60: #373737;
+$gray-70: #232323;
+$gray-80: #121212;
+$gray-90: #C1C1C1;
+$black-100: #000000;
+
+$red-10: #C30000;
+$red-20: #BA0909;
+$red-30: #B90A0A;
+$red-40: #AF1414;
+$red-50: #A61D1D;
+$red-60: #9C2727;
+$red-70: #923131;
+$red-80: #883B3B;
+$red-90: #F43535;
+
 *,
 *::before,
 *::after {
@@ -25,24 +48,52 @@ body {
   min-height: 100vh;
   line-height: 1.5;
 }
-
-// Background global
 .background {
-  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
-  background-size: cover;
-  min-height: 100vh;
-  display: grid;
+    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
 
-  .container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #948c18;
+    .container {
+      max-width:$desktop-max-width;
+      position: fixed;
+      margin-top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #da33be;
+
+    }
+
   }
 
-  // Tablet: 600px até 1023px
-  @media (min-width: 600px) and (max-width: 1023px) {
+
+//Mobile:300 até 599px
+@media (min-width: 270px) and (max-width: 599px) {
+  .background {
+    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
+
     .container {
-      width: 90%;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #186294;
+    }
+
+  }
+}
+
+// Tablet: 600px até 1023px
+@media (min-width: 600px) and (max-width: 1023px) {
+  .background {
+    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
+
+    .container {
+      width:90%;
       position: fixed;
       margin-top: 60px;
       left: 50%;
@@ -50,18 +101,28 @@ body {
       background-color: #33aada;
 
     }
+
   }
+}
 
   // Desktop: 1024px ou mais
-  @media (min-width: 1024px) {
+
+@media (min-width:1024px) {
+  .background {
+    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
+
     .container {
       width: 90%;
       position: fixed;
       margin-top: 60px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #d433da;
+      background-color: #76abb3;
 
     }
+
   }
 }
