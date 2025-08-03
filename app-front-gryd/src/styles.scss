@@ -1,7 +1,9 @@
 // Variáveis de grid e breakpoints
-$desktop-max-width: 1280px;
-$tablet-max-width: 768px;
-$mobile-max-width: 470px;
+$desktop-min-width: 1240px;
+$desktop-max-width: 1440px;
+$tablet-min-width: 600px;
+$tablet-max-width: 1024px;
+$mobile-max-width: 450px;
 
 // Reset básico
 *,
@@ -19,7 +21,6 @@ html {
 
 body {
   font-family: 'Inter', Arial, sans-serif;
-  background-color: #f1e758;
   color: #222;
   min-height: 100vh;
   line-height: 1.5;
@@ -27,49 +28,40 @@ body {
 
 // Background global
 .background {
-  background: url('/assets/mobile/bg-hero.webp') no-repeat center center / cover;
+  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+  background-size: cover;
   min-height: 100vh;
   display: grid;
-    
+
   .container {
-    
     width: 100%;
     margin: 0 auto;
     background-color: #948c18;
-
-  }
-}
-
-// Tablet
-@media (min-width: $tablet-max-width) {
-  .background {
-    background: url('/assets/tablet/bg-hero.webp') no-repeat center center / cover;
   }
 
-  @media (min-width: $desktop-max-width) {
-    .background {
-      background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+  // Tablet: 600px até 1023px
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .container {
+      width: 90%;
+      position: fixed;
+      margin-top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #33aada;
 
-      .container {
-        max-width: $desktop-max-width;
-        margin-top: 60px;
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-
-      }
     }
+  }
 
-    // Mobile
-    @media (min-width: $mobile-max-width) {
-      .background {
-        background: url('/assets/mobile/bg-hero.webp') no-repeat center center / cover;
+  // Desktop: 1024px ou mais
+  @media (min-width: 1024px) {
+    .container {
+      width: 90%;
+      position: fixed;
+      margin-top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #d433da;
 
-        .container {
-          max-width: $mobile-max-width;
-          transform: translateX(-50%);
-        }
-      }
     }
   }
 }
