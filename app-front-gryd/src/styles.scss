@@ -29,8 +29,10 @@ body {
 .background {
   background: url('/assets/mobile/bg-hero.webp') no-repeat center center / cover;
   min-height: 100vh;
-
+  display: grid;
+    
   .container {
+    
     width: 100%;
     margin: 0 auto;
     background-color: #948c18;
@@ -42,30 +44,32 @@ body {
 @media (min-width: $tablet-max-width) {
   .background {
     background: url('/assets/tablet/bg-hero.webp') no-repeat center center / cover;
-
-    .container {
-      max-width: $tablet-max-width;
-      margin-top: 60px;
-      position: fixed;
-      left:50%;
-      transform: translateX(-50%);
-
-    }
   }
-}
 
-// Desktop
-@media (min-width: $desktop-max-width) {
-  .background {
-    background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+  @media (min-width: $desktop-max-width) {
+    .background {
+      background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
 
-    .container {
-      max-width: $desktop-max-width;
-      margin-top: 60px;
-      position: fixed;
-      left:50%;
-      transform: translateX(-50%);
+      .container {
+        max-width: $desktop-max-width;
+        margin-top: 60px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
 
+      }
+    }
+
+    // Mobile
+    @media (min-width: $mobile-max-width) {
+      .background {
+        background: url('/assets/mobile/bg-hero.webp') no-repeat center center / cover;
+
+        .container {
+          max-width: $mobile-max-width;
+          transform: translateX(-50%);
+        }
+      }
     }
   }
 }

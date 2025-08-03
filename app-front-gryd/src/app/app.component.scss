@@ -21,6 +21,54 @@ $red-90: #F43535;
 
 $header-gradient: linear-gradient(to right, $gray-70, $red-10);
 
+header {
+  max-width: $desktop-max-width;
+  position: fixed;
+  background: $header-gradient;
+  margin-top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+
+
+  .header-inner {
+    height: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $nav-hover-color; // Cor de hover no menu
+        }
+      }
+    }
+  }
+}
 
 //   aside.hero-content {
 //     display: flex;
