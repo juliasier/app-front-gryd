@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MotivosComponent } from './components/section/motivos/motivos.component';
-import { SobreComponent } from './components/section/motivos/pages/sobre/sobre.component';
+import { MotivosComponent } from './pages/motivos/motivos.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 @Component({
   selector: 'app-root',
