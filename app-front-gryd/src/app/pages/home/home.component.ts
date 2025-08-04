@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, ViewEncapsulation } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
@@ -8,6 +8,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,  // <- isso permite aplicar estilos globais
 
 })
 export class HomeComponent {
