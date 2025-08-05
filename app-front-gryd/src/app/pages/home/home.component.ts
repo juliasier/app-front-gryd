@@ -1,17 +1,20 @@
-import { ChangeDetectionStrategy, Component, signal, ViewEncapsulation } from '@angular/core';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [MatExpansionModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,  // <- isso permite aplicar estilos globais
-
+  styleUrls: ['./home.component.scss'],
+  standalone: true,
 })
 export class HomeComponent {
-  readonly panelOpenState = signal(false);
+  isMobile: boolean = false;
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = window.innerWidth < 460; // Adjust the width as needed for mobile detection
+  }
+
+  ngOnInit() {
+    this.onResize(null); // Initial check on component load
+  }
 }

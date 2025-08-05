@@ -23,10 +23,24 @@
 
   </div>
 
-  <!-- sections SPA -->
+  <!-- Sidebar Mobile -->
+  <aside class="mobile-sidebar" [class.active]="sidebarOpen">
+    <button class="close-btn" (click)="toggleSidebar()" aria-label="Fechar menu">×</button>
+    <nav class="mobile-nav">
+      <a href="#home" (click)="toggleSidebar()">Home</a>
+      <a href="#beneficios" (click)="toggleSidebar()">Benefícios</a>
+      <a href="#sobre" (click)="toggleSidebar()">Sobre nós</a>
+      <a href="#servicos" (click)="toggleSidebar()">Serviços</a>
+      <a href="#reviews" (click)="toggleSidebar()">Reviews</a>
+      <a href="#equipe" (click)="toggleSidebar()">Nossa equipe</a>
+      <a href="#contato" (click)="toggleSidebar()">Contatos</a>
+    </nav>
+  </aside>
+
+  <!-- sections SPA -->  
   <section class="sections-of-page">
     <app-home></app-home>
     <app-motivos></app-motivos>
-    <app-sobre></app-sobre>
+    <!-- <app-sobre></app-sobre> -->
   </section>
 </div>

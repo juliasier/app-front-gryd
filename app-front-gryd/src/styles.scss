@@ -57,18 +57,18 @@ body {
 
   .container {
     max-width: $desktop-max-width;
-    position: fixed;
+    // position: fixed;
     margin-top: 60px;
     left: 50%;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
     background-color: #da33be;
   }
 
 }
 
 
-//Mobile:300 até 599px
-@media (min-width: 270px) and (max-width: 599px) {
+// Mobile: 270px até 599px
+@media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
   .background {
     background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
     background-size: cover;
@@ -78,15 +78,13 @@ body {
     .container {
       width: 100%;
       margin: 0 auto;
-      background-color: #186294;
+      padding: 0 10px;
     }
-
-
   }
 }
 
 // Tablet: 600px até 1023px
-@media (min-width: 600px) and (max-width: 1023px) {
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
   .background {
     background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
     background-size: cover;
@@ -95,14 +93,11 @@ body {
 
     .container {
       width: 90%;
-      position: fixed;
+      // position: fixed;
       margin-top: 60px;
       left: 50%;
-      transform: translateX(-50%);
-      background-color: #81517b;
-
+      // transform: translateX(-50%);
     }
-
   }
 }
 
@@ -117,10 +112,10 @@ body {
 
     .container {
       width: 90%;
-      position: fixed;
+      // position: fixed;
       margin-top: 60px;
       left: 50%;
-      transform: translateX(-50%);
+      // transform: translateX(-50%);
       background-color: #76abb3;
 
     }
