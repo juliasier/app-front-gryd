@@ -1,238 +1,125 @@
-$gray-70: #232323;
-$red-10: #C30000;
-$red-90: #F43535;
-$header-gradient: linear-gradient(to right, $gray-70, $red-10);
-body, html {
-  height: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  min-height: 80px;
-  z-index: 1000;
-  width: 100%;
-  
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    background: $header-gradient;
-    padding: 10px 20px;
+// $gray-70: #232323;
+// $red-10: #C30000;
+// $red-90: #F43535;
+// $header-gradient: linear-gradient(to right, $gray-70, $red-10);
 
 
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-grow: 1;
-      justify-content: center;
+// // Configurações para mobile
+// @media (min-width: 270px) and (max-width: 599px) {
+//   header {
+//     height: 90px;
+//     z-index: 1000;
+//     width: 100%;
 
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: color 0.3s ease;
+//     .header-inner {
+//       width: 100%; // Garante que ocupe toda a largura
+//       max-width: 100%;
+//       border-radius: 0;
+//       background: $header-gradient;
+//       height: 90px;
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       padding: 0 1rem; // padding horizontal apenas
+//       box-sizing: border-box;
 
-        &:hover {
-          color: #f4f4f4; // Cor de hover no menu
-        }
-      }
-    }
-   .logo {
-    margin-right: 0;
-    padding: 0;
-   }
-   .header-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+//       nav {
+//         display: none;
+//       }
 
+//       .logo {
+//         max-height: 50px;
+//       }
 
-      button {
-        background-color: #F43535;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+//       .header-buttons {
+//         display: flex;
+//         align-items: center;
+//         gap: 8px;
+//    display: block;
+//           position:relative;
+//           right:3%rem;
+//         .hamburger {
+//           font-size: 1.5rem;
+//           display: block;
+//           position:relative;
+//           right:3%rem;
+//         }
 
-        &:hover {
-          background-color:#883B3B; // Cor de hover no botão
-        }
-      }
-    }}
+//         .btn-cta {
+//            display: none;
+//           // font-size: 0.9rem;
+//           // padding: 0.5rem 0.75rem;
+//           // background-color: $red-90;
+//           // color: white;
+//           // border: none;
+//           // border-radius: 4px;
+//         }
+//       }
+//     }
+//   }
+// }
+// // Desktop: min-width:1024px
+// @media (min-width: 1024px) {
+//   header {
+//     position: fixed;
+//     height: 90px;
+//     z-index: 1000;
+//     width: 100%;
+//     padding: 2rem 2rem;
 
-  // Configurações para mobile e tablet
-  @media (min-width: 270px) and (max-width: 599px) {
-    .header-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      width: 100%;
-      padding: 10px;
-      
-      .logo {
-        grid-column: 1 / 3;
-        height: 30px;
-      }
-      
-      nav {
-        display: none; // Esconde nav em mobile
-      }
-      
-      .header-buttons {
-        grid-column: 3 / 5;
-        display: flex;
-        justify-content: flex-end;
-        
-        .hamburger {
-          display: block;
-        }
-        
-        .btn-cta {
-          display: none; // Esconde o botão CTA em mobile
-        }
-      }
-    }
-  }
-  
-  // Configurações para tablet
-  @media (min-width: 600px) and (max-width: 1023px) {
-    .header-inner {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 15px;
-      
-      .logo {
-        grid-column: 1 / 2;
-      }
-      
-      nav {
-        display: flex;
-        gap: 15px;
-        grid-column: 2 / 3;
-        
-        a {
-          font-size: 14px;
-        }
-      }
-      
-      .header-buttons {
-        grid-column: 3 / 4;
-        
-        .hamburger {
-          display: none;
-        }
-        
-        .btn-cta {
-          padding: 8px 15px;
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
-  // Desktop: mostra nav, esconde hambúrguer
-  @media (min-width: 1024px) {
-    .header-inner {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 40px;
-      padding: 15px 30px;
-      
-      .logo {
-        grid-column: 1 / 2;
-        height: 40px;
-      }
-      
-      nav {
-        display: flex;
-        gap: 30px;
-        grid-column: 2 / 3;
-        justify-content: center;
-        
-        a {
-          font-size: 16px;
-        }
-      }
-      
-      .header-buttons {
-        grid-column: 3 / 4;
-        display: flex;
-        align-items: center;
-        
-        .hamburger {
-          display: none;
-        }
-        
-        .btn-cta {
-          padding: 10px 24px;
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
+//     .header-inner {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       border-radius: 12px;
+//       background: $header-gradient;
+//       height: 90px;
 
 
-// Estilos para o sidebar mobile
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba($color: $gray-70, $alpha: 0.95);
-  z-index: 2000;
-  transition: right 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  
-  &.active {
-    right: 0;
-  }
-  
-  .close-btn {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  }
-}
+//       nav {
+//         display: flex;
+//         gap: 20px;
+//         flex-grow: 1;
+//         justify-content: center;
 
-.sections-of-page {
-  margin-top: 180px;
-  // position: relative;
-  // width: 100%;
-}
+//         a {
+//           text-decoration: none;
+//           color: #fff;
+//           font-size: 16px;
+//           transition: color 0.3s ease;
 
-.sections-of-page {
-  padding-top: 100px; // espaço igual à altura do header
-  position: relative;
-  width: 100%;
-  z-index: 0;
-}
+//           &:hover {
+//             color: #f4f4f4; // Cor de hover no menu
+//           }
+//         }
+//       }
+
+//       .logo {
+//         margin-right: 0;
+//         padding: 0;
+//       }
+
+//       .header-buttons {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         gap: 20px;
+
+
+//         button {
+//           background-color: #F43535;
+//           color: #fff;
+//           border: none;
+//           padding: 10px 20px;
+//           border-radius: 4px;
+//           cursor: pointer;
+//           transition: background-color 0.3s ease;
+
+//           &:hover {
+//             background-color: #883B3B; // Cor de hover no botão
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
