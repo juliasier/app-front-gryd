@@ -30,23 +30,29 @@ html, body {
   line-height: 1.6;
   max-width: 100vw;
 }
-
-// 📷 Background aplicado a todos os dispositivos
 .background {
-  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center;
-  background-size: cover;
+  background-image: url('/assets/desktop-1440/bg-hero.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; // importante para esticar proporcionalmente
+  background-color: #fbe8e8; // fallback pastel
+  width: 100vw;
   min-height: 100vh;
-  display: grid;
-  max-width: $desktop-max-width;
 
+  // Para garantir que a imagem cubra tudo mesmo com scroll:
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
+
 
 // 🖍️ Tipografia base
 h1, h2 {
   font-family: "Bai Jamjuree", sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  color: #70d28e;
+  color: #d2ae70;
 }
 
 // 📱 Mobile
