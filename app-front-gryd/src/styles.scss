@@ -26,6 +26,7 @@ $mobile-max-width: 599px;
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.6;
@@ -39,7 +40,7 @@ body {
   background-size: cover;
   background-color: #fbe8e8;
   width: 100vw;
-  display: flex !important;
+position:fixed;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -62,7 +63,7 @@ body {
   background-size: cover; // importante para esticar proporcionalmente
   background-color: #fbe8e8; // fallback pastel
   width: 100vw;
-    min-height: 600px;
+    min-height: auto;
 
   // Para garantir que a imagem cubra tudo mesmo com scroll:
   display: flex;
