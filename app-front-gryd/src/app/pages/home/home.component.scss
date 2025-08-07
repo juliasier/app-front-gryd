@@ -157,11 +157,13 @@ $red-90: #F43535;
       .first-card {
         margin: 0;
         padding: 0;
+        width:90;
       }
 
       .first-card .header-card {
         margin-top: 8px;
         gap: 12px;
+        display:flex;
 
         p {
           min-inline-size: max-content;
@@ -188,7 +190,7 @@ $red-90: #F43535;
       h2 {
         font-size: 0.75rem;
         color: #121212;
-        margin-bottom: 32px;
+        margin-bottom:1rem;
       }
 
       button {
@@ -205,12 +207,10 @@ $red-90: #F43535;
       position: relative;
       padding: 1rem 1rem;
       margin-top: 40px;
-      min-height: 600px;
-
+      min-height: 400px;
 
       .card-img {
-        position: absolute; // necessário para cascata
-
+        position: absolute;
         border-radius: 12px;
         object-fit: cover;
         width: 90%;
@@ -219,20 +219,23 @@ $red-90: #F43535;
         &:hover {
           transform: scale(1.03);
         }
+
+        img {
+        box-shadow: 8px 8px 0 rgba(141, 0, 0, 1);
+          width:280px;
+        }
       }
 
       .img1 {
         top: 10rem;
         right: 3rem;
         z-index: 3;
-        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
       }
 
       .img2 {
         top: 4rem;
         bottom: 13rem;
         z-index: 2;
-        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
       }
 
       .img3 {
@@ -240,7 +243,6 @@ $red-90: #F43535;
         left: 2rem;
         bottom: 0;
         z-index: 1;
-        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
       }
     }
   }

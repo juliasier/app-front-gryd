@@ -16,9 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
   ]
 })
 export class AppComponent {
-    sidebarOpen = false;
+isSidebarOpen = false;
 
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
-}
+toggleSidebar() {
+  this.isSidebarOpen = !this.isSidebarOpen;
+}}
