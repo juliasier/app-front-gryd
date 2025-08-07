@@ -26,7 +26,6 @@ $mobile-max-width: 599px;
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.6;
@@ -37,13 +36,10 @@ body {
   background-image: url('/assets/desktop-1440/bg-hero.webp');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; // importante para esticar proporcionalmente
-  background-color: #fbe8e8; // fallback pastel
+  background-size: cover;
+  background-color: #fbe8e8;
   width: 100vw;
-  min-height: 100vh;
-
-  // Para garantir que a imagem cubra tudo mesmo com scroll:
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -66,7 +62,7 @@ body {
   background-size: cover; // importante para esticar proporcionalmente
   background-color: #fbe8e8; // fallback pastel
   width: 100vw;
-  min-height: 100vh;
+    min-height: 600px;
 
   // Para garantir que a imagem cubra tudo mesmo com scroll:
   display: flex;
@@ -118,7 +114,7 @@ body {
         gap: 20px;
 
         .hamburger {
-          margin-right:2rem;
+          margin-right:1rem;
           color: #FAFAFA;
           border: none;
           cursor:pointer;

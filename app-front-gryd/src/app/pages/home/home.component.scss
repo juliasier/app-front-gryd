@@ -18,12 +18,13 @@ $red-90: #F43535;
 // /* ===== MOBILE ===== */
 @media (min-width: $mobile-min-width) {
   .motivos-container {
-    bakground-color:blue;
+    bakground-color: blue;
+    
     .motivos-content {
-      
       margin-top: 5.625rem;
-        width: 100%;
-        padding: 1rem 1rem;
+      width: 100%;
+      padding: 1rem 1rem;
+
       .first-card {
         margin: 0;
         padding: 0;
@@ -32,12 +33,13 @@ $red-90: #F43535;
       .first-card .header-card {
         display: flex;
         margin-top: 8px;
-        gap:12px;
+        gap: 12px;
+
         p {
           min-inline-size: max-content;
-          margin-top:20px;
-          font-size:1rem;
-          font-family:'Hind Madurai',sans-serif;
+          margin-top: 20px;
+          font-size: 1rem;
+          font-family: 'Hind Madurai', sans-serif;
           line-height: 1.8;
         }
       }
@@ -64,15 +66,55 @@ $red-90: #F43535;
       button {
         background-color: #F43535;
         color: #FAFAFA;
-        font-size: 0.75rem;
+        font-size: 1rem;
         padding: 0.75rem 1.6rem;
         border-radius: 4px;
-        border:none;
+        border: none;
       }
     }
 
+    .secondary-card {
+      position: relative;
+      padding: 1rem 1rem;
+      margin-top: 40px;
+      min-height:600px;
 
 
+      .card-img {
+        position: absolute; // necessário para cascata
+
+        border-radius: 12px;
+        object-fit: cover;
+        width: 90%;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+
+      .img1 {
+        top: 10rem;
+        right: 3rem;
+        z-index: 3;
+        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+      }
+
+      .img2 {
+        top: 4rem;
+        bottom: 13rem;
+        z-index: 2;
+        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+      }
+
+      .img3 {
+        top: 0;
+        left: 2rem;
+        bottom: 0;
+        z-index: 1;
+        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+      }
+    }
   }
 }
 
@@ -213,14 +255,14 @@ $red-90: #F43535;
     .secondary-card {
       position: relative;
       display: flex;
-      min-height: 300px; // Ajuste conforme a altura das imagens
+      min-height: 300px;
 
 
       .card-img {
         position: absolute;
         border-radius: 12px;
         object-fit: cover;
-        width: 450px; // Ajuste conforme necessário
+        width: 450px;
         height: auto;
         transition: transform 0.3s ease-in-out;
 
