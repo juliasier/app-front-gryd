@@ -1,7 +1,7 @@
-$gray-70: #232323;
-$red-10: #C30000;
-$red-90: #F43535;
-$header-gradient: linear-gradient(to right, $gray-70, $red-10);
+$gray: #2B2B2B;
+$red-20: #360000;
+$red-10: #F43535;
+$header-gradient: linear-gradient(to right, $gray, $red-20);
 
 // 🎯 Breakpoints
 $desktop-min-width: 1024px;
@@ -20,9 +20,11 @@ $mobile-max-width: 599px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  position:relative
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -30,6 +32,7 @@ html, body {
   line-height: 1.6;
   max-width: 100vw;
 }
+
 .background {
   background-image: url('/assets/desktop-1440/bg-hero.webp');
   background-repeat: no-repeat;
@@ -47,47 +50,57 @@ html, body {
 }
 
 
-// 🖍️ Tipografia base
-h1, h2 {
-  font-family: "Bai Jamjuree", sans-serif;
-  font-weight: 600;
-  line-height: 1.2;
-  color: #d2ae70;
+
+.logo {
+  width: 150px;
+  height: auto;
+  padding: 0.75rem;
 }
 
-// 📱 Mobile
+//Breakpoint: Mobile
 @media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
-  h1 {
-    font-size: 0.85rem;
-    background-color: #c570d2;
-  }
+  .background {
+  background-image: url('/assets/mobile/bg-hero.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; // importante para esticar proporcionalmente
+  background-color: #fbe8e8; // fallback pastel
+  width: 100vw;
+  min-height: 100vh;
 
-  h2 {
-    font-size: 0.75rem;
-  }
-
+  // Para garantir que a imagem cubra tudo mesmo com scroll:
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
   header {
-    // position: fixed;
-    height: 90px;
+    position: fixed;
     z-index: 1000;
     width: 100%;
-    // padding: 2rem 2rem;
+    padding: 1rem 1rem;
+    top:0;
 
     .header-inner {
       display: flex;
+      height: 90px;
       justify-content: center;
       align-items: center;
-      // border-radius: 12px;
       background: $header-gradient;
-      height: 90px;
-      gap:6rem;
-      nav { 
+      border-radius: 12px;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      .logo {
+        padding: 1rem;
+      }
+      nav {
         display: none;
         gap: 20px;
         flex-grow: 1;
         justify-content: center;
-        padding:0;
-        margin:0; 
+        padding: 0;
+        margin: 0;
 
         a {
           text-decoration: none;
@@ -101,84 +114,63 @@ h1, h2 {
         }
       }
 
-
       .header-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         gap: 20px;
-        padding:2rem;
-        margin-right:2rem;
 
-        button {
-          background-color: #F43535;
-          color: #fff;
+        .hamburger {
+          margin-right:2rem;
+          color: #FAFAFA;
           border: none;
-          padding: 10px 10px;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: #883B3B;
-          }
+          cursor:pointer;
+          background: transparent;
         }
-        .btn-cta {
-          display:none;
+
+        .comece-agora {
+          display: none;
         }
       }
     }
-  }
-}
-// 📲 Tablet
-@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-  h1 {
-    font-size: 0.75rem;
-    background-color: #d270cc;
-  }
 
-  h2 {
-    font-size: 0.5rem;
-  }
-
-  .container {
-    padding: 0 20px;
   }
 }
 
-// 🖥️ Desktop
+button {
+  color: #FAFAFA;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  max-height: 80px;
+    margin-right: 1rem;
+}
+
+//colocar focus e hover
+
+// BREALPOINT - Desktop
 @media (min-width: $desktop-min-width) {
-  h1 {
-    font-size: 1rem;
-    background-color: #8270d2;
-  }
-
-  h2 {
-    font-size: 0.75rem;
-  }
-
   header {
     position: fixed;
-    height: 90px;
     z-index: 1000;
     width: 100%;
     padding: 2rem 2rem;
 
     .header-inner {
       display: flex;
+      height: 90px;
       justify-content: center;
       align-items: center;
-      border-radius: 12px;
       background: $header-gradient;
-      height: 90px;
+      border-radius: 12px;
 
       nav {
         display: flex;
         gap: 20px;
         flex-grow: 1;
         justify-content: center;
-        padding:0;
-        margin:0; 
+        padding: 0;
+        margin: 0;
 
         a {
           text-decoration: none;
@@ -192,30 +184,23 @@ h1, h2 {
         }
       }
 
-      .logo {
-        
-        padding: 1rem;
-      }
-
       .header-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
         gap: 20px;
-        padding:2rem;
 
-        button {
-          background-color: #F43535;
-          color: #fff;
-          border: none;
-          padding: 10px 20px;
+        .hamburger {
+          display: none;
+        }
+
+        .comece-agora {
+          white-space: nowrap; // Garante que o texto não quebre
+          padding: 8px 20px;
+          margin-right: 20px;
+          border: 2px solid #F43535;
+          background-color: transparent;
+          margin-left: 2px;
           border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: #883B3B;
-          }
+          font-size: 0.85rem;
         }
       }
     }
