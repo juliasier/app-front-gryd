@@ -1,29 +1,73 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: #c9dd54;
-    position: relative;
-    
-}
-mat-accordion,
-mat-expansion-panel {
-  background: none !important;
-  box-shadow: none !important;
-  border: none;
-  border-radius: 0; // Remove bordas arredondadas
-  width:560px;
-  margin: 0;
-}
-.mat-expansion-panel-header {
- padding: 0 24px 0 10px !important;
-}
-mat-expansion-panel {
-  border-bottom: 1px solid #000 !important; // Divider preto
-  border-radius: 0 !important; // Remove bordas arredondadas
-}
+  display: flex;
+  flex-direction: column;
+  background-color: #ff5f5f;
+  position: relative;
 
-.mat-expansion-indicator {
-  color: #C30000 !important; // Seta
+  .faq-images{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    img {
+    justify-content: center;
+      margin-top:3rem;
+    }
+  }
+  .content {
+    background-color: #94ff5f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 7rem;
+    margin-top: -2rem;
   }
 
+  .infos-sobre {
+    max-width: 600px;
+    padding: 0 1rem;
+
+    h1 {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 38px;
+      letter-spacing: 0;
+      display:flex;
+    }
+
+    span {
+      margin-top: 2rem;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 18px;
+      letter-spacing: 0%;
+      margin-bottom:2rem;
+    }
+.mat-accordion {
+        margin-top:2rem;
+
+}
+    .mat-accordion .mat-expansion-panel {
+  background-color: transparent;
+    height: 90px;
+      border: 0;
+      border-radius: 0;
+      transition: height 0.3s ease, background-color 0.3s ease;
+    }
+     .mat-accordion .mat-expansion-panel.mat-expanded {
+      height:130px;
+      background-color:transparent !important;
+      margin-top:2rem;
+    }
+    .mat-expansion-panel-header-title {
+        color:#000000;
+        margin-top:3rem;
+      }
+    
+    }
   
+    .container-image {
+    }
+  }

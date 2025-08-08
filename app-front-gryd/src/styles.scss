@@ -49,19 +49,6 @@ button {
     scroll-behavior: smooth;
   }
 
-  .background {
-    background-image: url('/assets/mobile/bg-hero.webp');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    width: 100vw;
-    display: flex;
-    position: absolute;
-    overflow: hidden;
-  }
-
- 
-
   header {
     position: fixed;
     z-index: 1000;
@@ -122,90 +109,89 @@ button {
 
   }
 
- 
+
 }
 
 /* ===== DESKTOP (>= 1024px) ===== */
 @media (min-width: $desktop-min-width) {
   .main {
     display: contents !important;
+    scroll-behavior: smooth;
+
   }
 
   .background {
-    background-image: url('/assets/desktop-1440/bg-hero.webp');
+    background-image: url(/assets/desktop-1440/bg-hero.webp);
     background-repeat: no-repeat;
     height: -webkit-fill-available;
     background-size: cover;
-    width: 100vw;
-    position: absolute;
-    flex-direction: column;
+  }
+}
+
+
+.logo {
+  width: 150px;
+  height: auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  padding: 2rem 2rem;
+  top: 1rem;
+
+  .header-inner {
+    display: flex;
+    height: 90px;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-  }
+    background: $header-gradient;
+    border-radius: 12px;
 
-
-  .logo {
-    width: 150px;
-    height: auto;
-    padding: 0.75rem;
-  }
-
-  header {
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    padding: 2rem 2rem;
-    top:1rem;
-    .header-inner {
+    nav {
       display: flex;
-      height: 90px;
+      gap: 20px;
+      flex-grow: 1;
       justify-content: center;
-      align-items: center;
-      background: $header-gradient;
-      border-radius: 12px;
+      padding: 0;
+      margin: 0;
 
-      nav {
-        display: flex;
-        gap: 20px;
-        flex-grow: 1;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease;
 
-        a {
-          text-decoration: none;
-          color: #fff;
-          font-size: 16px;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #f4f4f4;
-          }
-        }
-      }
-
-      .header-buttons {
-
-        gap: 20px;
-
-        .hamburger {
-          display: none;
-        }
-
-        .comece-agora {
-          white-space: nowrap;
-          padding: 8px 20px;
-          margin-right: 20px;
-          border: 2px solid #F43535;
-          background-color: transparent;
-          margin-left: 2px;
-          border-radius: 4px;
-          font-size: 0.85rem;
+        &:hover {
+          color: #f4f4f4;
         }
       }
     }
+
+    .header-buttons {
+
+      gap: 20px;
+
+      .hamburger {
+        display: none;
+      }
+
+      .comece-agora {
+        white-space: nowrap;
+        padding: 8px 20px;
+        margin-right: 20px;
+        border: 2px solid #F43535;
+        background-color: transparent;
+        margin-left: 2px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+    }
   }
-  .mobile-sidebar {
-    display:none;
-  }
+}
+
+.mobile-sidebar {
+  display: none;
 }
