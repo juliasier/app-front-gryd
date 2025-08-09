@@ -1,0 +1,177 @@
+.container-service {
+  padding: 0;
+  background-color: #f5f5f5; /* Background para visualização */
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carousel-servico {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 0;
+  width: 100%;
+  gap: 1.5rem;
+
+  /* Cabeçalho do carousel com título e controles */
+  .carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      text-align: left;
+    }
+    
+    .controles {
+      display: flex;
+      gap: 0.8rem;
+      
+      button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e8f4fc;
+        color: #186294;
+        border: 1px solid #186294;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+        margin: 0;
+        
+        i {
+          font-size: 1.2rem;
+        }
+        
+        &:hover {
+          background-color: #186294;
+          color: white;
+        }
+      }
+    }
+  }
+  
+  /* Conteúdo principal do carousel */
+  .carousel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .conteudo {
+    flex: 1.5; /* Aumentando a proporção do conteúdo */
+    text-align: left;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .list-content {
+      margin-bottom: 1.5rem;
+      background-color: #ffffff;
+      padding: 15px 0;
+      text-align: left;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+        padding: 8px 0;
+        border-bottom: 1px solid #000;
+        
+        i {
+          color: #186294;
+          font-size: 1.2rem;
+        }
+        
+        p {
+          margin: 0;
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .btn-servicos {
+      margin-bottom: 0;
+      background-color: #186294;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: #0f4c75;
+      }
+    }
+  }
+
+  .imagem-direita {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f0f9ff; /* Background para visualização */
+    padding: 0;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Indicadores de slide */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 1rem 0 2rem;
+    
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &.active {
+        background-color: #186294;
+        transform: scale(1.2);
+      }
+      
+      &:hover {
+        background-color: #186294;
+      }
+    }
+  }
+}

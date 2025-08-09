@@ -1,68 +1,270 @@
+// Breakpoint variables (usando os mesmos do styles globais)
+$desktop-min-width: 1024px;
+$desktop-max-width: 1440px;
+$tablet-min-width: 600px;
+$tablet-max-width: 1023px;
+$mobile-min-width: 270px;
+$mobile-max-width: 599px;
+
 .motivos-container {
     background-color: #FAFAFA;
     position: relative;
     box-shadow: 0px 10px 20px 5px #00000040;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: 1440px;
+    width: 100%;
+    min-height: fit-content; // Garante que o background acompanhe o conteúdo
+    
+    // Desktop (1280px+) - Layout original em linha
+    @media (min-width: 1280px) {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    // Telas menores que 1280px - Container ocupa toda a largura
+    @media (max-width: 1279px) {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
     .motivos-content {
-        margin: 0 40px 140px;
-        display: inherit;
-        max-height: 592px;
-        padding: 2rem 2rem;
+        display: flex;
+        flex-direction: column;
         position: relative;
-        margin-top:10rem;
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            text-align: left;
-            color: #121212;
-            line-height: 58px;
-            font-family: 'Bai Jamjuree', sans-serif;
-            letter-spacing: 0;
-            padding: 2rem 1rem;
-        }
-
-        .motivos-list {
-            display: flex;
-            gap: 3rem;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .motivo {
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-
-            img {
-                margin-bottom: 16px;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-                margin-bottom: 12px;
-                color: #F43535;
-                line-height: 29px;
+        padding: 80px 2rem; // Espaçamento de 80px em cima e embaixo
+        box-sizing: border-box;
+        
+        // Desktop (≥1024px) - Todos os 3 itens na mesma linha
+        @media (min-width: $desktop-min-width) {
+            padding: 80px 100px; // Mantém 80px em cima e embaixo, 100px nas laterais
+            
+            h1 {
                 font-family: 'Bai Jamjuree', sans-serif;
-                letter-spacing: 0;
-                font-weight: 500;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 3rem; // H2-FS equivalent
+                line-height: 58px;
+                letter-spacing: 0%;
+                color: #121212;
+                text-align: center;
+                margin-bottom: 80px;
             }
 
-            p {
-                font-size: 0.9rem;
-                color: #444;
-                line-height: 1.2rem;
-                letter-spacing: 0;
-                font-weight: 400;
-                font-family: 'Hind Madurai', sans-serif;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
+            .motivos-list {
+                display: flex;
+                gap: 80px;
+                justify-content: center;
+                align-items: flex-start;
+                
+                // Resetar estrutura para layout em linha
+                .motivos-bottom {
+                    display: contents; // Remove o container, deixa os filhos fluírem
+                }
+            }
+
+            .motivo {
+                flex: 1;
+                text-align: center;
+                padding: 0;
+                max-width: 360px; // Limitação por container width
+
+                img {
+                    margin-bottom: 24px;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                h2 {
+                    font-family: 'Bai Jamjuree', sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 1.5rem; // H3-FS equivalent
+                    letter-spacing: -0.02em;
+                    text-align: center;
+                    color: #F43535;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    text-align: center;
+                    color: #444;
+                    margin-bottom: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        // Tablet (600px-1279px) - Layout específico
+        @media (min-width: $tablet-min-width) and (max-width: 1279px) {
+            padding: 80px 40px;
+            
+            h1 {
+                font-family: 'Bai Jamjuree', sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 2.5rem;
+                color: #121212;
+                text-align: left;
+                margin: 0;
+            }
+
+            .motivos-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                
+                .motivos-bottom {
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    width: 100%;
+                }
+            }
+
+            .motivo {
+                text-align: center;
+                padding: 20px 0 0 0;
+                max-width: 360px;
+
+                img {
+                    width: 44px;
+                    height: 44px;
+                    margin: 0;
+                }
+
+                h2 {
+                    font-family: 'Bai Jamjuree', sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 1.3rem;
+                    text-align: center;
+                    color: #F43535;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: 'Hind Madurai', sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 0.875rem;
+                    text-align: center;
+                    color: #444;
+                    margin: 0;
+                    max-width: 350px;
+                    // Remove line-clamp para telas menores
+                    display: block;
+                    -webkit-line-clamp: unset;
+                    -webkit-box-orient: unset;
+                    overflow: visible;
+                }
+            }
+
+            // Motivo 1 - centralizado
+            .motivo-1 {
+                align-self: center;
+            }
+
+            // Motivos 2 e 3 - lado a lado
+            .motivo-2,
+            .motivo-3 {
+                flex: 1;
+                max-width: 360px;
+            }
+        }
+
+        // Mobile (270px-599px) - Layout específico
+        @media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            padding: 80px 20px;
+            
+            h1 {
+                font-family: 'Bai Jamjuree', sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 2rem;
+                color: #121212;
+                text-align: left;
+                margin: 0;
+            }
+
+            .motivos-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                
+                .motivos-bottom {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
+            }
+
+            .motivo {
+                text-align: center;
+                padding: 20px 0 0 0;
+                max-width: 360px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin: 0;
+                }
+
+                h2 {
+                    font-family: 'Bai Jamjuree', sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    color: #F43535;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: 'Hind Madurai', sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 0.8rem;
+                    text-align: center;
+                    color: #444;
+                    margin: 0;
+                    max-width: 350px;
+                    // Remove line-clamp para telas menores
+                    display: block;
+                    -webkit-line-clamp: unset;
+                    -webkit-box-orient: unset;
+                    overflow: visible;
+                }
+            }
+
+            // Motivo 1 - centralizado
+            .motivo-1 {
+                align-self: center;
+            }
+
+            // Motivos 2 e 3 - lado a lado (com wrap para telas muito pequenas)
+            .motivo-2,
+            .motivo-3 {
+                flex: 1;
+                min-width: 150px;
+                max-width: 360px;
             }
         }
     }
-
 }
 
 .dotted-square {

@@ -1,0 +1,56 @@
+<main class="container-service">
+  <div class="carousel-servico">
+    <!-- Cabeçalho com título e controles nas extremidades -->
+    <div class="carousel-header">
+      <h1>Conheça nossos serviços.</h1>
+      <div class="controles">
+        <button (click)="anterior()" aria-label="Anterior">
+          <i class="ph ph-arrow-left"></i>
+        </button>
+        <button (click)="proximo()" aria-label="Próximo">
+          <i class="ph ph-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Conteúdo principal do carousel -->
+    <div class="carousel-content">
+      <!-- Coluna de texto à esquerda -->
+      <div class="conteudo">
+        <h2>{{ servicos[indiceAtual].titulo }}</h2>
+        <h3>{{ servicos[indiceAtual].descricao }}</h3>
+
+        <div class="list-content">
+          <div class="item">
+            <i class="ph ph-check-circle"></i>
+            <p>Layout prontos para serem colocados no ar!</p>
+          </div>
+          <div class="item">
+            <i class="ph ph-check-circle"></i>
+            <p>SEO otimizado.</p>
+          </div>
+          <div class="item">
+            <i class="ph ph-check-circle"></i>
+            <p>Gerenciamento do Google Analytics</p>
+          </div>
+        </div>
+
+        <button class="btn-servicos">Todos os serviços</button>
+      </div>
+
+      <!-- Imagem à direita -->
+      <div class="imagem-direita">
+        <img [src]="servicos[indiceAtual].imagem" alt="Imagem serviço" />
+      </div>
+    </div>
+    
+    <!-- Indicadores de slide -->
+    <div class="carousel-indicators">
+      <span 
+        *ngFor="let servico of servicos; let i = index" 
+        [class.active]="i === indiceAtual"
+        (click)="indiceAtual = i"
+      ></span>
+    </div>
+  </div>
+</main>

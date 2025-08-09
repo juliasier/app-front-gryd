@@ -1,4 +1,10 @@
- .mobile-sidebar {
+.sections-of-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mobile-sidebar {
      position: fixed;
      top: 0;
      right: 0;
