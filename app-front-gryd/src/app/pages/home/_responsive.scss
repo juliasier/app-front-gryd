@@ -1,0 +1,257 @@
+// ===== RESPONSIVE STYLES =====
+
+// Media queries para telas menores que desktop
+@media (max-width: calc($desktop-min-width - 1px)) {
+  .home-header .header-inner {
+    padding: 1rem;
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .header-buttons .hamburger {
+      display: block;
+    }
+  }
+
+  .container {
+    padding-top: 100px;
+    padding: 100px 1rem 0;
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+}
+
+// Media queries para tablet
+@media (max-width: $tablet-max-width) {
+  .home-header .header-inner {
+    padding: 0.75rem 1rem;
+
+    .header-buttons .comece-agora {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .container {
+    padding-top: 90px;
+  }
+
+  .content {
+    gap: 3rem; // Aumenta o espaçamento entre seções
+    justify-content: center;
+    align-items: center;
+  }
+
+  .infos-home {
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-card {
+      justify-content: center;
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 120px;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      align-self: center;
+    }
+  }
+
+  .container-image {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .card-img {
+      position: relative;
+      width: 554px; // Largura específica conforme solicitado
+      height: 383px; // Altura específica conforme solicitado
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1; // Opacidade conforme solicitado
+      transform: rotate(0deg); // Ângulo conforme solicitado
+      
+      img {
+        position: absolute; // Mantém absolute para efeito cascata
+        width: 320px; // Aumenta o width (+20px)
+        height: 200px; // Aumenta a altura proporcionalmente
+        border-radius: 12px;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+        object-fit: cover;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      
+      // Cascata centralizada da direita para esquerda em tablet
+      .img1 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, -50%); // Centraliza e posiciona à direita
+        z-index: 3;
+      }
+
+      .img2 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%); // Centraliza e posiciona no meio
+        z-index: 2;
+      }
+
+      .img3 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -70%); // Centraliza e posiciona à esquerda
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// Ajustes específicos para mobile
+@media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+  .container {
+    padding-top: 100px; // Reduz para 100px conforme solicitado
+    
+    .content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      gap: 3rem; // Espaçamento consistente entre seções
+      max-width: 550px; // Limita o width máximo em mobile
+      margin: 0 auto; // Centraliza o content
+    }
+    
+    .infos-home {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0; // Remove margin para usar gap do container
+      
+      .header-card {
+        flex-direction: column; // Itens um abaixo do outro
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; // Espaçamento entre imagem e texto
+        
+        p {
+          font-size: 0.8rem;
+          text-align: center;
+        }
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        white-space: normal; // Permite quebra de linha
+        word-wrap: break-word; // Quebra palavras longas se necessário
+        line-height: 1.3; // Melhora o espaçamento entre linhas
+      }
+      
+      h2 {
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: normal; // Permite quebra de linha
+        word-wrap: break-word; // Quebra palavras longas se necessário
+        line-height: 1.4; // Melhora o espaçamento entre linhas
+      }
+      
+      button {
+        padding: 0.75rem 1.6rem;
+        font-size: 0.9rem;
+        align-self: center;
+      }
+    }
+    
+    .container-image {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 40px; // 40px do botão "Fale com um especialista"
+      display: flex;
+      flex-direction: column;
+      
+      .card-img {
+        position: relative;
+        max-width: 554px; // Largura máxima conforme solicitado
+        max-height: 383px; // Altura máxima conforme solicitado
+        width: 100%; // Responsivo
+        height: 250px; // Altura reduzida para mobile
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1; // Opacidade conforme solicitado
+        transform: rotate(0deg); // Ângulo conforme solicitado
+        margin: 0 auto; // Centraliza o container
+        
+        img {
+          position: absolute; // Mantém absolute para efeito cascata
+          width: 160px; // Diminuído ainda mais
+          height: 100px; // Diminuído proporcionalmente
+          border-radius: 12px;
+          transition: transform 0.3s ease-in-out;
+          box-shadow: 4px 4px 0 rgba(185, 10, 10, 0.6);
+          object-fit: cover;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+        
+        // Cascata com margens controladas da direita para esquerda em mobile
+        .img1 {
+          top: 15px; // Margem do topo
+          right: 15px; // Margem da direita
+          z-index: 3;
+        }
+
+        .img2 {
+          top: 60px; // Margem maior do topo para criar cascata
+          right: 60px; // Margem maior da direita
+          z-index: 2;
+        }
+
+        .img3 {
+          top: 105px; // Margem ainda maior do topo
+          right: 105px; // Margem ainda maior da direita
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

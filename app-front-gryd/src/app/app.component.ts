@@ -1,23 +1,16 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { MotivosComponent } from './pages/motivos/motivos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
-import { HomeComponent } from './pages/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [RouterOutlet, HomeComponent, MotivosComponent, SobreComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports:[
-    HomeComponent,
-    MotivosComponent,
-    SobreComponent,
-
-  ]
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-isSidebarOpen = false;
-
-toggleSidebar() {
-  this.isSidebarOpen = !this.isSidebarOpen;
-}}
+  title = 'app-front-gryd';
+}

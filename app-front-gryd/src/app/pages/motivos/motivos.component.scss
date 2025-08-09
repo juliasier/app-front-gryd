@@ -1,10 +1,5 @@
-// Breakpoint variables (usando os mesmos do styles globais)
-$desktop-min-width: 1024px;
-$desktop-max-width: 1440px;
-$tablet-min-width: 600px;
-$tablet-max-width: 1023px;
-$mobile-min-width: 270px;
-$mobile-max-width: 599px;
+// Importando variáveis globais do styles.scss
+@import '../../../styles.scss';
 
 .motivos-container {
     background-color: #FAFAFA;
@@ -12,34 +7,21 @@ $mobile-max-width: 599px;
     box-shadow: 0px 10px 20px 5px #00000040;
     margin: 0 auto;
     padding: 0;
-    max-width: 1440px;
+    max-width: $desktop-max-width; // 1440px - sempre respeitando o tamanho do header
     width: 100%;
     min-height: fit-content; // Garante que o background acompanhe o conteúdo
-    
-    // Desktop (1280px+) - Layout original em linha
-    @media (min-width: 1280px) {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
-
-    // Telas menores que 1280px - Container ocupa toda a largura
-    @media (max-width: 1279px) {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-        box-sizing: border-box;
-    }
 
     .motivos-content {
         display: flex;
         flex-direction: column;
         position: relative;
+        max-width: calc($desktop-max-width * 0.9); // 90% de 1440px = 1296px - sempre
+        margin: 0 auto;
         padding: 80px 2rem; // Espaçamento de 80px em cima e embaixo
         box-sizing: border-box;
         
-        // Desktop (≥1024px) - Todos os 3 itens na mesma linha
+        // Desktop - Todos os 3 itens na mesma linha
         @media (min-width: $desktop-min-width) {
-            padding: 80px 100px; // Mantém 80px em cima e embaixo, 100px nas laterais
             
             h1 {
                 font-family: 'Bai Jamjuree', sans-serif;
@@ -105,8 +87,8 @@ $mobile-max-width: 599px;
             }
         }
 
-        // Tablet (600px-1279px) - Layout específico
-        @media (min-width: $tablet-min-width) and (max-width: 1279px) {
+        // Tablet - Layout específico
+        @media (min-width: $tablet-min-width) and (max-width: calc($desktop-min-width - 1px)) {
             padding: 80px 40px;
             
             h1 {
@@ -184,7 +166,7 @@ $mobile-max-width: 599px;
             }
         }
 
-        // Mobile (270px-599px) - Layout específico
+        // Mobile - Layout específico
         @media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
             padding: 80px 20px;
             

@@ -1,0 +1,266 @@
+// ===== CONTENT STYLES =====
+
+// Container do conteúdo (respeitando 1440px)
+.container {
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px; // Espaço para o header fixo
+  
+  // Dotted square como elemento de background
+  &::after {
+    content: '';
+    position: absolute;
+    top: 85%;
+    left: 4%;
+    width: 180px;
+    height: 180px;
+    background-image: url('/assets/desktop-1440/dotted-square.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(60deg);
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: -2rem;
+    gap: 2rem;
+    
+    // Desktop - conteúdo ocupa 90% do container
+    @media (min-width: $desktop-min-width) {
+      max-width: calc($desktop-max-width * 0.9);
+      margin: -2rem auto 0 auto;
+    }
+    
+    @media (max-width: $tablet-max-width) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      gap: 3rem; // Espaçamento entre as seções
+    }
+  }
+
+  .infos-home {
+    max-width: 600px;
+    padding: 0 1rem;
+    text-align: left;
+    flex: 1;
+    
+    @media (max-width: $tablet-max-width) {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 0; // Remove margin para usar gap do container
+      
+      .header-card {
+        justify-content: center;
+        align-items: center;
+      }
+      
+      h1, h2 {
+        text-align: center;
+      }
+      
+      button {
+        align-self: center;
+      }
+    }
+
+    .header-card {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      margin-bottom: 1rem;
+      
+      img {
+        flex-shrink: 0;
+      }
+      
+      p {
+        margin: 0;
+        white-space: nowrap;
+      }
+    }
+
+    h1 {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-align: left;
+      display: block;
+      margin: 0 0 1rem 0;
+
+      .text-red {
+        color: #F43535;
+        font-weight: 600;
+      }
+    }
+
+    h2 {
+      margin-top: 1rem;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 18px;
+      letter-spacing: 0%;
+      margin-bottom: 2rem;
+      display: block;
+      text-align: left;
+      color: #121212;
+    }
+
+    button {
+      background-color: $red-90;
+      border-radius: 4px;
+      color: #fff;
+      min-width: 220px;
+      border: none;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: #ab1111;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #f44040;
+      }
+    }
+  }
+
+  .container-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 400px;
+    
+    .card-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      
+      img {
+        position: absolute;
+        border-radius: 12px;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+        width: 450px;
+        height: 250px;
+        object-fit: cover;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      // Imagem 1 - Extremidade direita (mais à frente)
+      .img1 {
+        top: 0;
+        right: 0;
+        z-index: 3;
+      }
+
+      // Imagem 2 - 20px à esquerda e 20px abaixo da imagem 1
+      .img2 {
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+      }
+
+      // Imagem 3 - 20px à esquerda e 20px abaixo da imagem 2
+      .img3 {
+        top: 40px;
+        right: 40px;
+        z-index: 1;
+      }
+    }
+    
+    @media (max-width: $tablet-max-width) {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 0; // Remove margin para usar gap do container
+      display: flex;
+      flex-direction: column;
+      
+      .card-img {
+        position: relative;
+        width: 554px; // Largura específica conforme solicitado
+        height: 383px; // Altura específica conforme solicitado
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1; // Opacidade conforme solicitado
+        transform: rotate(0deg); // Ângulo conforme solicitado
+        
+        img {
+          position: absolute; // Mantém absolute para efeito cascata
+          width: 370px; // Aumenta o width (+20px do original 350px)
+          height: auto;
+          border-radius: 12px;
+          transition: transform 0.3s ease-in-out;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+          object-fit: cover;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+        
+        // Cascata centralizada da direita para esquerda em tablet
+        .img1 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-30%, -50%); // Centraliza e posiciona à direita
+          z-index: 3;
+        }
+
+        .img2 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -30%); // Centraliza e posiciona no meio
+          z-index: 2;
+        }
+
+        .img3 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-70%, -70%); // Centraliza e posiciona à esquerda
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+// Conteúdo sempre ocupa 90% do container
+.content {
+  max-width: calc($desktop-max-width * 0.9);
+  margin: 0 auto;
+  padding: 0 2rem;
+}

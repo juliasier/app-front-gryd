@@ -1,56 +1,8 @@
-<div class="background">
-  <main>
-
-
-    <header>
-      <div class="header-inner">
-        <img src="assets/logo.svg" alt="logo" class="logo" />
-        <nav class="desktop-nav">
-          <a href="#home">Home</a>
-          <a href="#beneficios">Benefícios</a>
-          <a href="#sobre">Sobre nós</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#equipe">Nossa equipe</a>
-          <a href="#contato">Contatos</a>
-        </nav>
-
-        <div class="header-buttons">
-          <button class="hamburger" (click)="toggleSidebar()" aria-label="Abrir menu">☰</button>
-          <button class="comece-agora" aria-label="botão: comece agora">Comece agora</button>
-        </div>
-      </div>
-    </header>
-
-    <div class="mobile-sidebar" [class.open]="isSidebarOpen">
-
-      <button class="close-btn" (click)="toggleSidebar()" aria-label="Fechar menu">
-        <img src="/assets/mobile/logo-side.svg" alt="logo" class="logo" />
-
-      </button>
-      <img src="" alt="">
-      <div class="divider"></div>
-      <nav class="mobile-nav">
-        <a href="#home" (click)="toggleSidebar()">Home</a>
-        <a href="#beneficios" (click)="toggleSidebar()">Benefícios</a>
-        <a href="#sobre" (click)="toggleSidebar()">Sobre nós</a>
-        <a href="#servicos" (click)="toggleSidebar()">Serviços</a>
-        <a href="#reviews" (click)="toggleSidebar()">Reviews</a>
-        <a href="#equipe" (click)="toggleSidebar()">Nossa equipe</a>
-        <a href="#contato" (click)="toggleSidebar()">Contatos</a>
-      </nav>
-
-      <div class="btn-sidebar">
-        <button class="comece-agora" aria-label="botão: comece agora">Comece agora</button>
-      </div>
-    </div>
-
-    <!-- sections SPA -->
-    <section class="sections-of-page">
-      <app-home></app-home>
-      <app-motivos></app-motivos>
-       <app-sobre></app-sobre>
-    </section>
-
-  </main>
-</div>
+<main>
+  <!-- sections SPA -->
+  <section class="sections-of-page">
+    <app-home></app-home>
+    <app-motivos></app-motivos>
+    <app-sobre></app-sobre>
+  </section>
+</main>

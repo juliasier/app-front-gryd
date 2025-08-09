@@ -1,20 +1,16 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
   standalone: true,
+  imports: [],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  isMobile: boolean = false;
+  isSidebarOpen = false;
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isMobile = window.innerWidth < 460; // Adjust the width as needed for mobile detection
-  }
-
-  ngOnInit() {
-    this.onResize(null); // Initial check on component load
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }
