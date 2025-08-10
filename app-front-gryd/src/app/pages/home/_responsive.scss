@@ -1,19 +1,8 @@
 // ===== RESPONSIVE STYLES =====
+// Estilização do header movida para styles.scss para centralização
 
 // Media queries para telas menores que desktop
 @media (max-width: calc($desktop-min-width - 1px)) {
-  .home-header .header-inner {
-    padding: 1rem;
-
-    .desktop-nav {
-      display: none;
-    }
-
-    .header-buttons .hamburger {
-      display: block;
-    }
-  }
-
   .container {
     padding-top: 100px;
     padding: 100px 1rem 0;
@@ -26,14 +15,6 @@
 
 // Media queries para tablet
 @media (max-width: $tablet-max-width) {
-  .home-header .header-inner {
-    padding: 0.75rem 1rem;
-
-    .header-buttons .comece-agora {
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
-    }
-  }
 
   .container {
     padding-top: 90px;

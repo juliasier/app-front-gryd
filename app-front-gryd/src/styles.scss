@@ -57,82 +57,331 @@ button {
   margin-right: 1rem;
 }
 
-/* ===== MOBILE ===== */
+/* ===== HEADER GLOBAL STYLES ===== */
+// Baseado nas medidas do Figma: Nav Bar com 834px width para tablet
 
-@media (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
-  * {
-    scroll-behavior: smooth;
-  }
+.home-header, header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
 
-  header {
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    padding: 1rem 1rem;
-    top: 0;
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $header-gradient;
+    border-radius: 12px;
+    height: 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 
-    .header-inner {
+    .logo {
+      height: 45px;
+      width: auto;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      object-fit: contain;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .desktop-nav, nav {
       display: flex;
-      height: 90px;
+      gap: 32px;
+      flex-grow: 1;
       justify-content: center;
       align-items: center;
-      background: $header-gradient;
-      border-radius: 12px;
-      margin: 0 auto;
-      justify-content: space-between;
 
-      .logo {
-        padding: 1rem;
-      }
+      a {
+        color: #FAFAFA;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
 
-      nav {
-        display: none;
-        gap: 20px;
-        flex-grow: 1;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-
-        a {
-          text-decoration: none;
-          color: #fff;
-          font-size: 16px;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #f4f4f4;
-          }
-        }
-      }
-
-      .header-buttons {
-        gap: 20px;
-
-        .hamburger {
-          margin-right: 1rem;
-          color: #FAFAFA;
-        border: none;
-          cursor: pointer;
-          background: transparent;
-        }
-
-        .comece-agora {
-          display: none;
+        &:hover {
+          color: $red-10;
         }
       }
     }
 
+    .header-buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        color: #FAFAFA;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .comece-agora {
+        background-color: transparent;
+        color: #FAFAFA;
+        border: 1px solid #FAFAFA;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 4px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $red-10;
+          border-color: $red-10;
+        }
+      }
+    }
   }
-
-
 }
 
-/* ===== DESKTOP (>= 1024px) ===== */
+/* ===== MOBILE SIDEBAR STYLES ===== */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #171717;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 32px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  .close-btn {
+    font-size: 32px;
+    background: transparent;
+    border: none;
+    color: #FAFAFA;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 32px;
+    padding: 8px;
+
+    .logo {
+      height: 35px;
+      width: auto;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #FAFAFA;
+    margin-bottom: 32px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+    flex-grow: 1;
+    gap: 16px;
+
+    a {
+      color: #FAFAFA;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: right;
+      transition: color 0.3s ease;
+      padding: 8px 0;
+
+      &:hover {
+        color: $red-10;
+      }
+    }
+  }
+
+  .btn-sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 32px;
+
+    .comece-agora {
+      background-color: transparent;
+      color: #FAFAFA;
+      border: 1px solid $red-10;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $red-10;
+      }
+    }
+  }
+}
+
+/* ===== TABLET BREAKPOINT ===== */
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  .home-header, header {
+    padding: 19px;
+
+    .header-inner {
+      max-width: 834px; // Medida exata do Figma para tablet
+      height: 90px;
+      padding: 0 24px;
+
+      .logo {
+        height: 40px;
+      }
+
+      .desktop-nav, nav {
+        display: none; // Esconde navegação no tablet
+      }
+
+      .header-buttons {
+        .hamburger {
+          display: block;
+        }
+
+        .comece-agora {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* ===== MOBILE BREAKPOINT ===== */
+@media (max-width: $mobile-max-width) {
+  .home-header, header {
+    padding: 5%; // 5% de cada lado = 90% de conteúdo centralizado
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .header-inner {
+      height: 70px;
+      padding: 0 12px;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+
+      .logo {
+        height: 32px;
+      }
+
+      .desktop-nav, nav {
+        display: none;
+      }
+
+      .header-buttons {
+        .hamburger {
+          display: block;
+          font-size: 22px;
+          padding: 6px;
+        }
+
+        .comece-agora {
+          display: none; // Esconde botão no mobile
+        }
+      }
+    }
+  }
+
+  // Ajustar sidebar para mobile também
+  .mobile-sidebar {
+    padding: 5%; // Sidebar também usa 90% da largura
+    width: 100vw;
+  }
+}
+
+/* ===== BREAKPOINT PARA TELAS MUITO PEQUENAS (iPhone SE e similares) ===== */
+@media (max-width: 375px) {
+  .home-header, header {
+    padding: 4%; // 4% de cada lado = 92% de conteúdo para telas muito pequenas
+
+    .header-inner {
+      height: 65px;
+      padding: 0 8px;
+      border-radius: 8px;
+
+      .logo {
+        height: 28px;
+      }
+
+      .header-buttons {
+        .hamburger {
+          font-size: 20px;
+          padding: 4px;
+        }
+      }
+    }
+  }
+
+  .mobile-sidebar {
+    padding: 4%;
+  }
+}
+
+/* ===== DESKTOP BREAKPOINT ===== */
 @media (min-width: $desktop-min-width) {
+  .home-header, header {
+    padding: 32px;
+    top: 16px;
+
+    .header-inner {
+      max-width: 1440px;
+      height: 90px;
+      padding: 0 32px;
+
+      .logo {
+        height: 45px;
+      }
+
+      .desktop-nav, nav {
+        display: flex;
+      }
+
+      .header-buttons {
+        .hamburger {
+          display: none;
+        }
+
+        .comece-agora {
+          display: flex;
+          padding: 12px 24px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
   .main {
     display: contents !important;
     scroll-behavior: smooth;
-
   }
 
   .background {
@@ -141,74 +390,4 @@ button {
     height: -webkit-fill-available;
     background-size: cover;
   }
-}
-
-
-.logo {
-  width: 150px;
-  height: auto;
-  padding: 2rem 1rem;
-}
-
-header {
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  padding: 2rem 2rem;
-  top: 1rem;
-
-  .header-inner {
-    display: flex;
-    height: 90px;
-    justify-content: center;
-    align-items: center;
-    background: $header-gradient;
-    border-radius: 12px;
-    max-width: 1440px; // Tamanho máximo do header
-    margin: 0 auto; // Centraliza o header
-
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-grow: 1;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #f4f4f4;
-        }
-      }
-    }
-
-    .header-buttons {
-
-      gap: 20px;
-
-      .hamburger {
-        display: none;
-      }
-
-      .comece-agora {
-        white-space: nowrap;
-        padding: 8px 20px;
-        margin-right: 20px;
-        border: 2px solid #F43535;
-        background-color: transparent;
-        margin-left: 2px;
-        border-radius: 4px;
-        font-size: 0.85rem;
-      }
-    }
-  }
-}
-
-.mobile-sidebar {
-  display: none;
 }
