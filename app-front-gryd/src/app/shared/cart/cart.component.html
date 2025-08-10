@@ -1,0 +1,126 @@
+<div class="cart-overlay" [class.open]="isOpen" (click)="onBackdropClick($event)">
+  <div class="cart-sidebar" [class.open]="isOpen">
+    <!-- Cart Header -->
+    <div class="cart-header">
+      <div class="header-content">
+        <div class="cart-title">
+          <i class="fas fa-shopping-cart"></i>
+          <h3>Carrinho de Compras</h3>
+        </div>
+        <div class="cart-count" *ngIf="totalItems > 0">{{ totalItems }}</div>
+      </div>
+      <button class="close-btn" (click)="onClose()" title="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="cart-content">
+      <!-- Empty Cart -->
+      <div class="empty-cart" *ngIf="items.length === 0">
+        <div class="empty-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <h4>Seu carrinho está vazio</h4>
+        <p>Adicione alguns serviços para começar</p>
+        <button class="browse-btn" (click)="onClose()">
+          <i class="fas fa-search"></i>
+          Explorar Serviços
+        </button>
+      </div>
+
+      <!-- Cart Items -->
+      <div class="cart-items" *ngIf="items.length > 0">
+        <div class="cart-item" *ngFor="let item of items; trackBy: trackByItemId">
+          <div class="item-info">
+            <div class="item-icon">
+              <i [class]="item.icon"></i>
+            </div>
+            <div class="item-details">
+              <h4 class="item-title">{{ item.title }}</h4>
+              <p class="item-category">{{ item.category }}</p>
+              <div class="item-price">
+                <span class="current-price">{{ formatPrice(item.price) }}</span>
+                <span class="original-price" *ngIf="item.originalPrice">
+                  {{ formatPrice(item.originalPrice) }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item-controls">
+            <div class="quantity-controls">
+              <button 
+                class="qty-btn" 
+                (click)="onUpdateQuantity(item.id, item.quantity - 1)"
+                [disabled]="item.quantity <= 1">
+                <i class="fas fa-minus"></i>
+              </button>
+              <span class="quantity">{{ item.quantity }}</span>
+              <button 
+                class="qty-btn" 
+                (click)="onUpdateQuantity(item.id, item.quantity + 1)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            
+            <div class="item-subtotal">
+              {{ formatPrice(item.subtotal) }}
+            </div>
+            
+            <button 
+              class="remove-btn" 
+              (click)="onRemoveItem(item.id)"
+              title="Remover item">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Footer -->
+    <div class="cart-footer" *ngIf="items.length > 0">
+      <!-- Summary -->
+      <div class="cart-summary">
+        <div class="summary-row" *ngIf="totalSavings > 0">
+          <span class="label">Subtotal:</span>
+          <span class="value original">{{ formatPrice(totalOriginalPrice) }}</span>
+        </div>
+        <div class="summary-row" *ngIf="totalSavings > 0">
+          <span class="label savings">Economia:</span>
+          <span class="value savings">-{{ formatPrice(totalSavings) }}</span>
+        </div>
+        <div class="summary-row total">
+          <span class="label">Total:</span>
+          <span class="value">{{ formatPrice(totalPrice) }}</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="cart-actions">
+        <button class="clear-btn" (click)="onClearCart()" title="Limpar carrinho">
+          <i class="fas fa-trash-alt"></i>
+          Limpar
+        </button>
+        
+        <button class="checkout-btn" (click)="onCheckout()">
+          <i class="fas fa-credit-card"></i>
+          Finalizar Pedido
+        </button>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="additional-info">
+        <div class="info-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Pagamento 100% seguro</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-headset"></i>
+          <span>Suporte especializado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -100,53 +100,83 @@
     }
 
     h1 {
-      font-family: 'Bai Jamjuree', sans-serif;
-      font-weight: 600;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      letter-spacing: 0;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       text-align: left;
       display: block;
-      margin: 0 0 1rem 0;
+      margin: 0 0 1.5rem 0;
+      color: $gray-90;
 
       .text-red {
-        color: #F43535;
-        font-weight: 600;
+        color: $red-50;
+        font-weight: 700;
+        background: linear-gradient(135deg, $red-50 0%, $red-60 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      @media (max-width: $tablet-max-width) {
+        font-size: 2.5rem;
+      }
+      
+      @media (max-width: $mobile-max-width) {
+        font-size: 2rem;
       }
     }
 
     h2 {
+      font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
       margin-top: 1rem;
       font-weight: 400;
-      font-size: 1rem;
-      line-height: 18px;
-      letter-spacing: 0%;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      letter-spacing: 0;
       margin-bottom: 2rem;
       display: block;
       text-align: left;
-      color: #121212;
+      color: $gray-70;
+      
+      @media (max-width: $mobile-max-width) {
+        font-size: 1rem;
+      }
     }
 
     button {
-      background-color: $red-90;
-      border-radius: 4px;
-      color: #fff;
-      min-width: 220px;
+      background: linear-gradient(135deg, $red-50 0%, $red-60 100%);
+      border-radius: 8px;
+      color: $gray-0;
+      min-width: 240px;
       border: none;
-      padding: 1.5rem;
+      padding: 16px 32px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 4px 12px rgba($red-50, 0.3);
 
       &:hover {
-        background-color: #ab1111;
+        background: linear-gradient(135deg, $red-40 0%, $red-50 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($red-50, 0.4);
       }
 
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px #f44040;
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba($red-50, 0.3);
+      }
+
+      &:focus-visible {
+        outline: 2px solid $red-50;
+        outline-offset: 2px;
       }
     }
   }

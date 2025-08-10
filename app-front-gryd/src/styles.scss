@@ -1,7 +1,63 @@
-$gray: #2B2B2B;
-$red-20: #360000;
-$red-10: #F43535;
-$header-gradient: linear-gradient(to right, $gray, $red-20);
+// ===== FIGMA STYLE GUIDE =====
+// Baseado no Style Guide do Figma - Identidade Visual GRYD
+
+// ===== TYPOGRAPHY =====
+// Primary Font: Bai Jamjuree (Headings)
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap');
+// Secondary Font: Hind Madurai (Body text)
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
+
+// ===== COLOR PALETTE =====
+// Gray Scale
+$gray-0: #FFFFFF;      // Pure white
+$gray-10: #FAFAFA;     // Light gray
+$gray-20: #F5F5F5;     // Very light gray
+$gray-30: #E0E0E0;     // Light gray border
+$gray-40: #BDBDBD;     // Medium light gray
+$gray-50: #9E9E9E;     // Medium gray
+$gray-60: #757575;     // Medium dark gray
+$gray-70: #616161;     // Dark gray
+$gray-80: #424242;     // Very dark gray
+$gray-90: #212121;     // Almost black
+$gray-99: #171717;     // Background dark
+$gray-100: #000000;    // Pure black
+
+// Primary Colors (Red)
+$red-10: #FFF5F5;      // Very light red
+$red-20: #FFE5E5;      // Light red
+$red-30: #FFB3B3;      // Medium light red
+$red-40: #FF8080;      // Medium red
+$red-50: #F43535;      // Primary red
+$red-60: #E02020;      // Medium dark red
+$red-70: #CC1010;      // Dark red
+$red-80: #B30000;      // Very dark red
+$red-90: #990000;      // Almost black red
+$red-100: #360000;     // Background dark red
+
+// Accent Colors
+$accent-primary: #FF6B35;    // Orange accent
+$accent-secondary: #4ECDC4;  // Teal accent
+$accent-tertiary: #45B7D1;   // Blue accent
+
+// Semantic Colors
+$success: #4CAF50;
+$warning: #FF9800;
+$error: $red-50;
+$info: $accent-tertiary;
+
+// Legacy variables (manter compatibilidade)
+$gray-dark: $gray-99;
+$gray-medium: $gray-80;
+$gray-light: $gray-10;
+$red-primary: $red-50;
+$red-dark: $red-100;
+$red-hover: $red-40;
+$white: $gray-0;
+
+$gray: $gray-medium;
+$red-20: $red-dark;
+$red-10: $red-primary;
+$header-gradient: linear-gradient(135deg, $gray-80 0%, $red-100 100%);
 
 
 $desktop-min-width: 1024px;
@@ -25,10 +81,113 @@ $mobile-max-width: 599px;
 html,
 body {
   height: 100%;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
   line-height: 1.6;
   max-width: 100vw;
   overflow-x: hidden;
+  color: $gray-90;
+  background-color: $gray-0;
+}
+
+// ===== TYPOGRAPHY STYLES =====
+// Baseado no Style Guide do Figma
+
+// Headings - Bai Jamjuree
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: $gray-90;
+}
+
+// Desktop Typography
+h1 {
+  font-size: 3.5rem;    // 56px
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  
+  @media (max-width: $tablet-max-width) {
+    font-size: 2.5rem;  // 40px
+  }
+  
+  @media (max-width: $mobile-max-width) {
+    font-size: 2rem;    // 32px
+  }
+}
+
+h2 {
+  font-size: 2.5rem;    // 40px
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  
+  @media (max-width: $tablet-max-width) {
+    font-size: 2rem;    // 32px
+  }
+  
+  @media (max-width: $mobile-max-width) {
+    font-size: 1.5rem;  // 24px
+  }
+}
+
+h3 {
+  font-size: 1.875rem;  // 30px
+  font-weight: 600;
+  line-height: 1.3;
+  
+  @media (max-width: $tablet-max-width) {
+    font-size: 1.5rem;  // 24px
+  }
+  
+  @media (max-width: $mobile-max-width) {
+    font-size: 1.25rem; // 20px
+  }
+}
+
+// Body Text - Hind Madurai
+p, span, div {
+  font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+  font-size: 1rem;      // 16px
+  font-weight: 400;
+  line-height: 1.6;
+  color: $gray-70;
+  margin: 0;
+}
+
+// Text sizes
+.text-large {
+  font-size: 1.125rem;  // 18px
+  line-height: 1.5;
+}
+
+.text-small {
+  font-size: 0.875rem;  // 14px
+  line-height: 1.4;
+}
+
+.text-caption {
+  font-size: 0.75rem;   // 12px
+  line-height: 1.3;
+  color: $gray-60;
+}
+
+// Text colors
+.text-red {
+  color: $red-50 !important;
+}
+
+.text-accent {
+  color: $accent-primary !important;
+}
+
+.text-muted {
+  color: $gray-60 !important;
+}
+
+.text-light {
+  color: $gray-10 !important;
 }
 
 /* Garantir que não haja margens laterais em telas menores que 1280px */
@@ -45,16 +204,135 @@ body {
   }
 }
 
+// ===== BUTTON STYLES =====
+// Baseado no Style Guide do Figma
+
 button {
-  color: #FAFAFA;
-  display: flex;
+  font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
-  border-radius: 4px;
-  max-height: 80px;
-  margin-right: 1rem;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  
+  &:focus-visible {
+    outline: 2px solid $red-50;
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Primary Button
+.btn-primary, .comece-agora {
+  background: linear-gradient(135deg, $red-50 0%, $red-60 100%);
+  color: $gray-0;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba($red-50, 0.3);
+  
+  &:hover {
+    background: linear-gradient(135deg, $red-40 0%, $red-50 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($red-50, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba($red-50, 0.3);
+  }
+}
+
+// Secondary Button
+.btn-secondary {
+  background: transparent;
+  color: $red-50;
+  border: 2px solid $red-50;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  
+  &:hover {
+    background: $red-50;
+    color: $gray-0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($red-50, 0.3);
+  }
+}
+
+// Outline Button
+.btn-outline {
+  background: transparent;
+  color: $gray-70;
+  border: 1px solid $gray-30;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+  &:hover {
+    background: $gray-10;
+    border-color: $gray-40;
+    color: $gray-90;
+  }
+}
+
+// Ghost Button
+.btn-ghost {
+  background: transparent;
+  color: $gray-70;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+  &:hover {
+    background: $gray-10;
+    color: $gray-90;
+  }
+}
+
+// Button sizes
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  border-radius: 10px;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+}
+
+// Icon buttons
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  
+  &.btn-icon-large {
+    width: 48px;
+    height: 48px;
+  }
+  
+  &.btn-icon-small {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* ===== HEADER GLOBAL STYLES ===== */
@@ -103,14 +381,41 @@ button {
       align-items: center;
 
       a {
-        color: #FAFAFA;
+        color: $gray-10;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
-        transition: color 0.3s ease;
+        font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: $red-50;
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
 
         &:hover {
-          color: $red-10;
+          color: $red-40;
+          background: rgba($red-50, 0.1);
+          transform: translateY(-1px);
+          
+          &::before {
+            width: 80%;
+          }
+        }
+        
+        &:focus-visible {
+          outline: 2px solid $red-50;
+          outline-offset: 2px;
         }
       }
     }
@@ -124,27 +429,49 @@ button {
         display: none;
         background: transparent;
         border: none;
-        color: #FAFAFA;
-        font-size: 24px;
+        color: $gray-10;
+        font-size: 1.5rem;
         cursor: pointer;
-        padding: 8px;
+        padding: 12px;
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        
+        &:hover {
+          background: rgba($gray-10, 0.1);
+          color: $red-40;
+          transform: scale(1.1);
+        }
+        
+        &:focus-visible {
+          outline: 2px solid $red-50;
+          outline-offset: 2px;
+        }
       }
 
       .comece-agora {
-        background-color: transparent;
-        color: #FAFAFA;
-        border: 1px solid #FAFAFA;
-        padding: 12px 24px;
-        font-size: 14px;
-        font-weight: 500;
-        border-radius: 4px;
+        background: transparent;
+        color: $gray-10;
+        border: 2px solid $gray-10;
+        padding: 10px 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 8px;
         cursor: pointer;
         white-space: nowrap;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
 
         &:hover {
-          background-color: $red-10;
-          border-color: $red-10;
+          background: $red-50;
+          border-color: $red-50;
+          color: $gray-0;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba($red-50, 0.3);
+        }
+        
+        &:focus-visible {
+          outline: 2px solid $red-50;
+          outline-offset: 2px;
         }
       }
     }
@@ -152,13 +479,14 @@ button {
 }
 
 /* ===== MOBILE SIDEBAR STYLES ===== */
+/* Baseado no Style Guide do Figma com tipografia Bai Jamjuree e Hind Madurai */
 .mobile-sidebar {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 100vw;
-  background: #171717;
+  background: $gray-dark;
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -166,7 +494,9 @@ button {
   align-items: flex-end;
   padding: 32px;
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(10px);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
 
   &.open {
     transform: translateX(0%);
@@ -176,23 +506,48 @@ button {
     font-size: 32px;
     background: transparent;
     border: none;
-    color: #FAFAFA;
+    color: $gray-light;
     align-self: flex-end;
     cursor: pointer;
     margin-bottom: 32px;
-    padding: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none;
+
+    // Acessibilidade - foco visível
+    &:focus {
+      outline: 2px solid $red-primary;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      background-color: rgba(244, 53, 53, 0.1);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     .logo {
       height: 35px;
       width: auto;
+      transition: filter 0.3s ease;
+    }
+
+    &:hover .logo {
+      filter: brightness(1.2);
     }
   }
 
   .divider {
     width: 100%;
-    height: 1px;
-    background-color: #FAFAFA;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $red-primary, transparent);
     margin-bottom: 32px;
+    border-radius: 1px;
+    opacity: 0.8;
   }
 
   .mobile-nav {
@@ -201,19 +556,67 @@ button {
     width: 100%;
     align-items: flex-end;
     flex-grow: 1;
-    gap: 16px;
+    gap: 20px;
 
     a {
-      color: #FAFAFA;
+      color: $gray-light;
+      font-family: 'Hind Madurai', sans-serif; // Tipografia do Figma para body text
       font-size: 20px;
       font-weight: 500;
+      line-height: 28px; // Line-height do style guide
       text-decoration: none;
       text-align: right;
-      transition: color 0.3s ease;
-      padding: 8px 0;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      padding: 12px 16px;
+      border-radius: 8px;
+      position: relative;
+      outline: none;
+      min-width: 120px;
+      display: flex;
+      justify-content: flex-end;
+
+      // Efeito de hover suave com gradiente
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(135deg, $red-primary, $red-hover);
+        border-radius: 8px;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+      }
+
+      // Acessibilidade - foco visível
+      &:focus {
+        outline: 2px solid $red-primary;
+        outline-offset: 2px;
+      }
 
       &:hover {
-        color: $red-10;
+        color: $white;
+        transform: translateX(-8px);
+        
+        &::before {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      &:active {
+        transform: translateX(-4px) scale(0.98);
+      }
+
+      // Estado ativo/selecionado para navegação
+      &.active {
+        color: $white;
+        background: linear-gradient(135deg, $red-primary, $red-hover);
+        box-shadow: 0 4px 12px rgba(244, 53, 53, 0.3);
       }
     }
   }
@@ -225,18 +628,56 @@ button {
     padding-top: 32px;
 
     .comece-agora {
-      background-color: transparent;
-      color: #FAFAFA;
-      border: 1px solid $red-10;
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: 4px;
+      background: transparent;
+      color: $gray-light;
+      border: 2px solid $red-primary;
+      padding: 14px 28px;
+      font-family: 'Bai Jamjuree', sans-serif; // Tipografia do Figma para headings
+      font-size: 16px;
+      font-weight: 600; // Semi-bold do style guide
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      text-transform: uppercase;
+
+      // Efeito de preenchimento no hover
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, $red-primary, $red-hover);
+        transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+      }
+
+      // Acessibilidade - foco visível
+      &:focus {
+        outline: 2px solid $white;
+        outline-offset: 2px;
+      }
 
       &:hover {
-        background-color: $red-10;
+        color: $white;
+        border-color: $red-hover;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(244, 53, 53, 0.4);
+
+        &::before {
+          left: 0;
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px rgba(244, 53, 53, 0.3);
       }
     }
   }

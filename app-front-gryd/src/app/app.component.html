@@ -4,5 +4,22 @@
     <app-home></app-home>
     <app-motivos></app-motivos>
     <app-sobre></app-sobre>
+    <app-testimonials></app-testimonials>
+    <app-team></app-team>
+    <app-contact></app-contact>
   </section>
+  
+  <!-- Footer -->
+  <app-footer></app-footer>
+  
+  <!-- Cart Sidebar -->
+  <app-cart 
+    [isOpen]="isCartOpen"
+    [items]="cartItems"
+    (closeCart)="closeCart()"
+    (removeItem)="removeFromCart($event)"
+    (updateQuantity)="updateCartQuantity($event.id, $event.quantity)"
+    (clearCart)="clearCart()"
+    (checkout)="checkout($event)">
+  </app-cart>
 </main>

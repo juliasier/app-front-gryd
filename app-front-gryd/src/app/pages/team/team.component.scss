@@ -1,0 +1,296 @@
+// Importando variáveis globais do styles.scss
+@import '../../../styles.scss';
+
+.team-container {
+  padding: 4rem 0;
+  background: $gray-0;
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.team-content {
+  max-width: calc($desktop-max-width * 0.9);
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  @media (max-width: $tablet-max-width) {
+    padding: 0 1rem;
+  }
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: $tablet-max-width) {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .award-badge {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, $red-40 0%, $red-60 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba($red-50, 0.3);
+    
+    i {
+      color: $gray-0;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: $tablet-max-width) {
+      order: 1;
+    }
+  }
+
+  h2 {
+    font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $gray-90;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    
+    @media (max-width: $tablet-max-width) {
+      font-size: 2rem;
+      order: 2;
+    }
+    
+    @media (max-width: $mobile-max-width) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    gap: 0.75rem;
+    
+    @media (max-width: $tablet-max-width) {
+      order: 3;
+    }
+
+    .slider-btn {
+      width: 48px;
+      height: 48px;
+      background: rgba($red-50, 0.1);
+      border: 2px solid $red-50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      color: $red-50;
+      
+      i {
+        font-size: 1.2rem;
+      }
+      
+      &:hover {
+        background: $red-50;
+        color: $gray-0;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba($red-50, 0.3);
+      }
+      
+      &:focus-visible {
+        outline: 2px solid $red-40;
+        outline-offset: 2px;
+      }
+    }
+  }
+}
+
+.team-description {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  p {
+    font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $gray-70;
+    max-width: 600px;
+    margin: 0 auto;
+    
+    @media (max-width: $tablet-max-width) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (max-width: $tablet-max-width) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: $mobile-max-width) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.team-member {
+  background: $gray-0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba($gray-90, 0.08);
+  border: 1px solid rgba($gray-30, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba($gray-90, 0.15);
+    border-color: rgba($red-40, 0.3);
+  }
+}
+
+.member-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba($red-50, 0.9) 0%, rgba($red-60, 0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      
+      a {
+        width: 44px;
+        height: 44px;
+        background: rgba($gray-0, 0.2);
+        border: 2px solid $gray-0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $gray-0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        
+        i {
+          font-size: 1.2rem;
+        }
+        
+        &:hover {
+          background: $gray-0;
+          color: $red-50;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  
+  &:hover {
+    .member-overlay {
+      opacity: 1;
+    }
+    
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.member-info {
+  padding: 1.5rem;
+  text-align: center;
+  
+  h3 {
+    font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $gray-90;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .member-role {
+    font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $red-50;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .member-bio {
+    font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $gray-60;
+    margin: 0;
+  }
+}
+
+.team-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $gray-40;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    &.active {
+      background: $red-50;
+      transform: scale(1.3);
+      box-shadow: 0 2px 8px rgba($red-50, 0.4);
+    }
+    
+    &:hover {
+      background: $red-40;
+      transform: scale(1.1);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid $red-50;
+      outline-offset: 2px;
+    }
+  }
+}

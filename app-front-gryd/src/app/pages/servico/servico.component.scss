@@ -3,7 +3,7 @@
 
 .container-service {
   padding: 0;
-  background-color: #f5f5f5; /* Background para visualização */
+  background-color: $gray-20;
   max-width: $desktop-max-width; // 1440px
   margin: 0 auto;
   width: 100%;
@@ -12,11 +12,12 @@
 .carousel-servico {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: $gray-0;
   padding: 0;
   max-width: calc($desktop-max-width * 0.9); // 90% de 1440px = 1296px - sempre
   margin: 0 auto;
   gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba($gray-90, 0.08);
 
   /* Cabeçalho do carousel com título e controles */
   .carousel-header {
@@ -27,9 +28,14 @@
     padding: 1rem 2rem;
     
     h1 {
-      font-size: 2rem;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       margin: 0;
       text-align: left;
+      color: $gray-90;
     }
     
     .controles {
@@ -37,17 +43,17 @@
       gap: 0.8rem;
       
       button {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #e8f4fc;
-        color: #186294;
-        border: 1px solid #186294;
+        background-color: rgba($red-50, 0.1);
+        color: $red-50;
+        border: 2px solid $red-50;
         border-radius: 50%;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         padding: 0;
         margin: 0;
         
@@ -56,8 +62,15 @@
         }
         
         &:hover {
-          background-color: #186294;
-          color: white;
+          background-color: $red-50;
+          color: $gray-0;
+          transform: scale(1.1);
+          box-shadow: 0 4px 12px rgba($red-50, 0.3);
+        }
+        
+        &:focus-visible {
+          outline: 2px solid $red-50;
+          outline-offset: 2px;
         }
       }
     }
@@ -81,59 +94,105 @@
     justify-content: center;
 
     h1 {
-      font-size: 2rem;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
+      color: $gray-90;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       margin-bottom: 0.5rem;
+      color: $gray-80;
     }
 
     h3 {
-      font-size: 1rem;
+      font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.4;
       margin-bottom: 1rem;
+      color: $gray-70;
     }
 
     .list-content {
-      margin-bottom: 1.5rem;
-      background-color: #ffffff;
-      padding: 15px 0;
-      text-align: left;
+        margin-bottom: 1.5rem;
+        background-color: $gray-0;
+        padding: 15px 0;
+        text-align: left;
 
-      .item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 0.8rem;
-        padding: 8px 0;
-        border-bottom: 1px solid #000;
-        
-        i {
-          color: #186294;
-          font-size: 1.2rem;
-        }
-        
-        p {
-          margin: 0;
-          font-size: 0.95rem;
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.8rem;
+          padding: 12px 0;
+          border-bottom: 1px solid $gray-30;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            padding-left: 8px;
+            border-bottom-color: $red-40;
+          }
+          
+          i {
+            color: $red-50;
+            font-size: 1.25rem;
+            transition: transform 0.2s ease;
+          }
+          
+          &:hover i {
+            transform: scale(1.1);
+          }
+          
+          p {
+            font-family: 'Hind Madurai', 'Inter', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+            color: $gray-70;
+          }
         }
       }
-    }
 
     .btn-servicos {
-      margin-bottom: 0;
-      background-color: #186294;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
+      font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+      font-size: 1rem;
       font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 0;
+      background-color: $red-50;
+      color: $gray-0;
+      border: 2px solid $red-50;
+      padding: 12px 24px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 2px 8px rgba($red-50, 0.2);
       
       &:hover {
-        background-color: #0f4c75;
+        background-color: $red-60;
+        border-color: $red-60;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba($red-50, 0.3);
+      }
+      
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba($red-50, 0.2);
+      }
+      
+      &:focus-visible {
+        outline: 2px solid $red-40;
+        outline-offset: 2px;
       }
     }
   }
@@ -143,13 +202,20 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #f0f9ff; /* Background para visualização */
+    background-color: rgba($red-10, 0.3);
     padding: 0;
     height: 100%;
+    border-radius: 12px;
 
     img {
       max-width: 100%;
       height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
   
@@ -157,24 +223,31 @@
   .carousel-indicators {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
     padding: 1rem 0 2rem;
     
     span {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background-color: #ccc;
+      background-color: $gray-40;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       
       &.active {
-        background-color: #186294;
-        transform: scale(1.2);
+        background-color: $red-50;
+        transform: scale(1.3);
+        box-shadow: 0 2px 8px rgba($red-50, 0.4);
       }
       
       &:hover {
-        background-color: #186294;
+        background-color: $red-40;
+        transform: scale(1.1);
+      }
+      
+      &:focus-visible {
+        outline: 2px solid $red-50;
+        outline-offset: 2px;
       }
     }
   }

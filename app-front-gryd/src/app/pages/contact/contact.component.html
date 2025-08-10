@@ -1,0 +1,164 @@
+<div class="contact-container">
+  <div class="contact-content">
+    <!-- Header -->
+    <div class="contact-header">
+      <div class="award-badge">
+        <i class="fas fa-comments"></i>
+      </div>
+      <h2>Entre em Contato</h2>
+      <div class="header-decoration"></div>
+    </div>
+
+    <div class="contact-description">
+      <p>Pronto para transformar suas ideias em realidade digital? Nossa equipe está aqui para ajudar você a alcançar seus objetivos.</p>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-section">
+        <div class="form-header">
+          <h3>Envie sua Mensagem</h3>
+          <p>Preencha o formulário abaixo e entraremos em contato em até 24 horas.</p>
+        </div>
+
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactFormRef="ngForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome Completo *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                [(ngModel)]="contactForm.name"
+                required
+                placeholder="Seu nome completo"
+                class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                [(ngModel)]="contactForm.email"
+                required
+                placeholder="seu@email.com"
+                class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                [(ngModel)]="contactForm.phone"
+                placeholder="(11) 99999-9999"
+                class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="company">Empresa</label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company"
+                [(ngModel)]="contactForm.company"
+                placeholder="Nome da sua empresa"
+                class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Serviço de Interesse</label>
+            <select 
+              id="service" 
+              name="service"
+              [(ngModel)]="contactForm.service"
+              class="form-select">
+              <option value="">Selecione um serviço</option>
+              <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <textarea 
+              id="message" 
+              name="message"
+              [(ngModel)]="contactForm.message"
+              required
+              placeholder="Conte-nos sobre seu projeto..."
+              rows="5"
+              class="form-textarea"></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="submit-btn"
+            [disabled]="!isFormValid()">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-section">
+        <div class="info-header">
+          <h3>Informações de Contato</h3>
+          <p>Escolha a forma mais conveniente para entrar em contato conosco.</p>
+        </div>
+
+        <div class="contact-methods">
+          <div class="contact-method" *ngFor="let method of contactMethods">
+            <a [href]="method.link" class="method-link">
+              <div class="method-icon">
+                <i [class]="method.icon"></i>
+              </div>
+              <div class="method-info">
+                <span class="method-title">{{ method.title }}</span>
+                <span class="method-value">{{ method.value }}</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h4>Siga-nos nas Redes Sociais</h4>
+          <div class="social-links">
+            <a 
+              *ngFor="let social of socialLinks" 
+              [href]="social.url" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              [title]="social.name">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="business-hours">
+          <h4>Horário de Atendimento</h4>
+          <div class="hours-list">
+            <div class="hour-item">
+              <span class="day">Segunda - Sexta</span>
+              <span class="time">09:00 - 18:00</span>
+            </div>
+            <div class="hour-item">
+              <span class="day">Sábado</span>
+              <span class="time">09:00 - 14:00</span>
+            </div>
+            <div class="hour-item">
+              <span class="day">Domingo</span>
+              <span class="time">Fechado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

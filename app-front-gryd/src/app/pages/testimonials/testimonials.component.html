@@ -1,0 +1,58 @@
+<section class="testimonials-container">
+  <div class="testimonials-content">
+    <div class="testimonials-header">
+      <div class="award-badge">
+        <i class="fas fa-award"></i>
+      </div>
+      <h2>O que nossos clientes dizem</h2>
+      <div class="slider-controls">
+        <button 
+          class="slider-btn prev" 
+          (click)="prevTestimonial()"
+          aria-label="Depoimento anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button 
+          class="slider-btn next" 
+          (click)="nextTestimonial()"
+          aria-label="Próximo depoimento">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="testimonials-slider">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials; let i = index" 
+           [class.active]="i === currentIndex">
+        <div class="testimonial-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="testimonial-text">{{ testimonial.text }}</p>
+          <div class="rating">
+            <i class="fas fa-star" *ngFor="let star of getStars(testimonial.rating)"></i>
+          </div>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img [src]="testimonial.image" [alt]="testimonial.name" />
+          </div>
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <span>{{ testimonial.role }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-indicators">
+      <button 
+        *ngFor="let testimonial of testimonials; let i = index"
+        class="indicator"
+        [class.active]="i === currentIndex"
+        (click)="goToTestimonial(i)"
+        [attr.aria-label]="'Ir para depoimento ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+</section>

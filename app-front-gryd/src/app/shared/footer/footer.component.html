@@ -1,0 +1,123 @@
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <!-- Company Info -->
+      <div class="footer-section company-info">
+        <div class="logo-section">
+          <div class="logo">
+            <span class="logo-text">GRYD</span>
+          </div>
+          <p class="company-description">
+            Transformamos ideias em soluções digitais inovadoras. 
+            Especialistas em desenvolvimento web, e-commerce e marketing digital.
+          </p>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>{{ contactInfo.phone }}</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>{{ contactInfo.email }}</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{{ contactInfo.address }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3 class="section-title">Links Rápidos</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a [href]="link.url" class="footer-link">
+              <i class="fas fa-chevron-right"></i>
+              {{ link.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h3 class="section-title">Nossos Serviços</h3>
+        <ul class="footer-links">
+          <li *ngFor="let service of services">
+            <a [href]="service.url" class="footer-link">
+              <i class="fas fa-chevron-right"></i>
+              {{ service.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter & Social -->
+      <div class="footer-section newsletter-section">
+        <h3 class="section-title">Fique por Dentro</h3>
+        <p class="newsletter-description">
+          Receba as últimas novidades sobre tecnologia e nossos projetos.
+        </p>
+        
+        <div class="newsletter-form">
+          <div class="input-group">
+            <input 
+              type="email" 
+              placeholder="Seu melhor email"
+              class="newsletter-input">
+            <button class="newsletter-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h4 class="social-title">Siga-nos</h4>
+          <div class="social-links">
+            <a 
+              *ngFor="let social of socialLinks" 
+              [href]="social.url" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              [title]="social.name">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; {{ currentYear }} GRYD. Todos os direitos reservados.</p>
+        </div>
+        
+        <div class="footer-bottom-links">
+          <a href="#" class="bottom-link">Política de Privacidade</a>
+          <span class="separator">|</span>
+          <a href="#" class="bottom-link">Termos de Uso</a>
+          <span class="separator">|</span>
+          <a href="#" class="bottom-link">Cookies</a>
+        </div>
+
+        <button class="scroll-top-btn" (click)="scrollToTop()" title="Voltar ao topo">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Decoration -->
+  <div class="footer-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
+</footer>
