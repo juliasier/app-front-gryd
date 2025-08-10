@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { MotivosComponent } from './pages/motivos/motivos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { ServicoComponent } from './pages/servico/servico.component';
 import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
 import { TeamComponent } from './pages/team/team.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -18,6 +19,7 @@ import { ServiceCard } from './shared/service-card/service-card.component';
     HomeComponent, 
     MotivosComponent, 
     SobreComponent,
+    ServicoComponent,
     TestimonialsComponent,
     TeamComponent,
     ContactComponent,
