@@ -4,11 +4,6 @@
   overflow-x: hidden;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 /* ===== Background Hero ===== */
 .home-background {
   background: url('/assets/backgrounds/bg-desktop.webp') center top/cover no-repeat;
@@ -19,7 +14,13 @@
   background-position: center;
 }
 
-/* ===== Seção Hero ===== */
+/* ===== MOBILE BASE (390px - 499px) ===== */
+.container {
+  max-width: var(--mobile-content);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero-section {
   padding: 120px 0 60px;
   color: white;
@@ -30,7 +31,7 @@
   
   .container {
     position: relative;
-    z-index: 2;
+    // z-index: 2;
   }
 }
 
@@ -46,7 +47,6 @@
   flex: 1;
 }
 
-/* ===== Header Card ===== */
 .header-card {
   display: flex;
   align-items: center;
@@ -58,29 +58,56 @@
   border-radius: 50px;
   display: inline-flex;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.9rem;
+  }
 }
 
-.header-card img {
-  width: 40px;
-  height: 40px;
-}
+.hero-text {
+  h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.header-card p {
-  margin: 0;
-  font-weight: 600;
-  color: #1f2937;
-  font-size: 0.9rem;
-}
+  h2 {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
 
-/* ===== Títulos e Textos ===== */
-.hero-text h1 {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  button {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+
+    &:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+    }
+  }
 }
 
 .text-red {
@@ -89,182 +116,432 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-text h2 {
-  font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 40px;
-  font-weight: 400;
-}
-
-.hero-text button {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
-}
-
-.hero-text button:hover {
-  background: #dc2626;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-}
-
-/* ===== Imagens Hero - Efeito Cascata ===== */
+/* Imagens Hero - Mobile */
 .card-img {
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: relative;
   margin-top: 30px;
+  width: 300px;
+  height: 250px;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow vermelho escuro aplicado */
+    transition: all 0.3s ease;
+    opacity: 1;
+    background-color: #959595;
+  }
 }
 
-.card-img img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); /* Background temporário */
-}
-
-/* Posicionamento em cascata - direita para esquerda, cima para baixo */
 .img1 {
-  align-self: flex-end;
-  transform: translateX(0px) translateY(0px);
-  animation: float 3s ease-in-out infinite;
-  background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  width: 200px;
+  height: 118px;
+  top: 0;
+  left: 100px;
+  border-radius: 12px;
+  background: #959595;
+  box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+  animation: cascadeFloat1 3s ease-in-out infinite;
 }
 
 .img2 {
-  align-self: center;
-  transform: translateX(-30px) translateY(20px);
-  animation: float 3s ease-in-out infinite 1s;
-  background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+  width: 200px;
+  height: 118px;
+  top: 44px;
+  left: 50px;
+  border-radius: 12px;
+  background: #959595;
+  box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+  animation: cascadeFloat2 3s ease-in-out infinite 1s;
 }
 
 .img3 {
-  align-self: flex-start;
-  transform: translateX(-60px) translateY(40px);
-  animation: float 3s ease-in-out infinite 2s;
-  background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%);
+  width: 200px;
+  height: 118px;
+  top: 88px;
+  left: 0;
+  border-radius: 12px;
+  background: var(--wireframe-stuff-wireframe-slate, #959595);
+  box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+  animation: cascadeFloat3 3s ease-in-out infinite 2s;
 }
 
-.card-img img:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-}
-
-@keyframes float {
+@keyframes cascadeFloat1 {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-10px); }
 }
 
-/* ===== Responsive para cascata ===== */
-@media (min-width: 768px) {
-  .card-img {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 400px;
+@keyframes cascadeFloat2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes cascadeFloat3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+/* ===== TABLET (500px - 1024px) ===== */
+@media (min-width: 500px) and (max-width: 1024px) {
+  .container {
+    max-width: var(--tablet-content);
+    padding: 0 30px;
   }
-  
+
+  .hero-content {
+    display: flex;
+    flex-direction: column; /* Mudança: uma div abaixo da outra */
+    align-items: center;
+    gap: 40px;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 600px; /* Limita a largura do texto */
+    order: 1; /* hero-text primeiro */
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+  }
+
+  .header-card {
+    justify-content: center; /* Centraliza o header-card */
+    margin-bottom: 1.5rem;
+    
+    img {
+      width: 38px;
+      height: 38px;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .card-img {
+    position: relative; /* Remove absolute positioning */
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto; /* Centraliza o container */
+    order: 2; /* card-img por último */
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+      transition: all 0.3s ease;
+      opacity: 1;
+      background-color: #959595; /* Fallback background */
+    }
+  }
+
+  /* Efeito cascata mantido para tablet */
   .img1 {
-    position: absolute;
+    width: 280px;
+    height: 165px;
     top: 0;
     right: 0;
-    width: 180px;
-    height: 120px;
+    border-radius: 12px;
+    background: #959595;
+    animation: cascadeFloat1 3s ease-in-out infinite;
   }
-  
-  .img2 {
-    position: absolute;
-    top: 80px;
-    right: 60px;
-    width: 180px;
-    height: 120px;
-  }
-  
-  .img3 {
-    position: absolute;
-    top: 160px;
-    right: 120px;
-    width: 180px;
-    height: 120px;
-  }
-}
 
-@media (min-width: 1024px) {
-  .img1, .img2, .img3 {
-    width: 220px;
-    height: 140px;
-  }
-  
   .img2 {
-    top: 100px;
+    width: 280px;
+    height: 165px;
+    top: 60px;
     right: 80px;
+    border-radius: 12px;
+    background: #959595;
+    animation: cascadeFloat2 3s ease-in-out infinite 1s;
   }
-  
+
   .img3 {
-    top: 200px;
+    width: 280px;
+    height: 165px;
+    top: 120px;
     right: 160px;
+    border-radius: 12px;
+    background: var(--wireframe-stuff-wireframe-slate, #959595);
+    box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+    animation: cascadeFloat3 3s ease-in-out infinite 2s;
+  }
+
+  /* Animações de cascata para tablet */
+  @keyframes cascadeFloat1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes cascadeFloat2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes cascadeFloat3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
   }
 }
 
-/* ===== Responsive Design ===== */
-@media (min-width: 768px) {
+  .img1 {
+    position: absolute;
+    width: 300px;
+    height: 177px;
+    top: 0;
+    left: 100px;
+    border-radius: 12px;
+  }
+
+  .img2 {
+    position: absolute;
+    width: 300px;
+    height: 177px;
+    top: 44px;
+    left: 50px;
+    border-radius: 12px;
+  }
+
+  .img3 {
+    position: absolute;
+    width: 300px;
+    height: 177px;
+    top: 88px;
+    left: 0;
+    border-radius: 12px;
+    background: var(--wireframe-stuff-wireframe-slate, #959595);
+    box-shadow: 8px 8px 0px 0px #B90A0A99;
+  }
+
+
+/* ===== DESKTOP (1025px - 1440px) ===== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    max-width: var(--desktop-content);
+    padding: 0 50px;
+  }
+
   .hero-content {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
     align-items: center;
-    gap: 50px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
-  
+
   .hero-text {
+    grid-column: 1 / 7; /* Ocupa 6 colunas (aproximadamente 593px) */
     text-align: left;
-    flex: 1;
+    max-width: 593px;
+
+    h1 {
+      font-size: 2.8rem; /* Reduzido de 3.5rem */
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem; /* Reduzido de 1.4rem */
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 12px 24px; /* Reduzido */
+      font-size: 0.95rem; /* Reduzido */
+    }
   }
-  
+
   .header-card {
     justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    
+    img {
+      width: 35px; /* Reduzido de 40px */
+      height: 35px;
+    }
+    
+    p {
+      font-size: 0.85rem; /* Reduzido */
+    }
   }
-  
+
   .card-img {
-    flex-direction: column;
-    margin-top: 0;
+    grid-column: 7 / 13; /* Ocupa 6 colunas (aproximadamente 703px) */
+    position: relative;
+    width: 100%;
+    max-width: 703px;
+    height: 415px;
+    margin: 0;
+    justify-self: end;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+      transition: all 0.3s ease;
+      opacity: 1;
+      /* Background cinza como fallback */
+      background-color: #959595;
+    }
   }
-  
-  .card-img img {
-    width: 150px;
-    height: 150px;
+
+  .img1 {
+    width: min(400px, 100%); /* Responsivo dentro do container */
+    height: min(236px, 60%);
+    top: 0;
+    right: 0;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
   }
-  
-  .hero-text h1 {
-    font-size: 3rem;
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
+
+  .img2 {
+    width: min(400px, 100%);
+    height: min(236px, 60%);
+    top: 15%;
+    right: 20%;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .img3 {
+    width: min(400px, 100%);
+    height: min(236px, 60%);
+    top: 30%;
+    right: 40%;
+    border-radius: 12px;
+    background: var(--wireframe-stuff-wireframe-slate, #959595);
+    box-shadow: 8px 8px 0px 0px #B90A0A99;
   }
 }
 
-@media (min-width: 1024px) {
-  .hero-text h1 {
-    font-size: 3.5rem;
+/* ===== DESKTOP XL (1441px+) - Container limitado a 1440px ===== */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 50px;
   }
-  
-  .hero-text h2 {
-    font-size: 1.4rem;
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
   }
-  
-  .card-img img {
-    width: 180px;
-    height: 180px;
+
+  .hero-text {
+    grid-column: 1 / 7; /* Ocupa 6 colunas (aproximadamente 593px) */
+    text-align: left;
+    max-width: 593px;
+
+    h1 {
+      font-size: 3rem; /* Ligeiramente maior para telas XL */
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+  }
+
+  .header-card {
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .card-img {
+    grid-column: 7 / 13; /* Ocupa 6 colunas (aproximadamente 703px) */
+    position: relative;
+    width: 100%;
+    max-width: 703px;
+    height: 415px;
+    margin: 0;
+    justify-self: end;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 8px 8px 0px 0px #8D0000; /* Box-shadow aplicado */
+      transition: all 0.3s ease;
+      opacity: 1;
+      /* Background cinza como fallback */
+      background-color: #959595;
+    }
+  }
+
+  .img1 {
+    width: min(450px, 100%); /* Ligeiramente maior para XL */
+    height: min(266px, 65%);
+    top: 0;
+    right: 0;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .img2 {
+    width: min(450px, 100%);
+    height: min(266px, 65%);
+    top: 15%;
+    right: 20%;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .img3 {
+    width: min(450px, 100%);
+    height: min(266px, 65%);
+    top: 30%;
+    right: 40%;
+    border-radius: 12px;
+    background: var(--wireframe-stuff-wireframe-slate, #959595);
+    box-shadow: 8px 8px 0px 0px #B90A0A99;
   }
 }
