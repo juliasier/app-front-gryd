@@ -26,6 +26,24 @@
   /* Container */
   --container: 1200px;
   --padding: 1rem;
+  
+  /* Breakpoints */
+  --mobile: 320px;
+  --mobile-lg: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --desktop-lg: 1200px;
+  --desktop-xl: 1440px;
+  
+  /* Grid System */
+  --grid-columns: 4;
+  --grid-gap: 1rem;
+  --container-padding: 1rem;
+  
+  /* Margins responsivos */
+  --margin-mobile: 1rem;
+  --margin-tablet: 2rem;
+  --margin-desktop: 3rem;
 }
 
 /* ===== Base ===== */
@@ -51,13 +69,6 @@ p {
   color: var(--text-light);
 }
 
-/* ===== Container ===== */
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--padding);
-}
-
 /* ===== Botões ===== */
 .btn {
   background: var(--primary);
@@ -76,9 +87,17 @@ p {
 }
 
 /* ===== Media Queries ===== */
+@media (min-width: 480px) {
+  :root {
+    --grid-columns: 6;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --padding: 2rem;
+    --grid-columns: 8;
+    --container-padding: 2rem;
   }
   
   h1 { font-size: 3rem; }
@@ -87,5 +106,68 @@ p {
 }
 
 @media (min-width: 1024px) {
+  :root {
+    --grid-columns: 12;
+    --container-padding: 3rem;
+  }
+  
   h1 { font-size: 3.5rem; }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --padding: 3rem;
+  }
+}
+
+/* ===== Container Unificado - Mesmo tamanho do Header ===== */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Tablet (≥ 768px) - 20px nas laterais conforme solicitado */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Desktop (≥ 1024px) - Mesmo sistema do header */
+@media (min-width: 1024px) {
+  .container {
+    width: calc(100% - 200px);
+    padding: 0 35px;
+  }
+}
+
+/* Desktop Large (≥ 1200px) - Mesmo padding do header */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Desktop XL (≥ 1440px) - Mesmo padding do header */
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Variação sem padding para casos específicos */
+.container-no-padding {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Container para casos especiais que precisam de largura fixa */
+.container-fixed {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
 }

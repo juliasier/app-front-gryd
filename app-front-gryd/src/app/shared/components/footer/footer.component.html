@@ -1,0 +1,120 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Main Footer Grid -->
+    <div class="footer-grid">
+      <!-- Company Section -->
+      <div class="footer-section company-section">
+        <div class="company-brand">
+          <span class="company-logo">{{ footerSections.company.logo }}</span>
+          <h3 class="company-title">{{ footerSections.company.title }}</h3>
+        </div>
+        <p class="company-description">{{ footerSections.company.description }}</p>
+        
+        <!-- Social Links -->
+        <div class="social-section">
+          <h4 class="social-title">Siga-nos</h4>
+          <div class="social-grid">
+            <a 
+              *ngFor="let social of socialLinks" 
+              [href]="social.url" 
+              class="social-link"
+              [title]="social.name"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="social-icon">{{ social.icon }}</span>
+              <span class="social-name">{{ social.name }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Links Section -->
+      <div class="footer-section links-section">
+        <h4 class="section-title">{{ footerSections.quickLinks.title }}</h4>
+        <nav class="footer-nav">
+          <a 
+            *ngFor="let link of footerSections.quickLinks.links" 
+            [href]="link.url" 
+            class="footer-link"
+          >
+            <span class="link-icon">{{ link.icon }}</span>
+            <span class="link-text">{{ link.name }}</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Services Section -->
+      <div class="footer-section services-section">
+        <h4 class="section-title">{{ footerSections.services.title }}</h4>
+        <nav class="footer-nav">
+          <a 
+            *ngFor="let service of footerSections.services.links" 
+            [href]="service.url" 
+            class="footer-link"
+          >
+            <span class="link-icon">{{ service.icon }}</span>
+            <span class="link-text">{{ service.name }}</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Contact Section -->
+      <div class="footer-section contact-section">
+        <h4 class="section-title">{{ footerSections.contact.title }}</h4>
+        <div class="contact-grid">
+          <a 
+            *ngFor="let contact of footerSections.contact.info" 
+            [href]="contact.link" 
+            class="contact-item"
+            [class.no-link]="contact.link === '#'"
+          >
+            <span class="contact-icon">{{ contact.icon }}</span>
+            <span class="contact-text">{{ contact.value }}</span>
+          </a>
+        </div>
+        
+        <!-- Newsletter Signup -->
+        <div class="newsletter-section">
+          <h5 class="newsletter-title">📬 Newsletter</h5>
+          <form class="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Seu e-mail" 
+              class="newsletter-input"
+              required
+            >
+            <button type="submit" class="newsletter-btn">Inscrever</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-grid">
+        <div class="copyright-section">
+          <p class="copyright">
+            © {{ currentYear }} {{ footerSections.company.title }}. Todos os direitos reservados.
+          </p>
+        </div>
+        
+        <nav class="legal-nav">
+          <a 
+            *ngFor="let legal of legalLinks; let last = last" 
+            [href]="legal.url" 
+            class="legal-link"
+          >
+            {{ legal.name }}<span *ngIf="!last" class="separator"> • </span>
+          </a>
+        </nav>
+        
+        <div class="footer-badge">
+          <span class="badge-text">Feito com</span>
+          <span class="badge-heart">❤️</span>
+          <span class="badge-text">em São Paulo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

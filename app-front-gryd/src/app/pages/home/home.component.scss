@@ -1,85 +1,170 @@
-/* ===== Main Content ===== */
+/* ===== Layout Principal ===== */
 .main-content {
-  padding-top: 80px;
+  padding-top: 0; /* Removido padding para permitir que o background ocupe todo o espaço */
 }
 
-/* ===== Two Column Section ===== */
-.two-column-section {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Background Hero ===== */
+.home-background {
+  background: url('/assets/backgrounds/bg-desktop.webp') center/cover no-repeat;
+  min-height: 100vh; /* Ocupa toda a altura da viewport */
+  width: 100vw; /* Ocupa toda a largura da viewport */
+  margin-left: calc(-50vw + 50%); /* Centraliza e expande além do container */
+  position: relative;
+  
+  /* Removido o ::before que criava o overlay escuro */
+}
+
+/* ===== Seção Hero ===== */
+.hero-section {
+  padding: 120px 0 60px; /* Padding superior para compensar o header */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-  margin: var(--space-xl) 0;
+  gap: 30px;
 }
 
-.left-column,
-.right-column {
-  background: var(--bg-light);
-  padding: var(--space-lg);
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-
-/* ===== Highlight Section ===== */
-.highlight-section {
-  background: var(--bg-light);
-  padding: var(--space-xl) 0;
-  margin: var(--space-xl) 0;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
-}
-
-.feature-item {
+.hero-text {
   text-align: center;
-  padding: var(--space-lg);
-  background: white;
-  border-radius: 8px;
-  border: 1px solid var(--border);
 }
 
-.feature-icon {
+.hero-text h1 {
   font-size: 2rem;
-  margin-bottom: var(--space-sm);
-  color: var(--primary);
+  color: white;
+  margin-bottom: 20px;
 }
 
-/* ===== Test Section ===== */
-.test-section {
-  padding: var(--space-xl) 0;
-  border-top: 1px solid var(--border);
+.hero-text p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-sm);
+.cta-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.grid-item {
-  background: var(--bg-light);
-  padding: var(--space-md);
-  border-radius: 6px;
+.cta-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== Benefícios ===== */
+.benefits-section {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.benefits-section h2 {
   text-align: center;
-  border: 1px solid var(--border);
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1f2937;
 }
 
-/* ===== Responsive ===== */
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.benefit-item p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
 @media (min-width: 768px) {
-  .two-column-section {
+  .hero-content {
     flex-direction: row;
+    align-items: flex-start;
   }
   
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .benefits-list {
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .benefit-item {
+    flex: 1;
   }
 }
 
 @media (min-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+  
+  .benefits-section {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 40px;
   }
 }
