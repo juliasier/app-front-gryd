@@ -1,186 +1,91 @@
-// Variáveis de grid e breakpoints
-$grid-columns: 12;
-$desktop-max-width: 1440px;
-$tablet-max-width: 1024px;
-$mobile-max-width: 768px;
-
-// Paleta de marrom pastel
-$background-color: #f4e1d2;  // Fundo geral
-
-$nav-hover-color: #7f5f3e;    // Cor de hover para o nav
-$button-bg-color: #b97a4b;    // Cor do botão "Comece agora"
-$button-hover-bg-color: #9e6132; // Cor do hover do botão
-$grid-background: #d7b9a1;   // Cor de fundo para destacar o grid
-
-$gray-10: #E2E2E2;
-$gray-20: #A5A5A5;
-$gray-30: #7B7B7B;
-$gray-40: #585858;
-$gray-50: #484848;
-$gray-60: #373737;
-$gray-70: #232323;
-$gray-80: #121212;
-$gray-90: #C1C1C1;
-$black-100: #000000;
-
-$red-10: #C30000;
-$red-20: #BA0909;
-$red-30: #B90A0A;
-$red-40: #AF1414;
-$red-50: #A61D1D;
-$red-60: #9C2727;
-$red-70: #923131;
-$red-80: #883B3B;
-
-$header-gradient: linear-gradient(to right, $gray-70, $red-10);
-
-// Layout Container - Aplique uma estrutura de grid geral
-.container {
-  width: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);
-  gap: 20px; // Espaçamento geral entre os itens
-  padding: 20px;
-  background-color: $grid-background;  // Destaca o grid para visualização
-
-  // Responsividade
-  @media (max-width: $desktop-max-width) {
-    max-width: $desktop-max-width;
-  }
-
-  @media (max-width: $tablet-max-width) {
-    grid-template-columns: repeat(8, 1fr);
-  }
-
-  @media (max-width: $mobile-max-width) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-// Header
-header {
-  position: relative;
-  width: 100%;
-  background: $header-gradient;
-  color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-
-  // Centralização e largura até 1440px
-  @media (max-width: $desktop-max-width) {
-    width: 100%;
-    margin-top:0;
-  }
-
-  @media (min-width: $desktop-max-width ) {
-    width: $desktop-max-width;
-    margin: 60px auto;
-    padding-top: 60px; // Para espaçamento do top 60px após 1440px
-
-  }
-
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 100%;
-
-    .logo {
-      height: 40px;
-      width: auto;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-grow: 1;
-      justify-content: center;
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $nav-hover-color;  // Cor de hover no menu
-        }
-      }
-    }
-
-    button {
-      background-color: $button-bg-color; // Cor do botão
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: $button-hover-bg-color; // Cor do hover no botão
-      }
-    }
-  }
-
-  // Responsividade para o Header
-  @media (max-width: $tablet-max-width) {
-    .header-inner {
-      flex-direction: column;
-      align-items: center;
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      button {
-        margin-top: 15px;
-      }
-    }
-  }
-
-  @media (max-width: $mobile-max-width) {
-    .header-inner {
-      padding: 10px;
-      nav {
-        gap: 10px;
-      }
-
-      button {
-        width: 100%;
-        margin-top: 15px;
-      }
-    }
-  }
-}
-
-// Body e conteúdo
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: $background-color; // Cor de fundo do body
-  color: #333;
+/* ===== Reset e Base ===== */
+* {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   box-sizing: border-box;
-  min-height: 100vh;
+}
 
+/* ===== Variáveis Globais ===== */
+:root {
+  /* Cores */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #ffffff;
+  --bg-light: #f8fafc;
+  --border: #e5e7eb;
+  
+  /* Espaçamento */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Container */
+  --container: 1200px;
+  --padding: 1rem;
+}
 
-  // .content {
-  //   margin-top: 40px;
-  // }
+/* ===== Base ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
 
-  // // Responsividade do conteúdo
-  // @media (max-width: $tablet-max-width) {
-  //   padding: 10px;
-  // }
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
 
-  // @media (max-width: $mobile-max-width) {
-  //   padding: 5px;
-  // }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: var(--space-sm);
+  color: var(--text-light);
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--padding);
+}
+
+/* ===== Botões ===== */
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Media Queries ===== */
+@media (min-width: 768px) {
+  :root {
+    --padding: 2rem;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3.5rem; }
 }
