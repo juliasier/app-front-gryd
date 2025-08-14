@@ -4,12 +4,12 @@
         </div>
         
         <nav class="nav-container">
-            <a href="#home">Home</a>
-            <a href="#beneficios">Benefícios</a>
-            <a href="#sobre">Sobre nós</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#equipe">Nossa equipe</a>
-            <a href="#contato">Contatos</a>
+            <a (click)="scrollToTop()" style="cursor: pointer;">Home</a>
+            <a (click)="scrollToSection('benefits')" style="cursor: pointer;">Benefícios</a>
+            <a (click)="scrollToSection('sobre')" style="cursor: pointer;">Sobre nós</a>
+            <a (click)="scrollToSection('reviews')" style="cursor: pointer;">Reviews</a>
+            <a (click)="scrollToSection('equipe')" style="cursor: pointer;">Nossa equipe</a>
+            <a (click)="scrollToSection('contato')" style="cursor: pointer;">Contatos</a>
         </nav>
         
         <!-- Mobile Menu Button - Sempre à direita -->
@@ -29,12 +29,12 @@
 <div class="mobile-sidebar" [class.open]="isMobileMenuOpen">
     <button class="close-sidebar" (click)="closeMobileMenu()" aria-label="Fechar menu">×</button>
     <nav class="mobile-nav">
-        <a href="#home" (click)="closeMobileMenu()">Home</a>
-        <a href="#beneficios" (click)="closeMobileMenu()">Benefícios</a>
-        <a href="#sobre" (click)="closeMobileMenu()">Sobre nós</a>
-        <a href="#reviews" (click)="closeMobileMenu()">Reviews</a>
-        <a href="#equipe" (click)="closeMobileMenu()">Nossa equipe</a>
-        <a href="#contato" (click)="closeMobileMenu()">Contatos</a>
+        <a (click)="scrollToTop()" style="cursor: pointer;">Home</a>
+        <a (click)="scrollToSection('benefits')" style="cursor: pointer;">Benefícios</a>
+        <a (click)="scrollToSection('sobre')" style="cursor: pointer;">Sobre nós</a>
+        <a (click)="scrollToSection('reviews')" style="cursor: pointer;">Reviews</a>
+        <a (click)="scrollToSection('equipe')" style="cursor: pointer;">Nossa equipe</a>
+        <a (click)="scrollToSection('contato')" style="cursor: pointer;">Contatos</a>
     </nav>
     
     <!-- CTA button no sidebar mobile -->

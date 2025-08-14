@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+import { CommonModule } from '@angular/common';
+import { BenefitsComponent } from '../../shared/components/benefits/benefits.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent],
+  imports: [CommonModule, BenefitsComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
