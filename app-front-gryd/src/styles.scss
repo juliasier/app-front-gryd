@@ -154,3 +154,53 @@ h3, .h3 {
     padding: 0 clamp(10rem, 12vw, 15rem);
   }
 }
+
+/* ===== Z-Index Hierarchy Global ===== */
+:root {
+  /* Z-index hierarchy para garantir ordem correta */
+  --z-background: -1;
+  --z-content: 1;
+  --z-elevated: 10;
+  --z-modal: 100;
+  --z-header: 9999;
+  --z-sidebar-overlay: 10000;
+  --z-sidebar: 10001;
+}
+
+/* Aplicação global do z-index para header */
+header,
+.header,
+app-header {
+  z-index: var(--z-header) !important;
+  position: relative;
+}
+
+/* Garantir que elementos com position fixed/absolute do header tenham prioridade */
+header *,
+.header *,
+app-header * {
+  z-index: inherit;
+}
+
+/* Background sempre atrás */
+.background,
+.home-background,
+[class*="background"] {
+  z-index: var(--z-background);
+}
+
+/* Conteúdo principal */
+main,
+.main-content,
+section {
+  z-index: var(--z-content);
+  position: relative;
+}
+
+/* Elementos elevados (cards, modais, etc) */
+.card,
+.modal,
+.dropdown,
+.tooltip {
+  z-index: var(--z-elevated);
+}
