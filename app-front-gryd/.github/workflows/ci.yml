@@ -1,44 +1,63 @@
-name: Build and Deploy Angular
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build Angular project
+      run: npm run build --if-present
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     steps:
-      # Baixando o código do repositório
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      # Configurando Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
         
-      # Instalando dependências do projeto
-      - name: Install dependencies
-        run: |
-          npm install
-
-      # Executando o build do Angular
-      - name: Build Angular project
-        run: |
-          npm run build --prod
-
-      # Deploy para GitHub Pages (utilizando o Angular CLI)
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.1.0
-        with:
-          branch: gh-pages        # Branch onde será publicado
-          folder: dist/meu-site-angular  # Caminho onde o build é gerado
-          token: ${{ secrets.GITHUB_TOKEN }} # Usar o token do GitHub
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build for production
+      run: npm run build
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.6.4
+      with:
+        branch: gh-pages
+        folder: dist/app-front-gryd
+        token: ${{ secrets.GITHUB_TOKEN }}
 
           
