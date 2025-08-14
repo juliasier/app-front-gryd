@@ -1,3 +1,6 @@
+/* ===== Importação das Fontes ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Mukta+Vaani:wght@400;700&display=swap');
+
 /* ===== Reset e Base ===== */
 * {
   margin: 0;
@@ -7,6 +10,52 @@
 
 /* ===== Variáveis Globais ===== */
 :root {
+  /* Tipografia Fluida */
+  --font-heading: 'Bai Jamjuree', sans-serif;
+  --font-body: 'Mukta Vaani', sans-serif;
+  
+  /* Tamanhos Fluidos com clamp() */
+  --h1-size: clamp(2rem, 4vw, 2.5rem);
+  --h1-weight: 600;
+  --h1-line-height: 1.25;
+  
+  --h2-size: clamp(1.5rem, 3vw, 2rem);
+  --h2-weight: 600;
+  --h2-line-height: 1.3;
+  
+  --h3-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  --h3-weight: 400;
+  --h3-line-height: 1.4;
+  
+  --body1-size: clamp(0.9rem, 1.5vw, 1rem);
+  --body1-weight: 400;
+  --body1-line-height: 1.6;
+  
+  --caption-size: clamp(0.7rem, 1vw, 0.75rem);
+  --caption-weight: 700;
+  --caption-line-height: 1.4;
+  
+  --caption2-size: clamp(0.6rem, 0.8vw, 0.65rem);
+  --caption2-weight: 700;
+  --caption2-line-height: 1.4;
+  
+  /* Links e Botões Fluidos */
+  --link-size: clamp(0.85rem, 0.75vw, 1rem);
+  --button-size: clamp(0.85rem, 0.75vw, 1rem);
+  
+  /* Container Sizes */
+  --mobile-content: 21.875rem; /* 350px */
+  --tablet-content: 49.6875rem; /* 795px */
+  --desktop-content: 77.5rem; /* 1240px */
+  --desktop-xl-content: 90rem; /* 1440px */
+  
+  /* Espaçamento Fluido */
+  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 2vw, 1rem);
+  --space-md: clamp(0.75rem, 3vw, 1.5rem);
+  --space-lg: clamp(1rem, 4vw, 2rem);
+  --space-xl: clamp(1.5rem, 5vw, 3rem);
+  
   /* Cores */
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
@@ -15,123 +64,93 @@
   --bg: #ffffff;
   --bg-light: #f8fafc;
   --border: #e5e7eb;
+  --cta-color: #F43535;
+  --cta-hover: #C42A2A;
   
-  /* Espaçamento */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  
-  /* Container */
-  --container: 1200px;
-  --padding: 1rem;
-  
-  /* Breakpoints */
-  // ... existing code ...
-:root {
-  // Breakpoints unificados
-  --mobile: 320px;
-  --tablet: 768px;
-  --desktop: 1024px;
-  --desktop-xl: 1440px;
-  
-  // Container system
-  --container-max: 1440px;
-  --container-padding: clamp(15px, 4vw, 40px);
-  --content-max: 1240px;
+  /* Header */
+  --header-gradient: linear-gradient(90.28deg, #2B2B2B 50%, #360000 88.66%);
+  --header-text-color: white;
+  --header-border-radius: 0.75rem;
+  --header-backdrop-blur: blur(10px);
+  --header-border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// Mixin para media queries consistentes
-@mixin respond($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (min-width: 768px) { @content; }
-  }
-  @if $breakpoint == desktop {
-    @media (min-width: 1024px) { @content; }
-  }
-  @if $breakpoint == desktop-xl {
-    @media (min-width: 1440px) { @content; }
-  }
-}
-  --grid-columns: 6;
+/* ===== Tipografia Global ===== */
+body {
+  font-family: var(--font-body);
+  font-size: var(--body1-size);
+  font-weight: var(--body1-weight);
+  line-height: var(--body1-line-height);
+  color: var(--text);
 }
 
-@media (min-width: 768px) {
-  :root {
-    --padding: 2rem;
-    --grid-columns: 8;
-    --container-padding: 2rem;
-  }
-  
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
+h1, .h1 {
+  font-family: var(--font-heading);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line-height);
 }
 
-@media (min-width: 1024px) {
-  :root {
-    --grid-columns: 12;
-    --container-padding: 3rem;
-  }
-  
-  h1 { font-size: 3.5rem; }
+h2, .h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
 }
 
-@media (min-width: 1200px) {
-  :root {
-    --padding: 3rem;
-  }
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
 }
 
-/* ===== Container Unificado - Mesmo tamanho do Header ===== */
+.body1 {
+  font-family: var(--font-body);
+  font-size: var(--body1-size);
+  font-weight: var(--body1-weight);
+  line-height: var(--body1-line-height);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  line-height: var(--caption-line-height);
+}
+
+.caption2 {
+  font-family: var(--font-body);
+  font-size: var(--caption2-size);
+  font-weight: var(--caption2-weight);
+  line-height: var(--caption2-line-height);
+}
+
+/* ===== Container System Fluido ===== */
 .container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
   width: 100%;
-}
-
-/* Tablet (≥ 768px) - 20px nas laterais conforme solicitado */
-@media (min-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
-}
-
-/* Desktop (≥ 1024px) - Mesmo sistema do header */
-@media (min-width: 1024px) {
-  .container {
-    width: calc(100% - 200px);
-    padding: 0 35px;
-  }
-}
-
-/* Desktop Large (≥ 1200px) - Mesmo padding do header */
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 40px;
-  }
-}
-
-/* Desktop XL (≥ 1440px) - Mesmo padding do header */
-@media (min-width: 1440px) {
-  .container {
-    padding: 0 40px;
-  }
-}
-
-/* Variação sem padding para casos específicos */
-.container-no-padding {
-  max-width: 1440px;
   margin: 0 auto;
-  width: 100%;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  max-width: var(--mobile-content);
 }
 
-/* Container para casos especiais que precisam de largura fixa */
-.container-fixed {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0;
+/* ===== Media Queries Simplificadas ===== */
+@media (min-width: 52.125rem) { /* 834px */
+  .container {
+    max-width: var(--tablet-content);
+  }
+}
+
+@media (min-width: 90rem) { /* 1440px */
+  .container {
+    max-width: var(--desktop-content);
+    padding: 0 clamp(4rem, 6vw, 6.25rem);
+  }
+}
+
+@media (min-width: 120rem) { /* 1920px */
+  .container {
+    max-width: var(--desktop-xl-content);
+    padding: 0 clamp(10rem, 12vw, 15rem);
+  }
 }

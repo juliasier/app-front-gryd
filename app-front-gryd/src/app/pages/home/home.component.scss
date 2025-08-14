@@ -9,14 +9,14 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
 /* ===== Background Hero ===== */
 .home-background {
-  background: url('/assets/backgrounds/bg-desktop.webp') center/cover no-repeat;
+  background: url('/assets/backgrounds/bg-desktop.webp') center top/cover no-repeat;
   min-height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-position: center;
 }
 
 /* ===== Seção Hero ===== */
@@ -166,15 +166,6 @@
   50% { transform: translateY(-15px); }
 }
 
-/* ===== Background temporário para visualização ===== */
-.home-background {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
 /* ===== Responsive para cascata ===== */
 @media (min-width: 768px) {
   .card-img {
@@ -275,15 +266,5 @@
   .card-img img {
     width: 180px;
     height: 180px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 40px;
-  }
-  
-  .hero-text h1 {
-    font-size: 4rem;
   }
 }
