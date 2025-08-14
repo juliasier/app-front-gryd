@@ -33,16 +33,19 @@ header {
   padding: 15px 20px;
   height: 65px;
   
+  /* Layout flexbox: logo à esquerda, menu hambúrguer à direita */
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 
+/* Logo sempre à esquerda */
 .logo-container {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  order: 1;
 }
 
 .logo {
@@ -50,13 +53,14 @@ header {
   width: auto;
 }
 
-/* Navigation - Hidden on mobile/tablet */
+/* Navigation - Oculta em mobile/tablet, centralizada no desktop */
 .nav-container {
   display: none;
   gap: 20px;
   flex: 1;
   justify-content: center;
   align-items: center;
+  order: 2;
 }
 
 .nav-container a {
@@ -72,7 +76,7 @@ header {
   color: #2563eb;
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu Button - À direita em mobile/tablet */
 .mobile-menu-btn {
   display: flex;
   flex-direction: column;
@@ -84,7 +88,7 @@ header {
   border: none;
   cursor: pointer;
   gap: 4px;
-  margin-left: auto;
+  order: 3;
 }
 
 .mobile-menu-btn span {
@@ -99,10 +103,11 @@ header {
   background: #2563eb;
 }
 
-/* CTA Button */
+/* CTA Button - À direita no desktop, oculto em mobile/tablet */
 .cta-container {
   display: none;
   flex-shrink: 0;
+  order: 3;
 }
 
 .cta-container button {
@@ -246,7 +251,7 @@ header {
     padding: 20px 35px;
     height: 85px;
     
-    /* Garante layout horizontal */
+    /* Layout: logo à esquerda, nav centralizada, CTA à direita */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -255,6 +260,7 @@ header {
   
   .logo-container {
     flex-shrink: 0;
+    order: 1;
   }
   
   .logo {
@@ -268,6 +274,7 @@ header {
     flex: 1;
     justify-content: center;
     align-items: center;
+    order: 2;
   }
   
   .nav-container a {
@@ -280,10 +287,11 @@ header {
     display: none;
   }
   
-  /* CTA visível no desktop */
+  /* CTA visível à direita no desktop */
   .cta-container {
     display: block;
     flex-shrink: 0;
+    order: 3;
   }
   
   .cta-container button {
