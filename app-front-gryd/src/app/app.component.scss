@@ -1,0 +1,138 @@
+:root {
+  --header-gradient: linear-gradient(90.28deg, #2B2B2B 50%, #360000 88.66%);
+  
+  --breakpoint-mobile-min: 350px;
+  --breakpoint-mobile-max: 499px;
+  --breakpoint-tablet-min: 500px;
+  --breakpoint-tablet-max: 1023px;
+  --breakpoint-desktop-min: 1024px;
+  --breakpoint-desktop-max: 1440px;
+  --breakpoint-desktop-xl-min: 1441px;
+  
+  /* Variáveis de conteúdo */
+  --tablet-content-width: 768px;
+  --desktop-content-width: 1200px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== MOBILE (350px - 499px) ===== */
+@media (min-width: 350px) and (max-width: 499px) {
+  main {
+    padding: 20px 40px;
+    max-width: var(--breakpoint-mobile-max); /* ✅ Variável funciona AQUI */
+    background-color: rgba(164, 66, 9, 0.9) !important;
+    border: 5px solid #ff0000 !important;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  
+  /* Indicador visual */
+  main::before {
+    content: "📱 MOBILE ATIVO (350px-499px)";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+}
+
+/* ===== TABLET (500px - 1023px) ===== */
+@media (min-width: 500px) and (max-width: 1023px) {
+  main {
+    padding-top: 130px;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: var(--tablet-content-width); /* ✅ Variável funciona AQUI */
+    background-color: rgba(0, 255, 0, 0.6) !important;
+    border: 5px solid #00aa00 !important;
+    margin: 0 auto;
+  }
+  
+  main::before {
+    content: "📱 TABLET ATIVO (500px-1023px)";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: #00aa00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+}
+
+/* ===== DESKTOP (1024px - 1440px) ===== */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  main {
+    padding-top: 160px;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: var(--desktop-content-width); /* ✅ Variável funciona AQUI */
+    background-color: rgba(86, 216, 5, 0.6) !important;
+    border: 5px solid #0066cc !important;
+    margin: 0 auto;
+  }
+  
+  main::before {
+    content: "🖥️ DESKTOP ATIVO (1024px-1440px)";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+}
+
+/* ===== DESKTOP XL (> 1440px) ===== */
+@media (min-width: 1441px) {
+  main {
+    padding-top: 160px;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: var(--desktop-content-width); /* ✅ Variável funciona AQUI */
+    background-color: rgba(123, 255, 0, 0.6) !important;
+    border: 5px solid #6600cc !important;
+    margin: 0 auto;
+  }
+  
+  main::before {
+    content: "🖥️ DESKTOP XL ATIVO (>1440px)";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: #6600cc;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+}
