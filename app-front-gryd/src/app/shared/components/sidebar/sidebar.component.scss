@@ -88,14 +88,13 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-        padding: 20px 20px;
-
+  
   .nav-item-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: relative;
-
+    
     .nav-item {
       display: block;
       padding: 8px 0;
@@ -105,11 +104,11 @@
       font-size: 18px;
       font-weight: 500;
       cursor: pointer;
-      transition: color 0.2s ease, transform 0.2s ease;
+      transition: color 0.3s ease, transform 0.2s ease;
       text-align: right;
       
       &:hover {
-        color: #FF6B6B;
+        color: #FF6B6B !important;
         transform: translateX(-5px);
       }
     }
@@ -131,13 +130,12 @@
   padding: 0;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   
   .btn-comece {
     width: 120px;
     height: 38px;
     background: #171717;
-    border: 2px solid #F43535;
+    border: 2px solid var(--Colors-accent-clr, #FF6B6B);
     border-radius: 8px;
     color: #FAFAFA;
     font-family: 'Bai Jamjuree', sans-serif;
@@ -155,13 +153,13 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-left: auto;
     
     &:hover {
-      background: #F43535;
-      color: #FAFAFA;
+      background: #0f0f0f !important;
+      color: #FAFAFA !important;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(244, 53, 53, 0.3);
+      box-shadow: 0 4px 12px rgba(15, 15, 15, 0.4);
+      opacity: 0.8;
     }
     
     &:active {
@@ -203,4 +201,5 @@
 
 .sidebar.open {
   animation: slideInRight 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px 30px;
 }
