@@ -39,8 +39,24 @@ main {
     background-attachment: fixed;
     margin: 0 auto;
     min-height: 100vh;
-    padding:9%;
+    padding: 5%;
   } 
+  .benefits-container {
+    background: #FAFAFA;
+    height: auto;
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Propriedades para ocupar toda a largura */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 60px 5vw;
+    box-sizing: border-box;
+
+}
+
 
 }
 
@@ -71,13 +87,7 @@ main {
 /* ===== DESKTOP XL (> 1440px) ===== */
 @media (min-width: 1441px) {
   main {
-    padding-top: 160px;
-    padding-left: 50px;
-    padding-right: 50px;
-    width:1440px;
-    background-color: rgba(123, 255, 0, 0.6) ;
-    border: 5px solid #6600cc;
-    margin: 0 auto;
+    max-width:1440px;
   }
   
 }

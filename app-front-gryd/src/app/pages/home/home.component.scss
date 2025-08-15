@@ -15,8 +15,7 @@
     color: rgb(0, 0, 0);
     display: flex;
     min-width: 100%;
-    gap: 40px;
-    min-height: 70vh;
+    gap: 10rem;
 }
 
 button {
@@ -62,11 +61,15 @@ button {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.7rem;
             font-weight: 500;
-            font-family: 0.95rem;
-            margin: 0;
-            padding: 0;
+        }
+        h1 {
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: 0;
+            font-weight: 600;
+
         }
 
       h2 {
@@ -76,7 +79,7 @@ button {
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0;
-            text-align: center;
+            text-align: left;
             color: #121212;
             margin-bottom: 40px;
         }
@@ -112,18 +115,103 @@ button {
 
     .img1 {
         top: 0;
-        right: 0%;
-    }
+        left: 14%;
+    }    }
 
     .img2 {
 
         top: 18%;
-        right: 10%
+        left: 7%
     }
 
     .img3 {
         top: 40%;
-        right: 25%
+        right: 16%
+    }
+
+/* ===== DESKTOP (1024px - 1440px) ===== */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .main-content {
+        margin-top: 184px;
+    }
+
+    .hero-text {
+        margin: 53px 0;
+        height: fit-content;
+
+        .header-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+            font-family: 0.95rem;
+        }
+
+        h1 {
+            font-family: 'Bai Jamjuree', sans-serif;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 48px;
+            letter-spacing: 0;
+            color: #121212;
+            margin-bottom: 20px;
+            width: 490px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-family: 'Hind Madurai', sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0;
+            text-align: left;
+            color: #121212;
+            margin-bottom: 40px;
+        }
+
+
+    }
+
+    .text-red {
+        color: #ef4444;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        margin-top: 30px;
+        width: 300px;
+        height: 250px;
+
+        img {
+        width: 300px;
+        height: 282px;
+        border-radius: 12px;
+        background: #959595;
+        box-shadow: 8px 8px 0px 0px #8D0000;
+      }
+    }
+
+    .img1 {
+        left: 100px;
+    }
+
+    .img2 {
+
+        top: 28%;
+        left: 50px;
+    }
+
+    .img3 {
+        top: 52%;
+        left: 0;
     }
 }
 
@@ -198,7 +286,7 @@ button {
 
     .card-img {
         position: relative;
-        height: 250px;
+        height: 400px; /* Aumentado para acomodar cascata */
 
         img {
             position: absolute;
@@ -208,26 +296,132 @@ button {
             opacity: 1;
             background-color: #959595;
             border-radius: 12px;
-            width: 450px;
-            height: 250px;
-            margin-top: 80px;
+            width: 280px;
+            height: 180px;
         }
     }
 
     .img1 {
         top: 0;
-        right: 0%
+        right: 5%;
+        z-index: 3;
     }
 
     .img2 {
-
-        top: 28%;
-        right: 14%
+        top: 60px; /* Cascata com 60px de diferença */
+        right: 15%;
+        z-index: 2;
     }
 
     .img3 {
-        top: 52%;
-        right: 20%
+        top: 120px; /* Cascata com 60px de diferença */
+        right: 25%;
+        z-index: 1;
+    }
+}
+
+/* ===== TABLET (500px - 1023px) ===== */
+@media (min-width: 500px) and (max-width: 1023px) {
+    .main-content {
+        margin-top: 90px;
+    }
+
+    .container {
+        display: block;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .hero-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        height: fit-content;
+
+        .header-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-weight: 500;
+            font-family: 0.95rem;
+        }
+
+        h1 {
+            font-family: 'Bai Jamjuree', sans-serif;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: 0;
+            color: #121212;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Hind Madurai', sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0;
+            text-align: center;
+            color: #121212;
+            margin-bottom: 40px;
+        }
+
+        button {
+            align-self: center;
+        }
+    }
+
+    .text-red {
+        color: #ef4444;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img {
+        position: relative;
+        height: 450px; /* Aumentado para acomodar cascata */
+
+        img {
+            position: absolute;
+            object-fit: cover;
+            box-shadow: 8px 8px 0px 0px #8D0000;
+            transition: all 0.3s ease;
+            opacity: 1;
+            background-color: #959595;
+            border-radius: 12px;
+            width: 400px;
+            height: 220px;
+        }
+    }
+
+    .img1 {
+        top: 0;
+        right: 5%;
+        z-index: 3;
+    }
+
+    .img2 {
+        top: 80px; /* Cascata com 80px de diferença */
+        right: 12%;
+        z-index: 2;
+    }
+
+    .img3 {
+        top: 160px; /* Cascata com 80px de diferença */
+        right: 19%;
+        z-index: 1;
     }
 }
 
@@ -289,43 +483,68 @@ button {
         gap: 20px;
         position: relative;
         margin-top: 30px;
-        width: 300px;
-        height: 250px;
+        width: 500px; /* Aumentado para acomodar cascata */
+        height: 400px; /* Aumentado para acomodar cascata */
 
         img {
             position: absolute;
             object-fit: cover;
             box-shadow: 8px 8px 0px 0px #8D0000;
-            /* Box-shadow vermelho escuro aplicado */
             transition: all 0.3s ease;
             opacity: 1;
             background-color: #959595;
+            width: 450px;
+            height: 270px;
+            border-radius: 12px;
         }
     }
 
-    .img1,
-    .img2,
-    .img3 {
-        width: 470px;
-        height: 282px;
-        border-radius: 12px;
-        background: #959595;
-        box-shadow: 8px 8px 0px 0px #8D0000;
-
-    }
-
     .img1 {
-        left: 100px;
+        top: 0;
+        left: 120px; /* Mantém margem da direita */
+        z-index: 3;
     }
 
     .img2 {
-
-        top: 28%;
-        left: 50px;
+        top: 90px; /* Cascata com 90px de diferença */
+        left: 70px; /* Cascata com 50px de diferença lateral */
+        z-index: 2;
     }
 
     .img3 {
-        top: 52%;
-        left: 0;
+        top: 180px; /* Cascata com 90px de diferença */
+        left: 20px; /* Cascata com 50px de diferença lateral */
+        z-index: 1;
+    }
+}
+
+/* ===== LARGE DESKTOP (1441px+) ===== */
+@media (min-width: 1441px) {
+    .card-img {
+        width: 600px;
+        height: 450px;
+
+        img {
+            width: 500px;
+            height: 300px;
+        }
+    }
+
+    .img1 {
+        top: 0;
+        left: 5%;
+        z-index: 3;
+    }
+
+    .img2 {
+        top: 14%;
+        right: 22%;
+        z-index: 3;
+    }
+
+    .img3 {
+        top: 30%;
+        right: 30%;
+        z-index: 5;
     }
 }

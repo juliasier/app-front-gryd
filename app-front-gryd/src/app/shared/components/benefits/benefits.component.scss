@@ -1,233 +1,97 @@
-// /* ===== MOBILE BASE (390px - 499px) ===== */
-// .benefits-container {
-//   background: #FAFAFA;
-//   height: auto;
-//   min-height: 590px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   position: relative;
-//   padding: 60px 20px;
-// }
+/* ===== MOBILE (300px - 499px) ===== */
+.background {
+    background-color: #FAFAFA;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 80px 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 3rem;
+}
 
-// .benefits-content {
-//   max-width: var(--mobile-content);
-//   width: 100%;
-//   text-align: center;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
+.benefits-content {
+    font-family: 'Bai Jamjuree', sans-serif;
 
-//   h1 {
-//     font-size: 2.2rem;
-//     font-weight: 700;
-//     color: #1f2937;
-//     margin-bottom: 40px;
-//     display: block;
-//     visibility: visible;
-//     opacity: 1;
-//     z-index: 10;
-//     max-width: 100%;
-//     width: 100%;
-//   }
-// }
+    max-width: var(--mobile-content);
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
+}
 
-// .benefits-list {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 20px;
-//   align-items: center;
-//   width: 100%;
-//   max-width: 100%;
-// }
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 
-// .benefit {
-//   background: white;
-//   height: 230px;
-//   border-radius: 12px;
-//   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-//   border: 1px solid #e5e7eb;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 20px;
-//   transition: transform 0.3s;
-//   position: relative;
-//   z-index: 2;
-//   width: 100%;
+    img {
+        margin-bottom: 5%;
+    }
 
-//   &:hover { transform: translateY(-4px); }
+}
 
-//   img {
-//     width: 40px;
-//     height: 40px;
-//     margin-bottom: 16px;
-//   }
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 29px;
+    color: #F43535;
+    padding: 0;
+    margin: 0;
+    width: 388px;
+}
 
-//   h2 {
-//     font-size: 1.1rem;
-//     font-weight: 600;
-//     color: #1f2937;
-//     margin-bottom: 12px;
-//     text-align: center;
-//   }
+p {
+    margin: 20px 3%;
+    font-size: 0.95rem;
+    color: black;
+    letter-spacing: 0;
+    line-height: 14px;
+}
 
-//   p {
-//     font-size: 0.85rem;
-//     color: #6b7280;
-//     line-height: 1.4;
-//     margin: 0;
-//     text-align: center;
-//   }
-// }
 
-// .dotted-square {
-//   position: absolute;
-//   bottom: 20px;
-//   right: 20px;
-//   width: 120px;
-//   height: 120px;
-//   opacity: 0.2;
-//   z-index: 1;
-// }
+// /* ===== TABLET (500px - 1023px) ===== */
+@media (min-width: 500px) and (max-width: 1023px) {
+    .benefit {
+        width: 90%;
+        img {
+            height: 100px;
+        }
 
-// /* ===== TABLET (500px - 1024px) ===== */
-// @media (min-width: 500px) and (max-width: 1024px) {
-//   .benefits-container {
-//     padding: 80px 30px;
-//   }
+        .benefit-1 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
 
-//   .benefits-content {
-//     max-width: var(--tablet-content);
+    .benefits-bottom {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
 
-//     h1 {
-//       font-size: 2.8rem;
-//     }
-//   }
+    .benefit-2,
+    .benefit-3 {
+        flex: 1;
+        max-width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
 
-//   .benefits-list {
-//     gap: 12px;
-//   }
 
-//   .benefit {
-//     &.benefit-1 {
-//       width: 100%;
-//     }
-    
-//     &.benefit-2,
-//     &.benefit-3 {
-//       width: calc(50% - 6px);
-//     }
-
-//     img {
-//       width: 36px;
-//       height: 36px;
-//     }
-
-//     h2 {
-//       font-size: 1rem;
-//     }
-
-//     p {
-//       font-size: 0.8rem;
-//     }
-//   }
-
-//   .benefits-bottom {
-//     display: flex;
-//     flex-direction: row;
-//     gap: 12px;
-//     width: 100%;
-//     justify-content: center;
-//   }
-// }
-
-// /* ===== DESKTOP (1025px - 1440px) ===== */
-// @media (min-width: 1025px) and (max-width: 1440px) {
-//   .benefits-container {
-//     padding: 100px 50px;
-//   }
-
-//   .benefits-content {
-//     max-width: var(--desktop-content);
-
-//     h1 {
-//       font-size: 3.2rem;
-//     }
-//   }
-
-//   .benefits-list {
-//     flex-direction: row;
-//     gap: 30px;
-//     justify-content: center;
-//   }
-
-//   .benefit {
-//     flex: 1;
-//     max-width: calc((100% - 60px) / 3);
-
-//     img {
-//       width: 42px;
-//       height: 42px;
-//     }
-
-//     h2 {
-//       font-size: 1.2rem;
-//     }
-
-//     p {
-//       font-size: 0.9rem;
-//     }
-//   }
-
-//   .benefits-bottom {
-//     display: contents;
-//   }
-// }
-
-// /* ===== DESKTOP XL (1441px+) - Container limitado a 1440px ===== */
-// @media (min-width: 1441px) {
-//   .benefits-container {
-//     padding: 100px 0;
-//   }
-
-//   .benefits-content {
-//     max-width: 1440px;
-//     padding: 0 50px;
-
-//     h1 {
-//       font-size: 3.2rem;
-//     }
-//   }
-
-//   .benefits-list {
-//     flex-direction: row;
-//     gap: 30px;
-//     justify-content: center;
-//   }
-
-//   .benefit {
-//     flex: 1;
-//     max-width: calc((1340px - 60px) / 3); /* 1440px - 100px padding */
-
-//     img {
-//       width: 42px;
-//       height: 42px;
-//     }
-
-//     h2 {
-//       font-size: 1.2rem;
-//     }
-
-//     p {
-//       font-size: 0.9rem;
-//     }
-//   }
-
-//   .benefits-bottom {
-//     display: contents;
-//   }
-// }
+/* ===== DESKTOP (1024px - 1440px) ===== */
+@media (min-width: 1024px) and (max-width: 1440px) {}

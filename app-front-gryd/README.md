@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+/* ===== MOBILE (300px - 499px) ===== */
+@media (min-width: 300px) and (max-width: 499px) {
+
+}
+
+/* ===== TABLET (500px - 1023px) ===== */
+@media (min-width: 500px) and (max-width: 1023px) {
+
+}
+
+/* ===== DESKTOP (1024px - 1440px) ===== */
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+}
