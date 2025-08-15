@@ -3,7 +3,7 @@
     background-color: #FAFAFA;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    padding: 80px 20px;
+    padding: 0 4%;
     box-sizing: border-box;
     position: relative;
     margin-top: 3rem;
@@ -57,18 +57,25 @@ p {
 
 // /* ===== TABLET (500px - 1023px) ===== */
 @media (min-width: 500px) and (max-width: 1023px) {
-    .benefit {
+   
+   h1 {
+    margin-bottom: 2rem;
+   } .benefit {
         width: 90%;
+
         img {
             height: 100px;
         }
 
         .benefit-1 {
-            width: 100%;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            p {
+            width: 360px;
+            }
         }
     }
 
@@ -94,4 +101,39 @@ p {
 
 
 /* ===== DESKTOP (1024px - 1440px) ===== */
-@media (min-width: 1024px) and (max-width: 1440px) {}
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+    .benefit {
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        align-items: stretch;
+    }
+
+    .benefits-bottom {
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        align-items: stretch;
+        
+    }
+    
+    .benefit-1,
+    .benefit-2,
+    .benefit-3 {
+        width: 100%;
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        text-align: center;
+        img {
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+
+}
