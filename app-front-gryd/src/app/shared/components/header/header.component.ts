@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SidebarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -38,5 +39,14 @@ export class HeaderComponent {
       behavior: 'smooth'
     });
     this.closeMobileMenu();
+  }
+
+  // Lidar com navegação do sidebar
+  handleSidebarNavigation(section: string) {
+    if (section === 'home') {
+      this.scrollToTop();
+    } else {
+      this.scrollToSection(section);
+    }
   }
 }

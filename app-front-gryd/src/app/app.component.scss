@@ -25,10 +25,10 @@ main {
   overflow-x: hidden;
 }
 
-/* ===== MOBILE (350px - 499px) ===== */
-@media (min-width: 350px) and (max-width: 499px) {
+/* ===== MOBILE (300px - 499px) ===== */
+@media (min-width: 300px) and (max-width: 499px) {
   main {
-    padding: 20px 40px;
+    padding: 20px 15px;
     max-width: var(--breakpoint-mobile-max); 
     background-color: rgba(164, 66, 9, 0.9);
     border: 5px solid #ff0000;

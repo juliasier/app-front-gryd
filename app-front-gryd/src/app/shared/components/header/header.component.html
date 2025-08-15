@@ -1,24 +1,29 @@
 <header>
-        <div class="logo-container">
-            <img src="assets/icons/logo.svg" alt="GRYD Logo" class="logo" />
-        </div>
-        <nav class="nav-container">
-            <a (click)="scrollToTop()" style="cursor: pointer;">Home</a>
-            <a (click)="scrollToSection('benefits')" style="cursor: pointer;">Benefícios</a>
-            <a (click)="scrollToSection('sobre')" style="cursor: pointer;">Sobre nós</a>
-            <a (click)="scrollToSection('reviews')" style="cursor: pointer;">Reviews</a>
-            <a (click)="scrollToSection('equipe')" style="cursor: pointer;">Nossa equipe</a>
-            <a (click)="scrollToSection('contato')" style="cursor: pointer;">Contatos</a>
-        </nav>
-        
-        <!-- Mobile Menu Button - Sempre à direita -->
-        <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <div class="cta-container">
-            <button aria-label="botão: comece agora">Comece agora</button>
-        </div>
+    <img src="assets/icons/logo.svg" alt="GRYD Logo" class="logo" />
+    <nav class="nav-container">
+        <a (click)="scrollToTop()" style="cursor: pointer;">Home</a>
+        <a (click)="scrollToSection('benefits')" style="cursor: pointer;">Benefícios</a>
+        <a (click)="scrollToSection('sobre')" style="cursor: pointer;">Sobre nós</a>
+        <a (click)="scrollToSection('reviews')" style="cursor: pointer;">Reviews</a>
+        <a (click)="scrollToSection('equipe')" style="cursor: pointer;">Nossa equipe</a>
+        <a (click)="scrollToSection('contato')" style="cursor: pointer;">Contatos</a>
+    </nav>
+
+    <button class="hamburguer" (click)="toggleMobileMenu()" 
+    [class.active]="isMobileMenuOpen" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="btn-comece">
+        <button aria-label="botão: comece agora">Comece agora</button>
+    </div>
 </header>
+
+<!-- Sidebar Component -->
+<app-sidebar 
+  [isOpen]="isMobileMenuOpen" 
+  (closeSidebar)="closeMobileMenu()"
+  (navigateToSection)="handleSidebarNavigation($event)">
+</app-sidebar>

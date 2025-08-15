@@ -1,0 +1,40 @@
+<div class="sidebar-overlay" [class.open]="isOpen" (click)="onBackdropClick($event)">
+  <div class="sidebar" [class.open]="isOpen">
+    <div class="sidebar-header">
+      <img src="assets/icons/logo-sidebar.svg" alt="GRYD Logo" class="logo-close" (click)="onClose()" />
+    </div>
+    
+    <div class="divider"></div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-item-container">
+        <a (click)="onNavigate('home')" class="nav-item">Home</a>
+        <div class="nav-divider"></div>
+      </div>
+      <div class="nav-item-container">
+        <a (click)="onNavigate('benefits')" class="nav-item">Benefícios</a>
+        <div class="nav-divider"></div>
+      </div>
+      <div class="nav-item-container">
+        <a (click)="onNavigate('sobre')" class="nav-item">Sobre nós</a>
+        <div class="nav-divider"></div>
+      </div>
+      <div class="nav-item-container">
+        <a (click)="onNavigate('reviews')" class="nav-item">Reviews</a>
+        <div class="nav-divider"></div>
+      </div>
+      <div class="nav-item-container">
+        <a (click)="onNavigate('equipe')" class="nav-item">Nossa equipe</a>
+        <div class="nav-divider"></div>
+      </div>
+      <div class="nav-item-container">
+        <a (click)="onNavigate('contato')" class="nav-item">Contatos</a>
+        <div class="nav-divider"></div>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="btn-comece" aria-label="botão: comece agora">Comece agora</button>
+    </div>
+  </div>
+</div>
