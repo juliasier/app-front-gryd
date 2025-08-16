@@ -24,15 +24,15 @@ main {
   position: relative;
   overflow-x: hidden;
   background: url('/assets/backgrounds/bg-desktop.webp') center/cover no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* ===== MOBILE (300px - 499px) ===== */
+/* ===== MOBILE ===== */
 @media (min-width: 300px) and (max-width: 499px) {
   main {
-    max-width: var(--breakpoint-mobile-max); 
+    max-width: var(--mobile-max);
     background: url('/assets/backgrounds/mobile/bg-mobile.webp') center/cover no-repeat;
     background-size: cover;
     background-position: center;
@@ -40,54 +40,46 @@ main {
     margin: 0 auto;
     min-height: 100vh;
     padding: 5%;
-  } 
+  }
+  
   .benefits-container {
-    background: #FAFAFA;
+    background: var(--background-light);
     height: auto;
     min-height: 590px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    /* Propriedades para ocupar toda a largura */
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    padding: 60px 5vw;
+    padding: var(--spacing-3xl) 5vw;
     box-sizing: border-box;
-
+  }
 }
 
-
-}
-
-/* ===== TABLET (500px - 1023px) ===== */
+/* ===== TABLET ===== */
 @media (min-width: 500px) and (max-width: 1023px) {
-    main {
-    max-width: var(--breakpoint-mobile-max); 
-  
+  main {
     margin: 0 auto;
     min-height: 100vh;
-    padding:2%;
-  } 
-
+    padding: 2%;
+  }
 }
 
-/* ===== DESKTOP (1024px - 1440px) ===== */
+/* ===== DESKTOP ===== */
 @media (min-width: 1024px) and (max-width: 1440px) {
-   main {
+  main {
     width: 100vw;
     height: 100vh;
     min-height: 100vh;
-
     margin: 0;
     padding: 5%;
-  } 
+  }
 }
 
-/* ===== DESKTOP XL (> 1440px) ===== */
+/* ===== DESKTOP XL ===== */
 @media (min-width: 1441px) {
   main {
-    max-width:1440px;
+    max-width: 1440px;
   }
-  
 }
