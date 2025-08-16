@@ -1,0 +1,60 @@
+.content {
+  background-color: aquamarine;
+  padding: 260px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px; // espaçamento entre elementos principais
+}
+
+.infos-sobre {
+  max-width: 560px;
+  height: 640px;
+
+  h1 {
+    font-size: 2rem; // se já tiver global, pode retirar
+    color: black;
+    font-weight: 600;
+    font-family: 'Bai Jamjuree', sans-serif;
+    background-color: #cc8282;
+    margin-bottom: 2rem;
+
+    span {
+      background-color: #deaa85;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* ============================
+   Estilos do mat-accordion
+   ============================ */
+mat-expansion-panel.mat-expansion-panel {
+  background-color: #70687e; // cor do painel fechado/aberto
+  gap: 2rem;
+  width: 100%;
+
+  .mat-expansion-panel-header {
+    background: aqua; // cor do header do painel
+    padding: 8px;
+
+    /* Faz o header alinhar os itens corretamente */
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Força o título a ocupar o espaço máximo até a seta */
+  .mat-expansion-panel-header mat-panel-title {
+    flex: 1; // ocupa o espaço disponível
+    white-space: normal; // permite que o texto quebre
+    word-break: break-word; // quebra palavras longas
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-right: 1rem; // respiro entre texto e seta
+  }
+
+  /* Ajusta a seta (ícone do Angular Material) */
+  .mat-expansion-indicator {
+    margin-left: auto; // empurra para a extrema direita
+  }
+}
