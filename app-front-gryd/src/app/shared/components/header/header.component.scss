@@ -135,16 +135,3 @@ header {
     }
   }
 }
-
-/* ===== DESKTOP XL (> 1440px) ===== */
-@media (min-width: 1441px) {
-  main {
-    padding-top: 160px;
-    padding-left: 50px;
-    padding-right: 50px;
-    max-width: var(--desktop-content-width);
-    background-color: rgba(123, 255, 0, 0.6);
-    border: 5px solid #6600cc;
-    margin: 0 auto;
-  }
-}

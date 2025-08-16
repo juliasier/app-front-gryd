@@ -1,85 +1,72 @@
 :root {
   --header-gradient: linear-gradient(90.28deg, #2B2B2B 50%, #360000 88.66%);
-  
-  --breakpoint-mobile-min: 350px;
-  --breakpoint-mobile-max: 499px;
-  --breakpoint-tablet-min: 500px;
-  --breakpoint-tablet-max: 1023px;
-  --breakpoint-desktop-min: 1024px;
-  --breakpoint-desktop-max: 1440px;
-  --breakpoint-desktop-xl-min: 1441px;
-  
-  /* Variáveis de conteúdo */
   --tablet-content-width: 768px;
   --desktop-content-width: 1200px;
 }
 
 main {
   width: 100vw;
-  height: 100vh;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: block;
   position: relative;
   overflow-x: hidden;
-  background: url('/assets/backgrounds/bg-desktop.webp') center/cover no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+
+  background: url('/assets/backgrounds/bg-desktop.webp') center top / cover no-repeat;
 }
 
-/* ===== MOBILE ===== */
-@media (min-width: 300px) and (max-width: 499px) {
+/* Container alinhado com header */
+.content-container {
+  width: calc(100% - 24px);
+  margin: 100px 12px 0 12px;
+}
+
+/* MOBILE */
+@media (max-width: 499px) {
   main {
-    max-width: var(--mobile-max);
-    background: url('/assets/backgrounds/mobile/bg-mobile.webp') center/cover no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 0 auto;
-    min-height: 100vh;
-    padding: 5%;
-  }
-  
-  .benefits-container {
-    background: var(--background-light);
-    height: auto;
-    min-height: 590px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    padding: var(--spacing-3xl) 5vw;
-    box-sizing: border-box;
+    background: url('/assets/backgrounds/mobile/bg-mobile.webp') center top / cover no-repeat;
+    background-size: 100% 50vh;
   }
 }
 
-/* ===== TABLET ===== */
+/* TABLET */
 @media (min-width: 500px) and (max-width: 1023px) {
-  main {
-    margin: 0 auto;
-    min-height: 100vh;
-    padding: 2%;
+  .content-container {
+    max-width: var(--tablet-content-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 12px;
   }
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 1024px) and (max-width: 1440px) {
-  main {
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    margin: 0;
-    padding: 5%;
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .content-container {
+    max-width: var(--desktop-content-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 12px;
   }
 }
 
-/* ===== DESKTOP XL ===== */
+/* DESKTOP XL */
+/* ===== DESKTOP XL (1441px+) ===== */
 @media (min-width: 1441px) {
   main {
-    max-width: 1440px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* ou center se quiser vertical */
+    background-size: cover;   /* ocupa toda a tela disponível */
+    background-position: center top;
+  }
+
+  .content-container {
+    max-width: 1440px; /* ou o valor que você desejar como largura máxima */
+    width: 100%;
+    margin: 0 auto;    /* centraliza horizontalmente */
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
+

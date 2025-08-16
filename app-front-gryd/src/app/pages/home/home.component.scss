@@ -1,371 +1,119 @@
+
 .main-content {
-    padding: 0;
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .container {
-    color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+/* ===== HERO TEXT ===== */
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  .header-card {
     display: flex;
-    min-width: 100%;
-    gap: 10rem;
-}
-
-.text-red {
-    color: var(--primary-red);
-    font-weight: 700;
-    text-shadow: var(--shadow-text);
-}
-
-/* Estilo global do botão */
-button {
-    width: min(233px, 90vw);
-    height: 42px;
-    gap: 10px;
-    opacity: 1;
-    border-radius: 4px;
-    padding: 12px 20px;
-    font-family: 'Bai Jamjuree', sans-serif;
+    align-items: center;
+    gap: var(--spacing-sm);
     font-weight: 500;
-    font-size: 1rem;
-    line-height: 18px;
-    letter-spacing: 0;
-    background-color: #F43535;
-    color: #FAFAFA;
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  h1 { font-weight: 600; }
+  h2 { font-weight: 500; }
+}
+button {
+  width: 230px;
+  height: 42px;
+  background: var(--red);
+  color: var(--text-color-white);
+
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* transição mais natural */
 }
 
-/* Dotted square específico da home - background no final */
-.dotted-square-home {
-    width: 100px;
-    height: 100px;
-    transform: rotate(53deg);
-    bottom: 30px;
-    opacity: 0.3;
-    position: relative;
+button:hover {
+  filter: brightness(0.85);
+}
+
+button:focus {
+  outline: none; /* remove outline padrão */
+  box-shadow: 0 0 0 3px rgba(241, 25, 25, 0.5); /* anel visível de foco */
 }
 
 
-/* ===== MOBILE (300px - 499px) ===== */
-@media (min-width: 300px) and (max-width: 499px) {
-    .main-content {
-        margin-top: 90px;
-    }
-
-    .container {
-        display: block;
-        flex-direction: column;
-        padding: 0 20px;
-    }
-
-    .hero-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        height: fit-content;
-        align-items: flex-start;
-        gap: 1rem;
-
-        .header-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            font-weight: 500;
-        }
-        
-        h1 {
-            font-size: 24px;
-            line-height: 29px;
-            letter-spacing: 0;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-family: 'Hind Madurai', sans-serif;
-            font-weight: 500;
-            font-style: normal;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0;
-            text-align: left;
-            color: #121212;
-            margin-bottom: 40px;
-        }
-
-        button {
-            align-self: flex-start;
-        }
-    }
-
-    .card-img-wrapper {
-        width: min(320px, 90vw); /* Reduzido para caber na tela com margens */
-        margin: 80px auto 0;
-    }
-
-    .card-img {
-        position: relative;
-        width: 100%;
-        height: 280px; /* Ajustado proporcionalmente */
-
-        img {
-            position: absolute;
-            object-fit: cover;
-            box-shadow: 8px 8px 0px 0px #8D0000;
-            transition: all 0.3s ease;
-            opacity: 1;
-            background-color: #959595;
-            border-radius: 12px;
-            width: min(250px, 70vw); /* Reduzido para caber no wrapper */
-            height: min(167px, 47vw); /* Mantendo proporção 3:2 */
-        }
-    }
-
-    .img1 {
-        top: 0.5px;
-        left: min(35px, 8vw); /* Ajustado proporcionalmente */
-        z-index: 1; /* img1 atrás da img2 */
-    }
-
-    .img2 {
-        top: 55px; /* Ajustado proporcionalmente */
-        left: min(18px, 4vw); /* Ajustado proporcionalmente */
-        z-index: 2; /* img2 no meio */
-    }
-
-    .img3 {
-        top: 110px; /* Ajustado proporcionalmente */
-        left: 0px;
-        z-index: 3; /* img3 na frente */
-    }
-    
-    .dotted-square-home {
-        left: 10px;
-        top: 10px;
-    }
+/* ===== CARD IMAGENS ===== */
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
 }
-/* ===== TABLET (500px - 1023px) ===== */
+
+.card-img {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-normal);
+    border-radius: var(--border-radius-card);
+    width: 70%;
+    max-width: 450px;
+    height: auto;
+  }
+}
+
+/* Posicionamento fixo das imagens */
+.img1 { top: 0; right: 0; z-index: 1; }
+.img2 { top: 20%; left: 50%; transform: translateX(-50%); z-index: 2; }
+.img3 { top: 40%; left: 0; z-index: 3; }
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* MOBILE */
+@media (max-width: 499px) {
+  .main-content { margin-top: var(--mobile-margin-top); }
+  .container { flex-direction: column; gap: var(--spacing-lg); padding: var(--spacing-md); }
+  .card-img { height: 280px; }
+  .card-img img { max-width: 230px; }
+}
+
+/* TABLET */
 @media (min-width: 500px) and (max-width: 1023px) {
-    .main-content {
-        margin-top: 90px;
-    }
-
-    .container {
-        display: block;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .hero-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 0;
-        height: fit-content;
-
-        .header-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-weight: 500;
-            font-family: 0.95rem;
-        }
-
-        h1 {
-            font-family: 'Bai Jamjuree', sans-serif;
-            font-weight: 500;
-            font-size: 32px;
-            line-height: 40px;
-            letter-spacing: 0;
-            color: #121212;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: 'Hind Madurai', sans-serif;
-            font-weight: 500;
-            font-style: normal;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0;
-            text-align: center;
-            color: #121212;
-            margin-bottom: 40px;
-        }
-
-        button {
-            align-self: center;
-        }
-    }
-
-    .card-img-wrapper {
-        width: min(554px, 90vw);
-        opacity: 1;
-        margin: 80px auto;
-    }
-
-    .card-img {
-        position: relative;
-        width: 100%;
-        height: 383px;
-
-        img {
-            position: absolute;
-            object-fit: cover;
-            box-shadow: 8px 8px 0px 0px #8D0000;
-            transition: all 0.3s ease;
-            opacity: 1;
-            background-color: #959595;
-            border-radius: 12px;
-            width: min(450px, 80vw);
-            height: min(250px, 45vw);
-        }
-    }
-
-    .img1 {
-        top: 0;
-        left: min(104px, 15vw);
-        z-index: 1; /* img1 atrás da img2 */
-    }
-
-    .img2 {
-        top: 66px;
-        left: min(52px, 8vw);
-        z-index: 2; /* img2 no meio */
-    }
-
-    .img3 {
-        top: 133px;
-        left: 0;
-        z-index: 3; /* img3 na frente */
-    }
-        .dotted-square-home {
-        left: 55px;
-        top: 10px;
-    }
+  .main-content { margin-top: var(--tablet-margin-top); }
+  .container { flex-direction: column; gap: var(--spacing-xl); padding: var(--spacing-md); }
+  .card-img { height: 380px; }
+  .card-img img { max-width: 350px; }
 }
 
-/* ===== DESKTOP (1024px - 1440px) ===== */
-@media (min-width: 1024px) and (max-width: 1440px) {
-    .main-content {
-        margin-top: 184px;
-    }
-
-    .hero-text {
-        margin: 53px 0;
-        height: fit-content;
-
-        .header-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-weight: 500;
-            font-family: 0.95rem;
-        }
-
-        h1 {
-            font-family: 'Bai Jamjuree', sans-serif;
-            font-weight: 500;
-            font-size: 40px;
-            line-height: 48px;
-            letter-spacing: 0;
-            color: #121212;
-            margin-bottom: 20px;
-            width: 490px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h2 {
-            font-family: 'Hind Madurai', sans-serif;
-            font-weight: 500;
-            font-style: normal;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0;
-            text-align: left;
-            color: #121212;
-            margin-bottom: 40px;
-        }
-
-        button {
-            width: 233px;
-        }
-    }
-
-    .card-img {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        position: relative;
-        margin-top: 30px;
-        width: 300px;
-        height: 250px;
-
-        img {
-            width: 300px;
-            height: 282px;
-            border-radius: 12px;
-            background: #959595;
-            box-shadow: 8px 8px 0px 0px #8D0000;
-        }
-    }
-
-    .img1 {
-        left: 100px;
-    }
-
-    .img2 {
-        top: 28%;
-        left: 50px;
-    }
-
-    .img3 {
-        top: 52%;
-        left: 0;
-    }
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .container {
+    margin-top: 184px;
+  }
+  .main-content { margin-top: var(--desktop-margin-top); }
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2xl);
+  }
+  .hero-text { max-width: 45%; }
+  .card-img-wrapper { flex: 1; max-width: 50%; }
+  .card-img { height: 500px; }
+  .card-img img { max-width: 450px; }
 }
-
-/* ===== LARGE DESKTOP (1441px+) ===== */
-@media (min-width: 1441px) {
-    .card-img {
-        width: 600px;
-        height: 450px;
-
-        img {
-            width: 500px;
-            height: 300px;
-        }
-    }
-
-    .img1 {
-        top: 0;
-        left: 5%;
-        z-index: 1; /* img1 atrás da img2 */
-    }
-
-    .img2 {
-        top: 14%;
-        right: 22%;
-        z-index: 2; /* img2 no meio */
-    }
-
-    .img3 {
-        top: 30%;
-        right: 30%;
-        z-index: 3; /* img3 na frente */
-    }
-}
-
