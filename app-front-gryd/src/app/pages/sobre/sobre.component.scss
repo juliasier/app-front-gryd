@@ -1,19 +1,90 @@
 
-.container-image {
-  .principal-image-bg,.background-top {
-    display: none;
+// Mobile-first: imagem visível
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.infos-sobre {
+  width: 100%;
+  max-width: 100%;
+  
+  .header-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  span {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  mat-accordion {
+    width: 100%;
   }
 }
+
+.container-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  // Tornando as imagens visíveis no mobile
+  .principal-image-bg,
+  .background-top,
+  .background-bottom {
+    display: block;
+  }
+  
+  .principal-image-bg {
+    img {
+      width: 200px;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  
+  .background-top,
+  .background-bottom {
+    position: absolute;
+    z-index: -1;
+    
+    img {
+      width: 30px;
+      height: auto;
+      opacity: 0.3;
+    }
+  }
+}
+
 mat-expansion-panel.mat-expansion-panel {
   margin-bottom: 0.15rem;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  border: 1px solid #8a2be2; /* Identificação dos panels */
+  border: 1px solid #8a2be2;
   
   .mat-expansion-panel-header {
     padding: 5px 10px;
     min-height: 36px;
-    background-color: rgba(250, 235, 215, 0.5); /* Identificação do header do panel */
+    background-color: rgba(250, 235, 215, 0.5);
     
     mat-panel-title {
       font-size: 0.8rem;
@@ -24,7 +95,7 @@ mat-expansion-panel.mat-expansion-panel {
   
   .mat-expansion-panel-content {
     padding: 0 10px 10px;
-    background-color: rgba(255, 248, 220, 0.5); /* Identificação do conteúdo do panel */
+    background-color: rgba(255, 248, 220, 0.5);
     
     p {
       font-size: 0.72rem;
@@ -34,47 +105,95 @@ mat-expansion-panel.mat-expansion-panel {
   }
 }
 
-
+// Tablet
 @media (min-width: 500px) and (max-width: 1023px) {
-  app-sobre {
-    padding: 40px 0;
-    border-color: #1e90ff; /* Cor diferente para tablet */
-  }
-  
   .content {
-    flex-direction: column;
-    gap: 25px;
+    flex-direction: row;
+    gap: 2rem;
     max-width: var(--tablet-content-width, 768px);
-    align-items: center;
-    padding: 18px;
-    background-color: #58580040;
-    height: 100vh;
-    
+    margin: 0 auto;
+    padding: 2rem;
   }
   
   .infos-sobre {
-    max-width: 100%;
-    padding: 14px;
-    text-align: center;
+    flex: 1;
+    max-width: 700px; // Largura máxima do mat-panel
+    
+    .header-title {
+      text-align: left;
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    span {
+      text-align: left;
+      font-size: 1rem;
+    }
   }
   
   .container-image {
-  
-    .faq-main-bg {
-      width: 180px;
-      height: 220px;
+    flex: 1;
+    
+    .principal-image-bg {
+      img {
+        width: 250px;
+      }
     }
   }
 }
 
+// Desktop
 @media (min-width: 1024px) {
- 
+  .content {
+    flex-direction: row;
+    gap: 3rem;
+    max-width: var(--desktop-content-width, 1200px);
+    margin: 0 auto;
+    padding: 3rem;
+  }
   
+  .infos-sobre {
+    flex: 1;
+    max-width: 700px; // Largura máxima do mat-panel
+    
+    .header-title {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    span {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .container-image {
+    flex: 1;
+    
+    .principal-image-bg {
+      img {
+        width: 300px;
+      }
+    }
+    
+    .background-top,
+    .background-bottom {
+      img {
+        width: 40px;
+      }
+    }
+  }
 }
 
 @media (min-width: 1441px) {
   .content {
     max-width: 1440px;
-    border-color: #800080; /* Cor diferente para desktop XL */
   }
 }
