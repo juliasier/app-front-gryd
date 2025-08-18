@@ -3,33 +3,34 @@
     overflow: hidden;
 
     .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 var(--spacing-md, 1.5rem);
         width: 100%;
 
         .satisfaction-person {
-            display: flex;
             gap: 1rem;
-           p {
-            font-weight:500;
-            font-size: 1rem;
-            color: #121212;
-           }
+            align-items: center;
+            margin-bottom: 26px;
+
+            p {
+                margin: 6px 0;
+                font-weight: 500;
+                font-size: 1rem;
+                color: #121212;
+                align-items: center;
+                justify-items: center;
+            }
         }
 
     }
 
     .reviews-header {
         text-align: left;
-        margin-bottom: var(--spacing-3xl, 6rem);
-        display: flex;
         justify-content: space-between;
 
         .carousel-controls {
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-top: 40px;
         }
 
         .carousel-btn {
@@ -62,7 +63,6 @@
             font-family: var(--font-secondary, 'Arial, sans-serif');
             font-size: 1rem;
             color: var(--text-secondary, #666);
-            margin: 0 0 var(--spacing-sm, 1rem) 0;
             font-weight: 500;
         }
 
@@ -74,11 +74,13 @@
             font-weight: 700;
             margin: 0;
         }
+
+
     }
 
     .reviews-carousel {
         position: relative;
-        margin-bottom: var(--spacing-xl, 3rem);
+        margin-top: 60px 0;
 
         .carousel-container {
             overflow: hidden;
@@ -92,11 +94,12 @@
         }
 
         .review-card {
-            // Mobile: um card por vez respeitando margens
-            flex: 0 0 calc(100% - 2rem); // 100% menos as margens laterais
+            flex: 0 0 calc(100% - 2rem);
             width: calc(100% - 2rem);
-            margin: 0 1rem; // Margens laterais
+            margin: 0 1rem;
             height: 30vh;
+            padding: 0;
+            margin: 20px 4px;
 
             .review-content {
                 background: white;
@@ -207,17 +210,16 @@
 
     // CTA Section
     .cta-section {
-        width: calc(100% - 2rem);
-        margin: 0 1rem;
-        background: #17171780;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        padding: 20px;
-        border-radius: 8px;
-        opacity: 1;
-
+    margin-top: 120px;
+    width: 100%;
+    background: rgba(23, 23, 23, 0.5019607843);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 20px 10px;
+    border-radius: 8px;
+    opacity: 1;
+    text-align: left;
         .cta-text {
             font-family: var(--font-secondary, 'Arial, sans-serif');
             font-size: 1rem;
@@ -227,19 +229,19 @@
         }
 
         .cta-button {
-            background: var(--red, #F43535);
-            color: white;
-            border: none;
-            padding: var(--spacing-md, 1.5rem) var(--spacing-xl, 3rem);
-            border-radius: var(--border-radius, 8px);
-            font-family: var(--font-primary, 'Arial, sans-serif');
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-fast, 0.2s ease);
-            box-shadow: var(--shadow-button, 0 4px 15px rgba(239, 68, 68, 0.3));
-            text-align: center;
-
+        background: var(--red, #F43535);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius, 8px);
+    font-family: var(--font-primary, "Arial, sans-serif");
+    font-size: 1rem;
+    font-weight: 600;
+    height: 48px;
+    cursor: pointer;
+    transition: all var(--transition-fast, 0.2s ease);
+    box-shadow: var(--shadow-button, 0 4px 15px rgba(239, 68, 68, 0.3));
+    text-align: center;
+    width: 100%;
             &:hover {
                 background: var(--red-dark, #d12d2d);
                 transform: translateY(-2px);
@@ -254,6 +256,8 @@
             .reviews-title {
                 font-size: var(--tablet-h1, 2rem);
                 line-height: var(--tablet-h1-line, 2.5rem);
+
+
             }
         }
 
@@ -308,10 +312,10 @@
             }
 
             .review-card {
-                flex: 0 0 400px;
+                flex: 0 0 350px;
                 width: 400px;
                 margin: 0;
-                height:14rem;
+                height: 14rem;
 
                 .review-content {
                     min-height: fit-content;
