@@ -16,30 +16,32 @@ html, body {
 :root {
   /* Cores */
   --primary-red-shadow: #8D0000;
- --text-color-white:#FAFAFA;
- --text-color-blcack: #121212;
- --red: #F43535;
- 
+  --text-color-white: #FAFAFA;
+  --text-color-black: #121212;
+  --text-secondary: #666;
+  --red: #F43535;
+  --red-dark: #d12d2d;
+
   /* Fontes */
   --font-primary: 'Bai Jamjuree', sans-serif;
   --font-secondary: 'Hind Madurai', sans-serif;
 
   /* Tipografia responsiva */
---mobile-h1: 1.5rem;
---mobile-h1-line: 1.8125rem;
---mobile-h2: 1rem;
---mobile-h2-line: 1.5rem;
---mobile-button: 1rem;
+  --mobile-h1: 1.5rem;
+  --mobile-h1-line: 1.8125rem;
+  --mobile-h2: 1rem;
+  --mobile-h2-line: 1.5rem;
+  --mobile-button: 1rem;
 
---tablet-h1: 2rem;
---tablet-h1-line: 2.5rem;
---tablet-h2: 1rem;
---tablet-h2-line: 1.5rem;
+  --tablet-h1: 2rem;
+  --tablet-h1-line: 2.5rem;
+  --tablet-h2: 1.25rem;
+  --tablet-h2-line: 1.75rem;
 
---desktop-h1: 2.5rem;
---desktop-h1-line: 3rem;
---desktop-h2: 1rem;
---desktop-h2-line: 1.5rem;
+  --desktop-h1: 2.5rem;
+  --desktop-h1-line: 3rem;
+  --desktop-h2: 1.5rem;
+  --desktop-h2-line: 2rem;
 
   /* Breakpoints */
   --mobile-min: 300px;
@@ -91,8 +93,6 @@ body {
   transition: background var(--transition-slow);
 }
 
-
-
 /* ===== TIPOGRAFIA GLOBAL ===== */
 .text-red {
   color: var(--red);
@@ -102,25 +102,25 @@ body {
 
 h1 {
   font-family: var(--font-primary);
-  font-weight: 500;
-  color: var(--text-primary);
+  font-weight: 600; /* Padrão 600 */
+  color: var(--text-color-black);
   margin-bottom: var(--spacing-md);
 }
 
 h2 {
-  font-family: var(--font-secondary);
-  font-weight: 500;
-  color: var(--text-primary);
+  font-family: var(--font-primary); /* Use a mesma fonte para h1/h2 */
+  font-weight: 500; /* Padrão 500 */
+  color: var(--text-color-black);
   margin-bottom: var(--spacing-lg);
 }
+
 p {
   font-family: var(--font-secondary);
-  color: var(--text-primary);
   margin-bottom: var(--spacing-md);
 }
 
 /* ===== MEDIA QUERIES TIPOGRAFIA ===== */
-@media (min-width: 300px) and (max-width: 499px) {
+@media (max-width: 499px) {
   h1 { font-size: var(--mobile-h1); line-height: var(--mobile-h1-line); }
   h2 { font-size: var(--mobile-h2); line-height: var(--mobile-h2-line); }
 }

@@ -1,0 +1,222 @@
+.container-service {
+    display: flex;
+    flex-direction: column;
+    background-color: #cac9c9d8; // colocar url imagem
+    padding: 0;
+    width: 100%;
+}
+
+.carousel-header {
+    margin-top: 100px;
+    font-weight: 600;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 2rem;
+    line-height: 38px;
+    color: #121212;
+}
+
+.conteudo {
+    width: 400px;
+
+    h1 {
+        font-size: 1.5rem;
+        line-height: 29px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .list-content {
+        gap: 1rem;
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+
+                p {
+                margin: 0;
+                font-size: 0.9rem;
+                color: black;
+                font-weight: 500;
+            }
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #F43535;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 0.5rem;
+            font-weight: bold;
+            line-height: 1.25;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .actions-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 240px;
+        align-items: flex-start;
+    }
+
+    .btn-servicos {
+        font-family: 'Bai Jamjuree', 'Inter', Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        background: var(--red, #F43535);
+        color: #FAFAFA;
+        padding: 1rem 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        margin-bottom: 0;
+
+        &:hover {
+            background-color: var(--red-dark, #d12d2d);
+            border-color: #d12d2d;
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #F43535;
+            outline-offset: 2px;
+        }
+
+        &::after {
+            content: '→';
+            color: #FAFAFA;
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 16px;
+            height: 16px;
+            transform: rotate(-60deg);
+            transition: transform 0.3s ease;
+            margin-left: 12px;
+        }
+
+    }
+
+    .controles {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+        .nav-btn {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Hind Madurai',sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            color:#F43535;
+            border: 1px solid #171717;
+            background: transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+          
+            &:hover {
+               background-color: #ba2424;
+                color: white;
+            }
+            
+
+        }
+    }
+}
+
+.imagem-direita {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem 0;
+
+    .image-container {
+        width: 100%;
+        max-width: 100%;
+        height: 180px; // Padrão mobile
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        padding: 1rem;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 1rem 0 1.5rem;
+}
+
+// Media queries consolidados e otimizados
+@media (min-width: 500px) {
+  
+    .carousel-content {
+        display: flex;
+    }
+
+    .imagem-direita {
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .conteudo {
+        width: 500px;
+    }
+
+    .imagem-direita {
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1441px) {
+    .container-service {
+        max-width: 1440px;
+    }
+}

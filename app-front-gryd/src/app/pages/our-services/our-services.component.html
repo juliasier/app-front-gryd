@@ -1,0 +1,59 @@
+<main class="container-service">
+  <div class="carousel-servico">
+    <!-- Cabeçalho com título -->
+    <div class="carousel-header">
+      <p>Conheça nossos serviços.</p>
+    </div>
+
+    <!-- Conteúdo principal do carousel -->
+    <div class="carousel-content">
+      <!-- Coluna de texto à esquerda -->
+      <div class="conteudo">
+        <h1>Desenvolvimento de Sites</h1>
+        <h2>Transforme visitantes em clientes com páginas otimizadas e prontas para vender! Nossa
+          solução coloca seu negócio no ar de forma rápida, com designs estratégicos e alto
+          desempenho.</h2>
+
+        <div class="list-content">
+          <div class="item" *ngFor="let beneficio of servicoAtual.beneficios; trackBy: trackByServicoId">
+            <span class="check-icon">✓</span>
+            <p>{{ beneficio }}</p>
+          </div>
+        </div>
+
+        <div class="actions-container">
+          <button class="btn-servicos">Todos os serviços</button>
+
+          <!-- Controles de navegação -->
+          <div class="controles">
+            <button (click)="anterior()" aria-label="Serviço anterior" class="nav-btn">
+                <svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor">
+                    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                </svg>
+            </button>
+            <button (click)="proximo()" aria-label="Próximo serviço" class="nav-btn">
+                <svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor">
+                    <path d="m181.66,133.66-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagem à direita -->
+      <div class="imagem-direita">
+        <div class="image-container">
+          <img [src]="servicoAtual.imagem" [alt]="'Imagem do serviço: ' + servicoAtual.titulo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicadores de slide -->
+    <div class="carousel-indicators">
+      <span *ngFor="let servico of servicos; let i = index; trackBy: trackByServicoId"
+        [class.active]="i === indiceAtual" (click)="irParaSlide(i)"
+        [attr.aria-label]="'Ir para serviço: ' + servico.titulo" role="button" tabindex="0"
+        (keydown.enter)="irParaSlide(i)" (keydown.space)="irParaSlide(i)"></span>
+    </div>
+  </div>
+</main>
