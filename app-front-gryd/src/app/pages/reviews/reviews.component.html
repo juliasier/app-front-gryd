@@ -1,71 +1,59 @@
 <section class="reviews-section">
-  <div class="container">
-    <div class="reviews-header">
-      <h2 class="reviews-title">
-        <span class="icon">💬</span>
-        Veja o que estão falando sobre nossos serviços.
-      </h2>
-    </div>
+    <div class="container">
+        <div class="satisfaction-person">
+            <span class="icon">💬</span>
+            <p> +5 Mil clientes satisfeitos</p>
+        </div>
+        <div class="reviews-header">
+            <h2 class="reviews-title">
 
-    <div class="reviews-carousel">
-      <div class="carousel-container">
-        <div class="reviews-wrapper" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
-          <div class="review-card" *ngFor="let review of reviews">
-            <div class="review-content">
-              <div class="reviewer-info">
-                <div class="reviewer-avatar">
-                  <img [src]="review.image" [alt]="review.name" />
-                </div>
-                <div class="reviewer-details">
-                  <h3 class="reviewer-name">{{ review.name }}</h3>
-                  <p class="reviewer-role">{{ review.role }}</p>
-                </div>
-              </div>
-              <p class="review-text">{{ review.text }}</p>
+                Veja o que estão falando sobre nossos serviços.
+            </h2>
+            <div class="carousel-controls">
+                <button class="carousel-btn carousel-btn-prev" [class.disabled]="isFirstItem" [disabled]="isFirstItem"
+                    (click)="previousReview()" aria-label="Review anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <button class="carousel-btn carousel-btn-next" [class.disabled]="isLastItem" [disabled]="isLastItem"
+                    (click)="nextReview()" aria-label="Próximo review">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="carousel-controls">
-        <button 
-          class="carousel-btn carousel-btn-prev" 
-          [class.disabled]="isFirstItem"
-          [disabled]="isFirstItem"
-          (click)="previousReview()"
-          aria-label="Review anterior">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="carousel-indicators">
-          <button 
-            *ngFor="let review of reviews; let i = index"
-            class="indicator"
-            [class.active]="i === currentIndex"
-            (click)="goToReview(i)"
-            [attr.aria-label]="'Ir para review ' + (i + 1)">
-          </button>
         </div>
 
-        <button 
-          class="carousel-btn carousel-btn-next" 
-          [class.disabled]="isLastItem"
-          [disabled]="isLastItem"
-          (click)="nextReview()"
-          aria-label="Próximo review">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+        <div class="reviews-carousel">
+            <div class="carousel-container">
+                <div class="reviews-wrapper" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+                    <div class="review-card" *ngFor="let review of reviews">
+                        <div class="review-content">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">
+                                    <img [src]="review.image" [alt]="review.name" />
+                                </div>
+                                <div class="reviewer-details">
+                                    <h3 class="reviewer-name">{{ review.name }}</h3>
+                                    <p class="reviewer-role">{{ review.role }}</p>
+                                </div>
+                            </div>
+                            <p class="review-text">{{ review.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="cta-section">
-      <p class="cta-text">Interessado? Entre em contato conosco!</p>
-      <button class="cta-button">Contato</button>
+        <div class="cta-section">
+            <p class="cta-text">Interessado? Entre em contato conosco!</p>
+            <button class="cta-button">Contato</button>
+        </div>
     </div>
-  </div>
 </section>
 <p>reviews works!</p>
