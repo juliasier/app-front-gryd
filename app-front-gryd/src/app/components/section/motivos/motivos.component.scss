@@ -1,0 +1,71 @@
+@import './../../../../styles.scss';
+.motivos-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f1bebe;
+    position: relative;
+
+    .motivos-content {
+        max-width: $desktop-max-width;
+        margin: 0 auto;
+        padding: 2rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .motivos-list {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .motivo {
+            flex: 1 1 280px;
+            max-width: 340px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 24px;
+            text-align: left;
+
+            img {
+                margin-bottom: 16px;
+            }
+            h2 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+            p {
+                font-size: 1rem;
+                color: #444;
+            }
+        }
+    }
+}
+
+.dotted-square {
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    transform: rotate(30deg);
+    width: 160px;
+
+    @media (max-width: $tablet-max-width) {
+        width: 100px;
+        top: 5%;
+        right: 2%;
+    }
+
+    @media (max-width: $mobile-max-width) {
+        width: 60px;
+        top: 2%;
+        right: 1%;
+    }
+}

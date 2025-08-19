@@ -1,0 +1,213 @@
+@import '../styles.scss'; // Caminho relativo ao arquivo do componente
+
+.background {
+  background: url('/assets/desktop-1440/bg-hero.webp') no-repeat center center / cover;
+  background-size: cover;
+  min-height: 100vh;
+
+  .content {
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    aside.hero-content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start; // Para alinhar pelo topo
+      gap: 2rem;
+      width: 100%;
+
+      .first-card {
+        flex: 1;
+        min-width: 300px;
+
+        section {
+          display: flex;
+          gap: 20px;
+        }
+
+        button {
+          background-color: $red-90;
+          border-radius: 4px;
+          padding: 1rem;
+          color: #fff;
+          min-width: 40%;
+        }
+
+        button:hover {
+          background-color: $red-80;
+        }
+
+        button:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px $red-60;
+        }
+      }
+
+      .secondary-card {
+        flex: 1;
+        position: relative;
+        min-width: 480px;
+        height: 212px; // para conter a altura exata das imagens
+        display: flex;
+        justify-content: flex-end;
+
+        .card-img {
+          position: absolute;
+          width: 480px;
+          height: 212px;
+          border: 2px solid #959595; // wireframe-stuff color
+          border-radius: 12px;
+          object-fit: cover;
+          transition: transform 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+
+        .img1 {
+          z-index: 3;
+          right: 190px;
+          top: 160px;
+          border-radius: 8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+        }
+
+        .img2 {
+          z-index: 2;
+          right: 120px;
+          top: 80px;
+          border-radius: 8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+
+        }
+
+        .img3 {
+          z-index: 1;
+          right: 40px;
+          top: 30px;
+          border-radius: 8px;
+          box-shadow: 8px 8px 0 rgba(185, 10, 10, 0.6);
+        }
+      }
+    }
+
+    // Tablet
+    @media (max-width: $tablet-max-width) {
+      padding: 1rem;
+
+      aside.hero-content {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .first-card,
+        .secondary-card {
+          min-width: 100%;
+          width: 100%;
+        }
+
+        .secondary-card {
+          height: 180px;
+
+          .card-img {
+            width: 320px;
+            height: 180px;
+          }
+
+          .img1 {
+            right: 120px;
+            top: 90px;
+          }
+
+          .img2 {
+            right: 60px;
+            top: 40px;
+          }
+
+          .img3 {
+            right: 0px;
+            top: 0px;
+          }
+        }
+      }
+    }
+
+    // Mobile
+    @media (max-width: $mobile-max-width) {
+      padding: 0.5rem;
+
+      aside.hero-content {
+        flex-direction: column;
+        gap: 1rem;
+
+        .first-card,
+        .secondary-card {
+          min-width: 100%;
+          width: 100%;
+        }
+
+        .secondary-card {
+          height: 120px;
+
+          .card-img {
+            width: 160px;
+            height: 120px;
+          }
+
+          .img1 {
+            right: 60px;
+            top: 60px;
+          }
+
+          .img2 {
+            right: 30px;
+            top: 20px;
+          }
+
+          .img3 {
+            right: 0px;
+            top: 0px;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .dotted-square {
+    transform: rotate(60deg);
+    margin-top: 10%;
+    margin-left: 4%;
+    width: 160px;
+
+    @media (max-width: $tablet-max-width) {
+      width: 100px;
+      margin-top: 5%;
+      margin-left: 2%;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      width: 60px;
+      margin-top: 2%;
+      margin-left: 1%;
+    }
+  }
+
+  .sections-of-page {
+    margin: 0;
+    padding: 0;
+    z-index: 1; // Garante que fique acima do fundo, mas abaixo de elementos fixos
+    position: relative;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <img src="" alt="Imagem ilustrativa: ponto de interrogação">
+    <div class="infos-sobre">
+        <h1>Transformamos os desafios digitais da sua empresa em oportunidades de crescimento!</h1>
+        <span>A GRYD nasceu para transformar o cenário digital de pequenas e médias empresas. Mais do que oferecer
+            serviços de marketing, unimos tecnologia e estratégia para impulsionar negócios que querem crescer de forma
+            digital.</span>
+
+<mat-accordion>
+  <mat-expansion-panel 
+    (opened)="panelOpenState.set(true)" 
+    (closed)="panelOpenState.set(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> 
+        O que diferencia a GRYD de outras empresas de marketing digital?
+     </mat-panel-title>
+      <!-- <mat-panel-description>
+        Currently I am {{ panelOpenState() ? 'open' : 'closed' }}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+    </div>
+</div>
