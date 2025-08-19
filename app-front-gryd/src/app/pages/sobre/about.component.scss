@@ -2,7 +2,6 @@
   flex-direction: column;
   display: flex;
   flex-direction: column;
-  padding: 40px 20px;
   height: 90vh;
 
   .dotted-rectangle-top {
@@ -12,15 +11,12 @@
 
   .infos-sobre {
     background-color: green;
-    height: 70vh;
+    height: 88%;
 
-    .header-title {
+    h1 {
       margin-bottom: 1rem;
-
-      h1 {
-        font-size: 1.5rem;
-        line-height: 1.4;
-      }
+      font-size: 1.5rem;
+      line-height: 1.4;
 
       img {
         display: none;
@@ -68,45 +64,57 @@
 }
 
 
+@media (min-width: 500px) and (max-width: 1023px) {
+  .infos-sobre {
+    .dotted-rectangle-bottom {
+      display: none;
+    }
+  }
 
-// // Tablet
-// @media (min-width: 500px) and (max-width: 1023px) {
-//   .content {
-//     flex-direction: row;
-//     gap: 2rem;
-//     max-width: var(--tablet-content-width, 768px);
-//     margin: 0 auto;
-//     padding: 2rem;
-//   }
+  .container-image {
+    background-color: #1a588e;
+    height: 80vh;
+    padding: 60px 100px;
 
-//   .infos-sobre {
-//     flex: 1;
-//     max-width: 700px; // Largura máxima do mat-panel
+    .principal-image {
+    background-color: #633e20;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+        .rectangle-top {
+        width: 200px;
+        height: 50px;
+        background: greenyellow;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
 
-//     .header-title {
-//       text-align: left;
+      .main-image {
+        height: 400px;
+        background-color: rgb(81, 228, 228);
+      }
 
-//       h1 {
-//         font-size: 2rem;
-//       }
-//     }
+      .rectangle-bottom {
+        width: 200px;
+        height: 50px;
+        background: greenyellow;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        right: 0; 
+      }
 
-//     span {
-//       text-align: left;
-//       font-size: 1rem;
-//     }
-//   }
+    }
+  }
 
-//   .container-image {
-//     flex: 1;
 
-//     .principal-image-bg {
-//       img {
-//         width: 250px;
-//       }
-//     }
-//   }
-// }
+}
+
+
 
 // // Desktop
 // @media (min-width: 1024px) {
