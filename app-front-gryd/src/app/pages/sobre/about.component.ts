@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
-  selector: 'app-sobre',
+  selector: 'app-about',
   standalone: true,
   imports: [CommonModule, MatExpansionModule],
-  templateUrl: './sobre.component.html',
-  styleUrls: ['./sobre.component.scss'],
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SobreComponent {
+export class AboutComponent {
   readonly panelOpenState = signal(false);
 
   onOpened() {

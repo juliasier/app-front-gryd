@@ -211,96 +211,96 @@
 }
 
 
-// Tablet
-@media (min-width: 500px) and (max-width: 1023px) {
+// // Tablet
+// @media (min-width: 500px) and (max-width: 1023px) {
 
-    .reviews-carousel {
-        .reviews-wrapper {
-            gap: 1rem;
-        }
+//     .reviews-carousel {
+//         .reviews-wrapper {
+//             gap: 1rem;
+//         }
 
-        .review-card {
-            flex: 0 0 350px;
-            width: 350px;
-            margin: 0;
+//         .review-card {
+//             flex: 0 0 350px;
+//             width: 350px;
+//             margin: 0;
 
-            .review-content {
-                min-height: fit-content;
-                height: auto;
-            }
-        }
-    }
+//             .review-content {
+//                 min-height: fit-content;
+//                 height: auto;
+//             }
+//         }
+//     }
 
-    // .cta-section {
-    //     width: 100%;
-    //     max-width: 800px;
-    //     margin: 0 auto;
-    //     flex-direction: row;
-    //     justify-content: space-between;
-    //     padding: 30px 40px;
+//     // .cta-section {
+//     //     width: 100%;
+//     //     max-width: 800px;
+//     //     margin: 0 auto;
+//     //     flex-direction: row;
+//     //     justify-content: space-between;
+//     //     padding: 30px 40px;
 
-    //     .cta-text {
-    //         text-align: left;
-    //         flex: 1;
-    //     }
-    // }
-}
+//     //     .cta-text {
+//     //         text-align: left;
+//     //         flex: 1;
+//     //     }
+//     // }
+// }
 
-// Desktop
-@media (min-width: 1024px) {
-    .reviews-section {
-        height: 10vh;
-    }
+// // Desktop
+// @media (min-width: 1024px) {
+//     .reviews-section {
+//         height: 10vh;
+//     }
 
 
-    .reviews-carousel {
-        .reviews-wrapper {
-            gap: 1rem;
-        }
+//     .reviews-carousel {
+//         .reviews-wrapper {
+//             gap: 1rem;
+//         }
 
-        .review-card {
-            flex: 0 0 350px;
-            width: 400px;
-            margin: 0;
-            height: 14rem;
+//         .review-card {
+//             flex: 0 0 350px;
+//             width: 400px;
+//             margin: 0;
+//             height: 14rem;
 
-            .review-content {
-                min-height: fit-content;
-                height: auto;
-                padding: 1rem;
+//             .review-content {
+//                 min-height: fit-content;
+//                 height: auto;
+//                 padding: 1rem;
 
-                .reviewer-info {
-                    .reviewer-avatar {
-                        width: 60px;
-                        height: 60px;
-                    }
+//                 .reviewer-info {
+//                     .reviewer-avatar {
+//                         width: 60px;
+//                         height: 60px;
+//                     }
 
-                    .reviewer-details {
-                        .reviewer-name {
-                            font-size: 1.25rem;
-                        }
+//                     .reviewer-details {
+//                         .reviewer-name {
+//                             font-size: 1.25rem;
+//                         }
 
-                        .reviewer-role {
-                            font-size: 1rem;
-                        }
-                    }
-                }
+//                         .reviewer-role {
+//                             font-size: 1rem;
+//                         }
+//                     }
+//                 }
 
-                .review-text {
-                    font-size: 1rem;
-                }
-            }
-        }
+//                 .review-text {
+//                     font-size: 1rem;
+//                 }
+//             }
+//         }
 
-        .carousel-controls {
-            justify-content: flex-start;
-            gap: var(--spacing-lg, 2rem);
+//         .carousel-controls {
+//             justify-content: flex-start;
+//             gap: var(--spacing-lg, 2rem);
 
-            .carousel-btn {
-                width: 48px;
-                height: 48px;
-            }
-        }
-    }
+//             .carousel-btn {
+//                 width: 48px;
+//                 height: 48px;
+//             }
+//         }
+//     }
 
-}
+// }

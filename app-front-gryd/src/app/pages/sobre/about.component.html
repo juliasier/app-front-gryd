@@ -1,6 +1,9 @@
 <div class="content">
   <div class="infos-sobre">
-    <div class="header-title">
+  <img class="dotted-rectangle-top"
+    src="assets/backgrounds/dotted-rectangle.svg" 
+    alt="imagem ilustrativa"
+  />    <div class="header-title">
       <h1>Transformamos os desafios digitais da sua empresa em oportunidades de crescimento!</h1>
       <img src="/assets/icons/sobre/interrogation.webp" alt="">
 
@@ -10,8 +13,7 @@
       serviços de marketing, unimos tecnologia e estratégia para impulsionar negócios que querem crescer de forma
       digital.
     </span>
-
-    <mat-accordion>
+    <div class="mat-expansion">
       <mat-expansion-panel (opened)="onOpened()" (closed)="onClosed()">
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -47,24 +49,26 @@
         </mat-expansion-panel-header>
         <p>Você pode esperar maior presença digital, mais clientes...</p>
       </mat-expansion-panel>
-    </mat-accordion>
 
+    </div>
+      <img class="dotted-rectangle-bottom" src="/assets/backgrounds/dotted-rectangle.svg" alt="">
   </div>
 
   <div class="container-image">
    
-    <div class="background-top">
-      <img src="/assets/icons/sobre/dotted-rectangle.webp" alt="">
-      <img src="/assets/icons/sobre/interrogation.webp" alt="">
-    </div>
+    <!-- <div class="background-top">
+      <img class="dotted-rectangle" src="/assets/backgrounds/dotted-rectangle.svg" alt="">
+      <img class="interrogation" src="/assets/icons/sobre/interrogation.webp" alt="">
+    </div> -->
     
-    <div class="principal-image-bg">
+    <!-- <div class="principal-image-bg">
           <img src="/assets/icons/sobre/faq1.webp" alt="">
     </div>
-    <div class="background-bottom">
-      <img src="/assets/icons/sobre/dotted-rectangle.webp" alt="">
+     -->
+    <!-- <div class="background-bottom">
+      <img class="dotted-rectangle" src="/assets/backgrounds/dotted-rectangle.svg" alt="">
       <img src="/assets/icons/sobre/interrogation.webp" alt="">
-    </div>
+    </div> -->
     
   </div>
 </div>

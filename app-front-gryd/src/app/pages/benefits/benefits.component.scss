@@ -1,3 +1,6 @@
+.benefits-container {
+    margin-bottom: 4rem;
+}
 
 .background {
     padding: 80px 20px;
@@ -17,6 +20,7 @@
         margin-top: 40px;
         align-items: center;
         text-align: center;
+
         img {
             padding: 20px 0 12px 0;
         }
@@ -29,8 +33,9 @@
             padding: 0;
             margin: 12px 0;
         }
+
         p {
-            
+
             font-size: 0.95rem;
             color: black;
         }
@@ -124,11 +129,11 @@
 
     // }
     .dotted-square {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    right: 7%;
-    bottom: -4%;
-    rotate: 80deg;
-}
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        right: 7%;
+        bottom: -6%;
+        rotate: 72deg;
+    }
 }
