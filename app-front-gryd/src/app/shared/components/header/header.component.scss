@@ -20,13 +20,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  /* Apenas as propriedades para ficar na frente durante scroll */
   position: fixed;
-  top: 1rem;
   left: 12px;
   right: 12px;
   z-index: 9999;
+  padding: 24px 12px;
+
+}
+
+img {
+  width: 80px;
+  padding: 4px;
+}
+//Removendo nav e botao em Mobile
+nav,
+.btn-comece {
+  display: none;
 }
 
 .hamburguer {
@@ -61,7 +70,7 @@ header {
   color: #fff;
   font-size: 0.75rem;
   font-weight: 500;
-  
+
   &:hover {
     color: #fff;
     transition: 0.3s;
@@ -69,69 +78,69 @@ header {
   }
 }
 
-/* ===== MOBILE (350px - 499px) ===== */
-@media (min-width: 300px) and (max-width: 499px) {
-  header {
-    padding: 24px 12px;
+// /* ===== MOBILE (350px - 499px) ===== */
+// @media (min-width: 300px) and (max-width: 499px) {
+// header {
+//   padding: 24px 12px;
 
-    img {
-      width: 80px;
-      padding: 4px;
-    }
+//   img {
+//     width: 80px;
+//     padding: 4px;
+//   }
 
-    nav,
-    .btn-comece {
-      display: none;
-    }
-  }
-}
+//   nav,
+//   .btn-comece {
+//     display: none;
+//   }
+// }
+// }
 
-/* ===== TABLET (500px - 1023px) ===== */
-@media (min-width: 500px) and (max-width: 1023px) {
-  header {
-    padding: 24px 12px;
+// /* ===== TABLET (500px - 1023px) ===== */
+// @media (min-width: 500px) and (max-width: 1023px) {
+//   header {
+//     padding: 24px 12px;
 
-    img {
-      width: 80px;
-      padding: 4px;
-    }
+//     img {
+//       width: 80px;
+//       padding: 4px;
+//     }
 
-    nav {
-      display: none;
-    }
+//     nav {
+//       display: none;
+//     }
 
-    .btn-header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      padding-right: 1rem;
-    }
-  }
-}
+//     .btn-header {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 1rem;
+//       padding-right: 1rem;
+//     }
+//   }
+// }
 
-/* ===== DESKTOP (1024px - 1440px) ===== */
-@media (min-width: 1024px) and (max-width: 1440px) {
-  header {
-    padding: 24px 12px;
+// /* ===== DESKTOP (1024px - 1440px) ===== */
+// @media (min-width: 1024px) and (max-width: 1440px) {
+//   header {
+//     padding: 24px 12px;
 
-    img {
-      width: 100px;
-      padding: 4px;
-    }
+//     img {
+//       width: 100px;
+//       padding: 4px;
+//     }
 
-    .hamburguer {
-      display: none;
-    }
+//     .hamburguer {
+//       display: none;
+//     }
 
-    .nav-container {
-      width: 50%;
-      gap: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      font-size: 1rem;
-      font-weight: 400;
-      color: #FAFAFA;
-    }
-  }
-}
+//     .nav-container {
+//       width: 50%;
+//       gap: 1.5rem;
+//       display: flex;
+//       justify-content: space-between;
+//       font-size: 1rem;
+//       font-weight: 400;
+//       color: #FAFAFA;
+//     }
+//   }
+// }

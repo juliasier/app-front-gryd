@@ -11,21 +11,19 @@ main {
   padding: 0;
   position: relative;
   overflow-x: hidden;
-
-  background: url('/assets/backgrounds/desktop/bg-desktop.webp') center top / cover no-repeat;
 }
 
 /* Container alinhado com header */
 .content-container {
-  width: calc(100% - 24px);
-  margin: 100px 12px 0 12px;
+  width: 100%;
+  margin: 40px 0;
 }
 
 /* MOBILE */
 @media (max-width: 499px) {
   main {
     background: url('/assets/backgrounds/mobile/bg-mobile.webp') center top / cover no-repeat;
-    background-size: 100% 50vh;
+    background-size: 100% 80vh;
   }
 }
 
@@ -55,18 +53,22 @@ main {
   main {
     min-height: 100vh;
     display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: flex-start; /* ou center se quiser vertical */
-    background-size: cover;   /* ocupa toda a tela disponível */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    align-items: flex-start;
+    /* ou center se quiser vertical */
+    background-size: cover;
+    /* ocupa toda a tela disponível */
     background-position: center top;
   }
 
   .content-container {
-    max-width: 1440px; /* ou o valor que você desejar como largura máxima */
+    max-width: 1440px;
+    /* ou o valor que você desejar como largura máxima */
     width: 100%;
-    margin: 0 auto;    /* centraliza horizontalmente */
+    margin: 0 auto;
+    /* centraliza horizontalmente */
     padding-left: 12px;
     padding-right: 12px;
   }
 }
-

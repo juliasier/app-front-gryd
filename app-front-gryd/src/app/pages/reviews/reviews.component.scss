@@ -9,6 +9,7 @@
             gap: 1rem;
             align-items: center;
             margin-bottom: 26px;
+            display: flex;
 
             p {
                 margin: 6px 0;
@@ -207,167 +208,99 @@
             }
         }
     }
+}
 
-    // CTA Section
-    .cta-section {
-    margin-top: 120px;
-    width: 100%;
-    background: rgba(23, 23, 23, 0.5019607843);
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 20px 10px;
-    border-radius: 8px;
-    opacity: 1;
-    text-align: left;
-        .cta-text {
-            font-family: var(--font-secondary, 'Arial, sans-serif');
-            font-size: 1rem;
-            color: white;
+
+// Tablet
+@media (min-width: 500px) and (max-width: 1023px) {
+
+    .reviews-carousel {
+        .reviews-wrapper {
+            gap: 1rem;
+        }
+
+        .review-card {
+            flex: 0 0 350px;
+            width: 350px;
             margin: 0;
-            text-align: center;
-        }
 
-        .cta-button {
-        background: var(--red, #F43535);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius, 8px);
-    font-family: var(--font-primary, "Arial, sans-serif");
-    font-size: 1rem;
-    font-weight: 600;
-    height: 48px;
-    cursor: pointer;
-    transition: all var(--transition-fast, 0.2s ease);
-    box-shadow: var(--shadow-button, 0 4px 15px rgba(239, 68, 68, 0.3));
-    text-align: center;
-    width: 100%;
-            &:hover {
-                background: var(--red-dark, #d12d2d);
-                transform: translateY(-2px);
-                box-shadow: var(--shadow-button-hover, 0 6px 20px rgba(239, 68, 68, 0.4));
+            .review-content {
+                min-height: fit-content;
+                height: auto;
             }
         }
     }
 
-    // Tablet
-    @media (min-width: 500px) and (max-width: 1023px) {
-        .reviews-header {
-            .reviews-title {
-                font-size: var(--tablet-h1, 2rem);
-                line-height: var(--tablet-h1-line, 2.5rem);
+    // .cta-section {
+    //     width: 100%;
+    //     max-width: 800px;
+    //     margin: 0 auto;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //     padding: 30px 40px;
 
+    //     .cta-text {
+    //         text-align: left;
+    //         flex: 1;
+    //     }
+    // }
+}
 
-            }
-        }
-
-        .reviews-carousel {
-            .reviews-wrapper {
-                gap: 1rem;
-            }
-
-            .review-card {
-                flex: 0 0 350px;
-                width: 350px;
-                margin: 0;
-
-                .review-content {
-                    min-height: fit-content;
-                    height: auto;
-                }
-            }
-        }
-
-        .cta-section {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 30px 40px;
-
-            .cta-text {
-                text-align: left;
-                flex: 1;
-            }
-        }
+// Desktop
+@media (min-width: 1024px) {
+    .reviews-section {
+        height: 10vh;
     }
 
-    // Desktop
-    @media (min-width: 1024px) {
-        .reviews-section {
-            height: 10vh;
+
+    .reviews-carousel {
+        .reviews-wrapper {
+            gap: 1rem;
         }
 
-        .reviews-header {
-            .reviews-title {
-                font-size: var(--desktop-h1, 2.5rem);
-                line-height: var(--desktop-h1-line, 3rem);
-            }
-        }
+        .review-card {
+            flex: 0 0 350px;
+            width: 400px;
+            margin: 0;
+            height: 14rem;
 
-        .reviews-carousel {
-            .reviews-wrapper {
-                gap: 1rem;
-            }
+            .review-content {
+                min-height: fit-content;
+                height: auto;
+                padding: 1rem;
 
-            .review-card {
-                flex: 0 0 350px;
-                width: 400px;
-                margin: 0;
-                height: 14rem;
-
-                .review-content {
-                    min-height: fit-content;
-                    height: auto;
-                    padding: 1rem;
-
-                    .reviewer-info {
-                        .reviewer-avatar {
-                            width: 60px;
-                            height: 60px;
-                        }
-
-                        .reviewer-details {
-                            .reviewer-name {
-                                font-size: 1.25rem;
-                            }
-
-                            .reviewer-role {
-                                font-size: 1rem;
-                            }
-                        }
+                .reviewer-info {
+                    .reviewer-avatar {
+                        width: 60px;
+                        height: 60px;
                     }
 
-                    .review-text {
-                        font-size: 1rem;
+                    .reviewer-details {
+                        .reviewer-name {
+                            font-size: 1.25rem;
+                        }
+
+                        .reviewer-role {
+                            font-size: 1rem;
+                        }
                     }
                 }
-            }
 
-            .carousel-controls {
-                justify-content: flex-start;
-                gap: var(--spacing-lg, 2rem);
-
-                .carousel-btn {
-                    width: 48px;
-                    height: 48px;
+                .review-text {
+                    font-size: 1rem;
                 }
             }
         }
 
-        .cta-section {
-            width: 1240px;
-            margin: 0 auto;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 40px 80px;
+        .carousel-controls {
+            justify-content: flex-start;
+            gap: var(--spacing-lg, 2rem);
 
-            .cta-text {
-                font-size: 1.125rem;
-                text-align: left;
-                flex: 1;
+            .carousel-btn {
+                width: 48px;
+                height: 48px;
             }
         }
     }
+
 }
