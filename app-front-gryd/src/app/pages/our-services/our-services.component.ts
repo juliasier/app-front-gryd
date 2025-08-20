@@ -12,7 +12,7 @@ export class OurServicesComponent {
   servicos = [
     {
       id: 1,
-      imagem: 'assets/images/carousel/person/person-roberto.svg',
+      imagem: 'assets/images/products/note.svg',
       beneficios: [
         'Layout responsivo e moderno',
         'SEO otimizado desde o início',
@@ -24,7 +24,7 @@ export class OurServicesComponent {
       id: 2,
       titulo: 'SEO Otimizado',
       descricao: 'Impulsione o tráfego orgânico do seu site com nossas estratégias.',
-      imagem: 'assets/images/carousel/person/person-camila.svg',
+      imagem: 'assets/images/products/note.svg',
       beneficios: [
         'Análise completa de palavras-chave',
         'Otimização on-page e off-page',
@@ -36,7 +36,7 @@ export class OurServicesComponent {
       id: 3,
       titulo: 'Gerenciamento Analytics',
       descricao: 'Acompanhe e analise dados importantes do seu negócio.',
-      imagem: 'assets/images/carousel/person/person-carlos.svg',
+      imagem: 'assets/images/products/note.svg',
       beneficios: [
         'Configuração do Google Analytics',
         'Dashboards personalizados',
@@ -48,7 +48,7 @@ export class OurServicesComponent {
       id: 4,
       titulo: 'Marketing Digital',
       descricao: 'Estratégias completas para aumentar sua presença online.',
-      imagem: 'assets/hero-image.svg',
+      imagem: 'assets/images/products/note.svg',
       beneficios: [
         'Gestão de redes sociais',
         'Campanhas de Google Ads',
@@ -60,7 +60,7 @@ export class OurServicesComponent {
       id: 5,
       titulo: 'E-commerce',
       descricao: 'Lojas virtuais completas para vender online.',
-      imagem: 'assets/client-faces.svg',
+      imagem: 'assets/images/products/note.svg',
       beneficios: [
         'Plataforma de vendas robusta',
         'Integração com meios de pagamento',
