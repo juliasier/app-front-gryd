@@ -72,19 +72,19 @@
   }
 
   .container-image {
-    background-color: #1a588e;
-    height: 80vh;
-    padding: 60px 100px;
-
+        background-color: #1a588e;
+        padding: 60px 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
     .principal-image {
-    background-color: #633e20;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-     
+        background-color: #633e20;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .rectangle-top {
-        width: 200px;
         height: 50px;
         background: greenyellow;
         z-index: 1;
@@ -99,7 +99,6 @@
       }
 
       .rectangle-bottom {
-        width: 200px;
         height: 50px;
         background: greenyellow;
         z-index: 1;
@@ -110,11 +109,6 @@
 
     }
   }
-
-
-}
-
-
 
 // // Desktop
 // @media (min-width: 1024px) {
