@@ -4,56 +4,52 @@
             <img src="/assets/icons/medal.svg" alt="">
             <p> +5 Mil clientes satisfeitos</p>
         </div>
-        <div class="reviews-header">
-            <h2 class="reviews-title">
+        <h1>Veja o que estão falando sobre nossos serviços.</h1>
 
-                Veja o que estão falando sobre nossos serviços.
-            </h2>
-            <div class="carousel-controls">
-                <button class="carousel-btn carousel-btn-prev" [class.disabled]="isFirstItem" [disabled]="isFirstItem"
-                    (click)="previousReview()" aria-label="Review anterior">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
+        <div class="carousel-controls">
+            <button class="carousel-btn carousel-btn-prev" [class.disabled]="isFirstItem" [disabled]="isFirstItem"
+                (click)="previousReview()" aria-label="Review anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
 
-                <button class="carousel-btn carousel-btn-next" [class.disabled]="isLastItem" [disabled]="isLastItem"
-                    (click)="nextReview()" aria-label="Próximo review">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-
+            <button class="carousel-btn carousel-btn-next" [class.disabled]="isLastItem" [disabled]="isLastItem"
+                (click)="nextReview()" aria-label="Próximo review">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
 
-        <div class="reviews-carousel">
-            <div class="carousel-container">
-                <div class="reviews-wrapper" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
-                    <div class="review-card" *ngFor="let review of reviews">
-                        <div class="review-content">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">
-                                    <img [src]="review.image" [alt]="review.name" />
-                                </div>
-                                <div class="reviewer-details">
-                                    <h3 class="reviewer-name">{{ review.name }}</h3>
-                                    <p class="reviewer-role">{{ review.role }}</p>
-                                </div>
+        
+    </div>
+
+    <div class="reviews-carousel">
+        <div class="carousel-container">
+            <div class="reviews-wrapper" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+                <div class="review-card" *ngFor="let review of reviews">
+                    <div class="review-content">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <img [src]="review.image" [alt]="review.name" />
                             </div>
-                            <p class="review-text">{{ review.text }}</p>
+                            <div class="reviewer-details">
+                                <h3 class="reviewer-name">{{ review.name }}</h3>
+                                <p class="reviewer-role">{{ review.role }}</p>
+                            </div>
                         </div>
+                        <p class="review-text">{{ review.text }}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="cta-section">
-            <p class="cta-text">Interessado? Entre em contato conosco!</p>
-            <button class="cta-button">Contato</button>
-        </div>
+    <div class="cta-section">
+        <p class="cta-text">Interessado? Entre em contato conosco!</p>
+        <button class="cta-button">Contato</button>
     </div>
 </section>
-<p>reviews works!</p>

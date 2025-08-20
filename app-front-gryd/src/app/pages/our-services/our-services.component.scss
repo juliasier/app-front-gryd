@@ -1,7 +1,6 @@
 .container-service {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
     background: url('/assets/backgrounds/mobile/bg-service-mobile.webp');
     background-position: center -30px;
     background-size: 100% 130%;
@@ -139,22 +138,17 @@ header {
 
                 }
             }
-
-
-
         }
 
     }
 }
-
-
 
 .imagem-direita {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.2rem 0;
+    margin: 1rem 0;
 
     .image-container {
         width: 100%;
