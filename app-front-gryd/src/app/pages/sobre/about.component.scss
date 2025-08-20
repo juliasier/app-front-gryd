@@ -2,7 +2,7 @@
   flex-direction: column;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 105%;
 
   .dotted-rectangle-top {
     width: 100px;
@@ -59,6 +59,7 @@
       top: 20px;
       left: 70%;
     }
+
   }
 
 }
@@ -69,46 +70,65 @@
     .dotted-rectangle-bottom {
       display: none;
     }
+
+     img.interrogation-left {
+      rotate: 5deg;
+      background: gray;
+      margin-top: 14rem;
+      margin-left: 7rem;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+
+    .interrogation-right {
+        rotate: -35deg;
+        background: #b01e1e;
+        margin-left: 10rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        top: 19rem;
+        left: 26rem;
+    }
+
   }
 
   .container-image {
-        background-color: #1a588e;
-        padding: 60px 0;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-    }
-    .principal-image {
-        background-color: #633e20;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .rectangle-top {
-        height: 50px;
-        background: greenyellow;
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .main-image {
-        height: 400px;
-        background-color: rgb(81, 228, 228);
-      }
-
-      .rectangle-bottom {
-        height: 50px;
-        background: greenyellow;
-        z-index: 1;
-        position: absolute;
-        bottom: 0;
-        right: 0; 
-      }
-
-    }
+    padding: 60px 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
+
+  .principal-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .rectangle-top {
+      height: 50px;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .main-image {
+      height: 400px;
+    }
+
+    .rectangle-bottom {
+      height: 50px;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+  }
+}
 
 // // Desktop
 // @media (min-width: 1024px) {
