@@ -7,11 +7,14 @@
   .dotted-rectangle-top {
     width: 100px;
     height: 32px;
+    margin: 1rem 0;
+
   }
 
   .infos-sobre {
-    background-color: green;
-    height: 88%;
+    background-color: #B90A0A0D;
+    height: 75vh;
+    padding: 0 20px;
 
     h1 {
       margin-bottom: 1rem;
@@ -60,6 +63,11 @@
       left: 70%;
     }
 
+    section {
+      display: none;
+    }
+
+
   }
 
 }
@@ -71,7 +79,7 @@
       display: none;
     }
 
-     img.interrogation-left {
+    img.interrogation-left {
       rotate: 5deg;
       background: gray;
       margin-top: 14rem;
@@ -82,14 +90,14 @@
     }
 
     .interrogation-right {
-        rotate: -35deg;
-        background: #b01e1e;
-        margin-left: 10rem;
-        position: relative;
-        width: 100px;
-        height: 100px;
-        top: 19rem;
-        left: 26rem;
+      rotate: -35deg;
+      background: #b01e1e;
+      margin-left: 10rem;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      top: 19rem;
+      left: 26rem;
     }
 
   }
